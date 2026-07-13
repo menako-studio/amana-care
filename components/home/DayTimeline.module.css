@@ -1,0 +1,138 @@
+.section {
+  background: var(--color-white);
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.subtitle {
+  color: var(--color-gray);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-light), transparent);
+  transform: translateX(-50%);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  position: relative;
+}
+
+.itemLeft {
+  flex-direction: row;
+  padding-right: calc(50% + var(--space-8));
+}
+
+.itemRight {
+  flex-direction: row-reverse;
+  padding-left: calc(50% + var(--space-8));
+}
+
+.dot {
+  position: absolute;
+  left: 50%;
+  top: 1.25rem;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.dotEmoji {
+  font-size: 1.25rem;
+}
+
+.card {
+  background: var(--color-cream);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  width: 100%;
+}
+
+.card:hover {
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.time {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  margin-top: var(--space-1);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+  line-height: 1.6;
+  margin-top: var(--space-2);
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .line {
+    left: 1.5rem;
+  }
+
+  .item,
+  .itemLeft,
+  .itemRight {
+    flex-direction: row !important;
+    padding: 0 0 0 var(--space-16);
+  }
+
+  .dot {
+    left: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .dotEmoji {
+    font-size: 1rem;
+  }
+}
