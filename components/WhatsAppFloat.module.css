@@ -1,0 +1,81 @@
+.float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #25D366;
+  color: white;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-spring);
+  overflow: hidden;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-decoration: none;
+}
+
+.float:hover {
+  width: 11rem;
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #25D366;
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+.ring2 {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #25D366;
+  animation: pulse-ring 2.5s ease-out infinite 0.8s;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity var(--transition-base) 0.1s, transform var(--transition-base) 0.1s;
+  position: relative;
+  z-index: 1;
+  padding-right: var(--space-4);
+}
+
+.float:hover .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 640px) {
+  .float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
