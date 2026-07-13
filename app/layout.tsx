@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import SmoothScroll from '@/components/layout/SmoothScroll'
 
 export const metadata: Metadata = {
   title: {
@@ -57,13 +58,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id" className={`${nunito.variable} ${inter.variable}`}>
+    <html lang="id" className={`${nunito.variable} ${inter.variable}`} data-scroll-behavior="smooth">
       <body>
-        <AnnouncementBar />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <SmoothScroll>
+          <AnnouncementBar />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+        </SmoothScroll>
       </body>
     </html>
   )
