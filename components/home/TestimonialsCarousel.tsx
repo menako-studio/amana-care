@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import useEmblaCarousel from 'embla-carousel-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './TestimonialsCarousel.module.css'
 
@@ -37,29 +38,42 @@ const testimonials = [
 ]
 
 export default function TestimonialsCarousel() {
-  const [current, setCurrent] = useState(0)
-  const [paused, setPaused] = useState(false)
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, skipSnaps: false })
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
 
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % testimonials.length)
-  }, [])
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi])
 
-  const prev = () => {
-    setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length)
-  }
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
 
   useEffect(() => {
-    if (paused) return
-    const timer = setInterval(next, 5000)
-    return () => clearInterval(timer)
-  }, [paused, next])
+    if (!emblaApi) return
+    onSelect()
+    setScrollSnaps(emblaApi.scrollSnapList())
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+
+    // Autoplay logic
+    const timer = setInterval(() => {
+      emblaApi.scrollNext()
+    }, 5500)
+
+    return () => {
+      clearInterval(timer)
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
+    }
+  }, [emblaApi, onSelect])
 
   return (
     <section
       className={`section ${styles.section}`}
       aria-labelledby="testimonials-heading"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       {/* Decorative quote */}
       <div className={styles.bigQuote} aria-hidden="true">"</div>
@@ -74,30 +88,39 @@ export default function TestimonialsCarousel() {
           </div>
         </ScrollReveal>
 
-        <div className={styles.carousel} role="region" aria-label="Testimoni orang tua">
-          <div className={styles.slide} key={current}>
-            <div className={styles.quoteIcon} aria-hidden="true">"</div>
-            <p className={styles.text}>{testimonials[current].text}</p>
+        <div className={styles.carouselContainer}>
+          {/* Embla Viewport */}
+          <div className={styles.viewport} ref={emblaRef}>
+            <div className={styles.container}>
+              {testimonials.map((item, index) => (
+                <div className={styles.slide} key={index}>
+                  <div className={styles.slideContent}>
+                    <div className={styles.quoteIcon} aria-hidden="true">"</div>
+                    <p className={styles.text}>{item.text}</p>
 
-            <div className={styles.stars} aria-label={`${testimonials[current].rating} bintang dari 5`}>
-              {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                <Star key={i} size={18} fill="#FFD166" color="#FFD166" aria-hidden="true" />
+                    <div className={styles.stars} aria-label={`${item.rating} bintang dari 5`}>
+                      {Array.from({ length: item.rating }).map((_, i) => (
+                        <Star key={i} size={18} fill="#FFD166" color="#FFD166" aria-hidden="true" />
+                      ))}
+                    </div>
+
+                    <div className={styles.author}>
+                      <span className={styles.avatar}>{item.avatar}</span>
+                      <div>
+                        <p className={styles.name}>{item.name}</p>
+                        <p className={styles.role}>{item.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </div>
-
-            <div className={styles.author}>
-              <span className={styles.avatar}>{testimonials[current].avatar}</span>
-              <div>
-                <p className={styles.name}>{testimonials[current].name}</p>
-                <p className={styles.role}>{testimonials[current].role}</p>
-              </div>
             </div>
           </div>
 
           {/* Controls */}
           <div className={styles.controls}>
             <button
-              onClick={prev}
+              onClick={scrollPrev}
               className={styles.arrowBtn}
               aria-label="Testimoni sebelumnya"
             >
@@ -105,20 +128,20 @@ export default function TestimonialsCarousel() {
             </button>
 
             <div className={styles.dots} role="tablist">
-              {testimonials.map((_, i) => (
+              {scrollSnaps.map((_, index) => (
                 <button
-                  key={i}
+                  key={index}
                   role="tab"
-                  aria-selected={i === current}
-                  aria-label={`Testimoni ${i + 1}`}
-                  className={`${styles.dot} ${i === current ? styles.dotActive : ''}`}
-                  onClick={() => setCurrent(i)}
+                  aria-selected={index === selectedIndex}
+                  aria-label={`Testimoni ${index + 1}`}
+                  className={`${styles.dot} ${index === selectedIndex ? styles.dotActive : ''}`}
+                  onClick={() => scrollTo(index)}
                 />
               ))}
             </div>
 
             <button
-              onClick={next}
+              onClick={scrollNext}
               className={styles.arrowBtn}
               aria-label="Testimoni berikutnya"
             >

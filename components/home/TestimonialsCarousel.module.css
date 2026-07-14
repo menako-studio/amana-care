@@ -41,26 +41,39 @@
   border-radius: var(--radius-full);
 }
 
-.carousel {
+.carouselContainer {
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
 }
 
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 var(--space-4);
+}
+
+.slideContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-6);
-  animation: fadeSlide 0.4s ease both;
-}
-
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  text-align: center;
 }
 
 .quoteIcon {
