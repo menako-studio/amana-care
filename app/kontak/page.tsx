@@ -52,6 +52,7 @@ export default function Kontak() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [form, setForm] = useState({ nama: '', namaAnak: '', usia: '', wa: '', pesan: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [method, setMethod] = useState<'form' | 'cal'>('form')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -166,7 +167,35 @@ export default function Kontak() {
             {/* Right: Form */}
             <ScrollReveal direction="right" delay={100}>
               <div className={styles.formSide}>
-                {!submitted ? (
+                <div className={styles.methodSelector}>
+                  <button
+                    type="button"
+                    className={`${styles.methodBtn} ${method === 'form' ? styles.methodBtnActive : ''}`}
+                    onClick={() => setMethod('form')}
+                  >
+                    📝 Form Pendaftaran
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.methodBtn} ${method === 'cal' ? styles.methodBtnActive : ''}`}
+                    onClick={() => setMethod('cal')}
+                  >
+                    📅 Jadwalkan Site Visit
+                  </button>
+                </div>
+
+                {method === 'cal' ? (
+                  <div className={styles.calWrapper}>
+                    <iframe
+                      src="https://cal.com/amanacare/site-visit?embed=true"
+                      width="100%"
+                      height="500"
+                      frameBorder="0"
+                      title="Jadwalkan Kunjungan Amana Care Bintaro"
+                      className={styles.calFrame}
+                    />
+                  </div>
+                ) : !submitted ? (
                   <form className={styles.form} onSubmit={handleSubmit} noValidate>
                     <h3 className={styles.formTitle}>Form Pendaftaran / Tanya Info</h3>
                     <p className={styles.formDesc}>Hubungi kami langsung via tombol kirim untuk membuka chat WhatsApp.</p>

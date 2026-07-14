@@ -28,6 +28,7 @@ const ageGroups = ['0–6 bulan', '6–12 bulan', '1–2 tahun', '2–3 tahun', 
 export default function ContactSection() {
   const [form, setForm] = useState({ nama: '', namaAnak: '', usia: '', wa: '', pesan: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [method, setMethod] = useState<'form' | 'cal'>('form')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -54,15 +55,43 @@ export default function ContactSection() {
           {/* Left: Form */}
           <ScrollReveal direction="left">
             <div className={styles.formSide}>
-              <span className="section-label">📝 Daftar Sekarang</span>
+              <span className="section-label">📝 Hubungi Kami</span>
               <h2 className="heading-2" id="contact-heading">
                 Siap mendaftarkan<br />si kecil?
               </h2>
               <p className={styles.formSubtitle}>
-                Isi form ini dan kami akan menghubungi Anda via WhatsApp dalam waktu 1×24 jam.
+                Pilih cara pendaftaran yang paling nyaman untuk Anda di bawah ini.
               </p>
 
-              {!submitted ? (
+              <div className={styles.methodSelector}>
+                <button
+                  type="button"
+                  className={`${styles.methodBtn} ${method === 'form' ? styles.methodBtnActive : ''}`}
+                  onClick={() => setMethod('form')}
+                >
+                  📝 Form Pendaftaran
+                </button>
+                <button
+                  type="button"
+                  className={`${styles.methodBtn} ${method === 'cal' ? styles.methodBtnActive : ''}`}
+                  onClick={() => setMethod('cal')}
+                >
+                  📅 Jadwalkan Site Visit
+                </button>
+              </div>
+
+              {method === 'cal' ? (
+                <div className={styles.calWrapper}>
+                  <iframe
+                    src="https://cal.com/amanacare/site-visit?embed=true"
+                    width="100%"
+                    height="500"
+                    frameBorder="0"
+                    title="Jadwalkan Kunjungan Amana Care Bintaro"
+                    className={styles.calFrame}
+                  />
+                </div>
+              ) : !submitted ? (
                 <form className={styles.form} onSubmit={handleSubmit} noValidate>
                   <div className={styles.row}>
                     <div className={styles.field}>
