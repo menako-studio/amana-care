@@ -103,7 +103,14 @@ export default function Footer() {
               <ul className={styles.contactList}>
                 <li className={styles.contactItem}>
                   <MapPin size={16} className={styles.contactIcon} />
-                  <span>Bintaro Sektor 7, Tangerang Selatan, Banten</span>
+                  <a
+                    href="https://share.google/IbDHnKDtXvBJQah2i"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.contactLink}
+                  >
+                    Bintaro Sektor 7, Tangerang Selatan, Banten
+                  </a>
                 </li>
                 <li className={styles.contactItem}>
                   <Clock size={16} className={styles.contactIcon} />
@@ -153,7 +160,7 @@ export default function Footer() {
         <div className="container">
           <div className={styles.bottomInner}>
             <p className={styles.copyright}>
-              © {currentYear} Amana Care. Hak cipta dilindungi.
+              © {currentYear} PT Amana Peduli Warga Indonesia (Amana Care). Hak cipta dilindungi.
             </p>
             <p className={styles.credit}>
               Made with ❤️ in Bintaro
