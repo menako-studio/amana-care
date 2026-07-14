@@ -26,7 +26,7 @@ export default function AnnouncementBar() {
       <div className={styles.content}>
         <span className={styles.emoji}>🎉</span>
         <p className={styles.text}>
-          <strong>Pendaftaran Agustus 2025 Dibuka!</strong> Slot terbatas — hubungi kami sekarang.
+          <strong>Pendaftaran Agustus 2026 Dibuka!</strong> Slot terbatas — hubungi kami sekarang.
         </p>
         <a
           href="https://wa.me/6281234567890?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
