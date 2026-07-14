@@ -203,7 +203,16 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className={styles.infoLabel}>Alamat</p>
-                      <p className={styles.infoValue}>Bintaro Sektor 7,<br />Tangerang Selatan, Banten</p>
+                      <p className={styles.infoValue}>
+                        <a
+                          href="https://share.google/IbDHnKDtXvBJQah2i"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.infoLink}
+                        >
+                          Bintaro Sektor 7,<br />Tangerang Selatan, Banten
+                        </a>
+                      </p>
                     </div>
                   </div>
 

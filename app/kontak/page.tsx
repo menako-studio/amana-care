@@ -104,7 +104,16 @@ export default function Kontak() {
                       </div>
                       <div>
                         <p className={styles.infoLabel}>Alamat</p>
-                        <p className={styles.infoValue}>Bintaro Sektor 7, Tangerang Selatan, Banten</p>
+                        <p className={styles.infoValue}>
+                          <a
+                            href="https://share.google/IbDHnKDtXvBJQah2i"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.infoLink}
+                          >
+                            Bintaro Sektor 7, Tangerang Selatan, Banten
+                          </a>
+                        </p>
                       </div>
                     </div>
 
