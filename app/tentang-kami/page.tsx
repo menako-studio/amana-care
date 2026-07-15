@@ -162,7 +162,36 @@ export default function TentangKami() {
             </div>
           </ScrollReveal>
 
-          <div className="grid-4">
+          {/* Team Video Intro Grid */}
+          <div className={styles.teamIntroGrid}>
+            <ScrollReveal direction="left" className={styles.teamIntroText}>
+              <h3 className={styles.teamIntroTitle}>Komitmen Pengasuhan Sepenuh Hati</h3>
+              <p className={styles.teamIntroDesc}>
+                Setiap anggota tim kami melewati proses seleksi ketat dan pelatihan berkelanjutan. Kami memiliki komitmen tinggi untuk menghadirkan lingkungan pengasuhan yang aman, bersih, stimulatif, dan dipenuhi kasih sayang layaknya rumah kedua bagi buah hati Anda.
+              </p>
+              <p className={styles.teamIntroDesc}>
+                Tonton video perkenalan singkat tim kami di samping untuk melihat bagaimana dedikasi kami berpadu dalam aktivitas keseharian bersama si kecil.
+              </p>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="right" className={styles.teamIntroVideoCol} delay={100}>
+              <div className={styles.videoCard}>
+                <video 
+                  src="/videos/amanacare-about-meet-the-team.webm" 
+                  className={styles.introVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  preload="metadata"
+                />
+                <span className={styles.videoTag}>🎬 Meet the Team</span>
+              </div>
+            </ScrollReveal>
+          </div>
+ 
+          <div className="grid-4" style={{ marginTop: 'var(--space-16)' }}>
             {team.map((member, i) => (
               <ScrollReveal key={member.name} direction="up" delay={i * 80}>
                 <div className={styles.teamCard}>
