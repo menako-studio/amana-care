@@ -146,6 +146,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
                     muted={globalMuted}
                     playsInline
                     preload="metadata"
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                   
                   {/* Glassmorphism Badge */}
@@ -207,8 +208,10 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
                   className={styles.lightboxVideo}
                   autoPlay
                   controls
+                  controlsList="nodownload"
                   loop
                   playsInline
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
             </div>
