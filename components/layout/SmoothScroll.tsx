@@ -22,10 +22,41 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     rafId = requestAnimationFrame(raf)
 
-    // Add scroll listener to update scroll styles or state if needed
+    // Global protection against downloading photo and video assets
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target &&
+        (target.tagName === 'IMG' ||
+          target.tagName === 'VIDEO' ||
+          target.closest('video') ||
+          target.closest('img'))
+      ) {
+        e.preventDefault()
+      }
+    }
+
+    const handleDragStart = (e: DragEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target &&
+        (target.tagName === 'IMG' ||
+          target.tagName === 'VIDEO' ||
+          target.closest('video') ||
+          target.closest('img'))
+      ) {
+        e.preventDefault()
+      }
+    }
+
+    document.addEventListener('contextmenu', handleContextMenu)
+    document.addEventListener('dragstart', handleDragStart)
+
     return () => {
       cancelAnimationFrame(rafId)
       lenis.destroy()
+      document.removeEventListener('contextmenu', handleContextMenu)
+      document.removeEventListener('dragstart', handleDragStart)
     }
   }, [])
 
