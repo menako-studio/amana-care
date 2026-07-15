@@ -47,3 +47,13 @@
 - [x] npm run build (zero errors)
 - [x] Mobile responsiveness check
 - [x] SEO metadata all pages
+
+## Phase 9: Video Reels & YouTube Integration
+- [x] Create VideoReels component and CSS module
+- [x] Add VideoReels component to the Homepage
+- [x] Integrate WebM reels on the Gallery page (tab switcher)
+- [x] Embed YouTube event video with metadata card on the Gallery page
+- [x] Embed Meet the Team video in the About page
+- [x] Embed Montessori and Sensory Play videos in the Services page
+- [x] Verify the build and check responsiveness
+
