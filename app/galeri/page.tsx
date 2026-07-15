@@ -2,12 +2,14 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { X, ZoomIn } from 'lucide-react'
+import Link from 'next/link'
+import { X, ZoomIn, Calendar, Users, Award, Clock, ArrowRight } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import VideoReels from '@/components/home/VideoReels'
 import styles from './page.module.css'
 
 const categories = [
-  { id: 'semua', label: 'Semua' },
+  { id: 'semua', label: 'Semua Kategori' },
   { id: 'aktivitas', label: 'Aktivitas Belajar' },
   { id: 'fasilitas', label: 'Fasilitas' },
   { id: 'event', label: 'Event & Hari Spesial' },
@@ -26,6 +28,7 @@ const galleryItems = [
 ]
 
 export default function Galeri() {
+  const [mediaType, setMediaType] = useState<'foto' | 'video'>('foto')
   const [filter, setFilter] = useState('semua')
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
@@ -47,46 +50,167 @@ export default function Galeri() {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className={styles.filterSection}>
+      {/* Main Tab Switcher */}
+      <section className={styles.mediaSelectorSection}>
         <div className="container">
           <ScrollReveal direction="up">
-            <div className={styles.tabs} role="tablist" aria-label="Kategori foto galeri">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  role="tab"
-                  aria-selected={filter === cat.id}
-                  className={`${styles.tab} ${filter === cat.id ? styles.tabActive : ''}`}
-                  onClick={() => setFilter(cat.id)}
-                >
-                  {cat.label}
-                </button>
-              ))}
+            <div className={styles.mediaTypeSelector}>
+              <button 
+                className={`${styles.mediaTypeBtn} ${mediaType === 'foto' ? styles.mediaTypeBtnActive : ''}`}
+                onClick={() => setMediaType('foto')}
+              >
+                📸 Galeri Foto
+              </button>
+              <button 
+                className={`${styles.mediaTypeBtn} ${mediaType === 'video' ? styles.mediaTypeBtnActive : ''}`}
+                onClick={() => setMediaType('video')}
+              >
+                🎥 Video Reels
+              </button>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Media Content */}
+      <section className={styles.filterSection}>
+        <div className="container">
+          {mediaType === 'foto' ? (
+            <>
+              <ScrollReveal direction="up">
+                <div className={styles.tabs} role="tablist" aria-label="Kategori foto galeri">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      role="tab"
+                      aria-selected={filter === cat.id}
+                      className={`${styles.tab} ${filter === cat.id ? styles.tabActive : ''}`}
+                      onClick={() => setFilter(cat.id)}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
+              </ScrollReveal>
+
+              {/* Photo Grid */}
+              <div className={styles.grid}>
+                {filteredItems.map((item, i) => (
+                  <ScrollReveal key={i} direction="up" delay={i * 50}>
+                    <div className={styles.item} onClick={() => setLightbox({ src: item.src, alt: item.alt })}>
+                      <div className={styles.imgWrapper}>
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className={styles.img}
+                        />
+                        <div className={styles.overlay}>
+                          <ZoomIn className={styles.zoomIcon} size={28} />
+                          <span className={styles.tag}>{item.tag}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className={styles.reelsWrapper}>
+              <VideoReels showTitle={false} />
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Featured YouTube Video Event Section */}
+      <section className={`section ${styles.youtubeSection}`}>
+        <div className="container">
+          <ScrollReveal direction="up">
+            <div className={styles.youtubeHeader}>
+              <span className="section-label">🎥 Event Khusus</span>
+              <h2 className="heading-2">On-Site Daycare Service Event</h2>
+              <p className={styles.youtubeSubtitle}>
+                Dokumentasi eksklusif pelayanan penitipan anak di lokasi acara (on-site daycare) untuk event privat di Jakarta Selatan.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Grid */}
-          <div className={styles.grid}>
-            {filteredItems.map((item, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 50}>
-                <div className={styles.item} onClick={() => setLightbox({ src: item.src, alt: item.alt })}>
-                  <div className={styles.imgWrapper}>
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className={styles.img}
-                    />
-                    <div className={styles.overlay}>
-                      <ZoomIn className={styles.zoomIcon} size={28} />
-                      <span className={styles.tag}>{item.tag}</span>
+          <div className={styles.youtubeGrid}>
+            {/* Video Column */}
+            <ScrollReveal direction="left" className={styles.videoColumn}>
+              <div className={styles.iframeWrapper}>
+                <iframe 
+                  src="https://www.youtube.com/embed/Hk196cyieQ0?si=KQ1BOoSkYUWaim29" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                  loading="lazy"
+                  className={styles.youtubeIframe}
+                />
+              </div>
+            </ScrollReveal>
+
+            {/* Info / Metadata Column */}
+            <ScrollReveal direction="right" className={styles.infoColumn}>
+              <div className={styles.infoCard}>
+                <h3 className={styles.infoCardTitle}>Detail Dokumentasi Event</h3>
+                <p className={styles.infoCardDesc}>
+                  Amana Care menyediakan layanan penitipan anak di lokasi (on-site daycare) untuk kebutuhan acara formal, semi-formal, maupun privat. Kami menyulap salah satu ruangan menjadi daycare yang ramah anak, aman, dan lengkap dengan berbagai aktivitas edukasi yang menyenangkan.
+                </p>
+
+                <div className={styles.metadataGrid}>
+                  <div className={styles.metaItem}>
+                    <div className={styles.metaIcon}>
+                      <Clock size={20} />
+                    </div>
+                    <div>
+                      <p className={styles.metaLabel}>Durasi Event</p>
+                      <p className={styles.metaValue}>3 Jam Penuh</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.metaItem}>
+                    <div className={styles.metaIcon}>
+                      <Award size={20} />
+                    </div>
+                    <div>
+                      <p className={styles.metaLabel}>Aktivitas Anak</p>
+                      <p className={styles.metaValue}>1.5 Jam Art & Craft + 1.5 Jam Free Play</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.metaItem}>
+                    <div className={styles.metaIcon}>
+                      <Users size={20} />
+                    </div>
+                    <div>
+                      <p className={styles.metaLabel}>Jumlah Anak</p>
+                      <p className={styles.metaValue}>7 Anak</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.metaItem}>
+                    <div className={styles.metaIcon}>
+                      <Calendar size={20} />
+                    </div>
+                    <div>
+                      <p className={styles.metaLabel}>Rentang Usia</p>
+                      <p className={styles.metaValue}>7 Bulan sampai 6 Tahun</p>
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
+
+                <div className={styles.ctaWrapper}>
+                  <Link href="/kontak" className="btn btn-primary" id="youtube-cta-kontak">
+                    Hubungi untuk Layanan Event 💬
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -121,3 +245,4 @@ export default function Galeri() {
     </div>
   )
 }
+
