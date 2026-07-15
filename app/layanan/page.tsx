@@ -103,6 +103,73 @@ export default function Layanan() {
         </div>
       </section>
 
+      {/* Daycare Program Videos Section */}
+      <section className={`section ${styles.videoProgramSection}`}>
+        <div className="container">
+          <ScrollReveal direction="up">
+            <div className={styles.sectionHeader}>
+              <span className="section-label">🎬 Program Unggulan</span>
+              <h2 className="heading-2">Kurikulum &amp; Stimulasi dalam Aksi</h2>
+              <p className={styles.sectionSubtitle}>
+                Lihat langsung bagaimana si kecil mengeksplorasi dunia belajar dan bermain di Amana Care.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className={styles.videoGrid}>
+            {/* Montessori Video */}
+            <ScrollReveal direction="up" delay={50}>
+              <div className={styles.videoProgramCard}>
+                <div className={styles.videoCardWrapper}>
+                  <video 
+                    src="/videos/amanacare-curriculum-montessori-practical-life.webm"
+                    className={styles.programVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    preload="metadata"
+                  />
+                  <span className={styles.videoBadge}>Montessori Curriculum</span>
+                </div>
+                <div className={styles.videoCardContent}>
+                  <h3 className={styles.videoCardTitle}>Montessori Practical Life</h3>
+                  <p className={styles.videoCardDesc}>
+                    Melatih kemandirian, konsentrasi, koordinasi fisik, dan rasa percaya diri anak dengan menyiram tanaman, merapikan mainan, serta aktivitas motorik halus lainnya.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Sensory Play Video */}
+            <ScrollReveal direction="up" delay={150}>
+              <div className={styles.videoProgramCard}>
+                <div className={styles.videoCardWrapper}>
+                  <video 
+                    src="/videos/amanacare-program-baby-sensory-play.webm"
+                    className={styles.programVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    preload="metadata"
+                  />
+                  <span className={styles.videoBadge}>Baby Stimulation</span>
+                </div>
+                <div className={styles.videoCardContent}>
+                  <h3 className={styles.videoCardTitle}>Baby Sensory Play</h3>
+                  <p className={styles.videoCardDesc}>
+                    Eksplorasi bertekstur, warna-warni, suara, dan stimulasi taktil terarah yang aman bagi bayi untuk merangsang hubungan sinapsis otak di usia emas tumbuh kembangnya.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Parents Working Space Section */}
       <section className="section" id="working-space">
         <div className="container">
