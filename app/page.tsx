@@ -6,6 +6,7 @@ import DayTimeline from '@/components/home/DayTimeline'
 import ProgramTabs from '@/components/home/ProgramTabs'
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel'
 import GalleryPreview from '@/components/home/GalleryPreview'
+import VideoReels from '@/components/home/VideoReels'
 import ContactSection from '@/components/home/ContactSection'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <ProgramTabs />
       <TestimonialsCarousel />
       <GalleryPreview />
+      <VideoReels limit={3} />
       <ContactSection />
     </>
   )
