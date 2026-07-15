@@ -129,6 +129,7 @@ export default function Layanan() {
                     muted
                     playsInline
                     controls
+                    controlsList="nodownload"
                     preload="metadata"
                   />
                   <span className={styles.videoBadge}>Montessori Curriculum</span>
@@ -154,6 +155,7 @@ export default function Layanan() {
                     muted
                     playsInline
                     controls
+                    controlsList="nodownload"
                     preload="metadata"
                   />
                   <span className={styles.videoBadge}>Baby Stimulation</span>

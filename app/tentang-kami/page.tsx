@@ -184,6 +184,7 @@ export default function TentangKami() {
                   muted
                   playsInline
                   controls
+                  controlsList="nodownload"
                   preload="metadata"
                 />
                 <span className={styles.videoTag}>🎬 Meet the Team</span>
