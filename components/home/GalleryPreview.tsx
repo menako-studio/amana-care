@@ -9,8 +9,8 @@ const photos = [
   { src: '/images/gallery-outdoor.png', alt: 'Bermain outdoor di area bermain Amana Care', span: 'wide' },
   { src: '/images/hero-layanan.png', alt: 'Parents working space di Amana Care', span: 'normal' },
   { src: '/images/hero-fasilitas.png', alt: 'Ruang belajar dan bermain Amana Care Bintaro', span: 'normal' },
-  { src: '/images/hero-kontak.png', alt: 'Lobi penerimaan anak yang nyaman', span: 'normal' },
-  { src: '/images/hero-daycare-room.png', alt: 'Ruang istirahat anak di Amana Care', span: 'tall' },
+  { src: '/images/hero-kontak.png', alt: 'Lobi penerimaan anak yang nyaman', span: 'wide' },
+  { src: '/images/hero-daycare-room.png', alt: 'Ruang istirahat anak di Amana Care', span: 'normal' },
 ]
 
 export default function GalleryPreview() {
