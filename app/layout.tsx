@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { nunito, inter } from '@/lib/fonts'
+import { quicksand, inter } from '@/lib/fonts'
 import '@/app/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import SmoothScroll from '@/components/layout/SmoothScroll'
+import LoadingScreen from '@/components/layout/LoadingScreen'
 
 export const metadata: Metadata = {
   title: {
@@ -34,10 +35,10 @@ export const metadata: Metadata = {
       'Daycare premium dengan CCTV realtime, daily report, dan skrining psikolog anak di Bintaro Sektor 7.',
     images: [
       {
-        url: '/images/hero-children-play.png',
+        url: '/images/logo/logo-amanacare-horizontal-color.png',
         width: 1200,
-        height: 630,
-        alt: 'Amana Care Daycare Bintaro',
+        height: 524,
+        alt: 'Amana Care Logo',
       },
     ],
   },
@@ -58,8 +59,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id" className={`${nunito.variable} ${inter.variable}`} data-scroll-behavior="smooth">
+    <html lang="id" className={`${quicksand.variable} ${inter.variable}`} data-scroll-behavior="smooth">
       <body>
+        <LoadingScreen />
         <SmoothScroll>
           <AnnouncementBar />
           <Navbar />
