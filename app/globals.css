@@ -302,6 +302,7 @@ ul, ol {
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
   margin-bottom: var(--space-4);
+  width: fit-content;
 }
 
 /* --- Decorative SVG Shapes --- */
