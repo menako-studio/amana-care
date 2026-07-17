@@ -98,6 +98,7 @@ export default function HeroSection() {
               fill
               sizes="(max-width: 768px) 60vw, 260px"
               className={styles.img}
+              priority
             />
           </div>
           {/* Floating labels */}

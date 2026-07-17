@@ -88,6 +88,7 @@ export default function Layanan() {
                     width={500}
                     height={400}
                     className="img-rounded"
+                    priority
                   />
                 </div>
                 <div className={styles.floatingCard}>

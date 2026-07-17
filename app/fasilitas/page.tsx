@@ -71,6 +71,7 @@ export default function Fasilitas() {
                       width={500}
                       height={340}
                       className="img-rounded"
+                      priority={i === 0}
                     />
                   </div>
                   <div className={styles.areaContent}>
