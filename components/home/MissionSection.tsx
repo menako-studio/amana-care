@@ -12,7 +12,7 @@ export default function MissionSection() {
           {/* Left: Quote */}
           <ScrollReveal direction="left" delay={100}>
             <div className={styles.quoteBlock}>
-              <div className={styles.quoteMark} aria-hidden="true">"</div>
+              <div className={styles.quoteMark} aria-hidden="true">&quot;</div>
               <blockquote className={styles.quote} id="mission-heading">
                 Amana artinya amanah — dan kami memegang amanah itu sepenuh hati.
               </blockquote>

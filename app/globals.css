@@ -1,23 +1,20 @@
 /* ===================================================
    AMANA CARE — Global Design System
-   Brand: Turquoise Blue (#00B4D8) + Warm Cream (#FFF9F2)
-   Inspired by: MEplace.co aesthetic
+   Brand: Sky Blue (#39C2E7) + Natural Blue (#86DDF4) + Warm Cream (#FFF9F2)
    =================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
-  /* Brand Colors */
-  --color-primary: #00B4D8;
-  --color-primary-dark: #0077B6;
-  --color-primary-light: #90E0EF;
-  --color-primary-pale: #CAF0F8;
-  --color-yellow: #FFD166;
+  /* Brand Colors (Official Amana Care Guidelines) */
+  --color-primary: #39C2E7;       /* Sky Blue */
+  --color-primary-light: #86DDF4; /* Natural/Soft Blue */
+  --color-primary-dark: #1988A7;  /* Sky Blue Dark (optimized for readability/hover) */
+  --color-primary-pale: #D5F7FE;  /* Sky Blue Pale */
+  --color-yellow: #FFD166;        
   --color-yellow-dark: #F4B63D;
-  --color-coral: #EF8C8C;
-  --color-green: #06D6A0;
-  --color-purple: #B47CBA;
+  --color-coral: #F27455;         /* Burnt Sienna */
+  --color-green: #30F2B2;         /* Green Lizard */
+  --color-purple: #E371FF;        /* Heliotrope */
 
   /* Neutrals */
   --color-cream: #FFF9F2;
@@ -37,7 +34,7 @@
   --color-surface: var(--color-white);
 
   /* Typography */
-  --font-display: 'Nunito', sans-serif;
+  --font-display: 'Quicksand', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Type Scale */
