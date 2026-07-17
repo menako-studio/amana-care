@@ -288,19 +288,18 @@
   position: relative;
 }
 
-.founderAvatarPlaceholder {
+.founderAvatarWrapper {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-  color: var(--color-white);
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+  background: var(--color-light-gray);
+}
+
+.founderImg {
+  object-fit: cover;
 }
 
 .founderVisualTag {

@@ -9,10 +9,13 @@ export const metadata: Metadata = {
 }
 
 const team = [
-  { name: 'Dr. Elizabeth Shanti, M.Psi.', role: 'Child Psychologist', desc: 'Konsultan tumbuh kembang anak berkala di Amana Care.', avatar: '🧠' },
-  { name: 'Kak Fitri Aulia', role: 'Head of Caregiver', desc: 'Berpengalaman >8 tahun di dunia PAUD & penitipan anak.', avatar: '👩‍🏫' },
-  { name: 'Kak Riana Indah', role: 'Lead Nurse / Caregiver', desc: 'Perawat anak bersertifikasi pertolongan pertama (P3K).', avatar: '👩‍⚕️' },
-  { name: 'Kak Sarah Nadia', role: 'Caregiver & Educator', desc: 'Lulusan Pendidikan Guru PAUD, fokus stimulasi motorik.', avatar: '👩' },
+  { name: 'Kak Rosyi', role: 'Teacher', desc: 'Pendidik senior berpengalaman 4 tahun memandu kelas motorik & stimulasi di Amana Care.', avatar: '👩‍🏫' },
+  { name: 'Kak Via', role: 'Caregiver', desc: 'Caregiver senior berpengalaman 3 tahun mendampingi aktivitas balita & stimulasi dini.', avatar: '👩' },
+  { name: 'Kak Mara', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun fokus pada pengenalan bahasa, numerasi dasar, & bercerita.', avatar: '👩‍🏫' },
+  { name: 'Kak Fafa', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun membawakan kurikulum bermain sensorik & eksplorasi alam.', avatar: '👩‍🏫' },
+  { name: 'Kak Daffa', role: 'Caregiver', desc: 'Caregiver ramah berpengalaman 2 tahun, terampil memandu aktivitas fisik motorik kasar anak.', avatar: '👨' },
+  { name: 'Kak Dinda', role: 'Caregiver', desc: 'Pendamping ceria berpengalaman 1.5 tahun menjaga kenyamanan & kebersihan harian buah hati.', avatar: '👩' },
+  { name: 'Kak Ola', role: 'Caregiver', desc: 'Pendamping terlatih berpengalaman 1.5 tahun mendampingi jam istirahat siang & stimulasi mandiri.', avatar: '👩' },
 ]
 
 export default function TentangKami() {
@@ -51,8 +54,8 @@ export default function TentangKami() {
             <ScrollReveal direction="left">
               <div className={styles.storyVisual}>
                 <Image
-                  src="/images/hero-children-play.png"
-                  alt="Anak-anak aktif di Amana Care"
+                  src="/images/hero-layanan.png"
+                  alt="Anak-anak bermain gembira didampingi pengasuh sementara orang tua fokus bekerja di parents working space"
                   width={500}
                   height={400}
                   className="img-rounded"
@@ -103,8 +106,13 @@ export default function TentangKami() {
             <ScrollReveal direction="right" delay={100}>
               <div className={styles.founderVisual}>
                 <div className={styles.founderImgFrame}>
-                  <div className={styles.founderAvatarPlaceholder}>
-                    <span>AS</span>
+                  <div className={styles.founderAvatarWrapper}>
+                    <Image
+                      src="/images/team/adiwerti-sarahayu.jpeg"
+                      alt="Adiwerti Sarahayu Lestari, S.H. - Founder & Owner Amana Care"
+                      fill
+                      className={styles.founderImg}
+                    />
                   </div>
                   <div className={styles.founderVisualTag}>
                     <p className={styles.fvtTitle}>Founder &amp; Owner</p>
