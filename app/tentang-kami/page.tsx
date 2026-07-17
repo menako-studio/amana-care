@@ -13,7 +13,7 @@ const team = [
   { name: 'Kak Via', role: 'Caregiver', desc: 'Caregiver senior berpengalaman 3 tahun mendampingi aktivitas balita & stimulasi dini.', avatar: '👩' },
   { name: 'Kak Mara', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun fokus pada pengenalan bahasa, numerasi dasar, & bercerita.', avatar: '👩‍🏫' },
   { name: 'Kak Fafa', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun membawakan kurikulum bermain sensorik & eksplorasi alam.', avatar: '👩‍🏫' },
-  { name: 'Kak Daffa', role: 'Caregiver', desc: 'Caregiver ramah berpengalaman 2 tahun, terampil memandu aktivitas fisik motorik kasar anak.', avatar: '👨' },
+  { name: 'Kak Daffa', role: 'Caregiver', desc: 'Caregiver ramah berpengalaman 2 tahun, terampil memandu aktivitas fisik motorik kasar anak.', avatar: '👩' },
   { name: 'Kak Dinda', role: 'Caregiver', desc: 'Pendamping ceria berpengalaman 1.5 tahun menjaga kenyamanan & kebersihan harian buah hati.', avatar: '👩' },
   { name: 'Kak Ola', role: 'Caregiver', desc: 'Pendamping terlatih berpengalaman 1.5 tahun mendampingi jam istirahat siang & stimulasi mandiri.', avatar: '👩' },
 ]
@@ -111,6 +111,7 @@ export default function TentangKami() {
                       src="/images/team/adiwerti-sarahayu.jpeg"
                       alt="Adiwerti Sarahayu Lestari, S.H. - Founder & Owner Amana Care"
                       fill
+                      sizes="128px"
                       className={styles.founderImg}
                     />
                   </div>
