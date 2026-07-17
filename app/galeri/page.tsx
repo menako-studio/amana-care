@@ -16,12 +16,12 @@ const categories = [
 ]
 
 const galleryItems = [
-  { src: '/images/hero-children-play.png', alt: 'Anak melukis mewarnai bersama pengasuh', category: 'aktivitas', tag: 'Aktivitas Seni' },
+  { src: '/images/hero-galeri.png', alt: 'Anak-anak melukis mewarnai bersama pengasuh di ruang seni', category: 'aktivitas', tag: 'Aktivitas Seni' },
   { src: '/images/gallery-outdoor.png', alt: 'Bermain perosotan di rumput sintetis outdoor', category: 'aktivitas', tag: 'Outdoor Play' },
-  { src: '/images/working-space.png', alt: 'Suasana parents working space nyaman bersih', category: 'fasilitas', tag: 'Co-Working' },
-  { src: '/images/hero-daycare-room.png', alt: 'Ruang kelas toddlers dengan loker mainan rapi', category: 'fasilitas', tag: 'Ruang Belajar' },
+  { src: '/images/hero-layanan.png', alt: 'Suasana parents working space terintegrasi dengan daycare', category: 'fasilitas', tag: 'Co-Working' },
+  { src: '/images/hero-fasilitas.png', alt: 'Ruang kelas toddlers dengan loker mainan rapi dan bersih', category: 'fasilitas', tag: 'Ruang Belajar' },
   { src: '/images/hero-children-play.png', alt: 'Sensory play dengan manik-manik air warna-warni', category: 'aktivitas', tag: 'Sensory Play' },
-  { src: '/images/gallery-outdoor.png', alt: 'Perayaan Batik Day memakai baju adat bersama', category: 'event', tag: 'Hari Batik' },
+  { src: '/images/hero-kontak.png', alt: 'Lobi resepsionis penerimaan anak yang aesthetic dan nyaman', category: 'fasilitas', tag: 'Lobi Penerimaan' },
   { src: '/images/hero-daycare-room.png', alt: 'Area tidur siang dengan kasur personal bersih', category: 'fasilitas', tag: 'Ruang Istirahat' },
   { src: '/images/working-space.png', alt: 'Monitor CCTV terpasang di area kerja orang tua', category: 'fasilitas', tag: 'CCTV Monitor' },
   { src: '/images/gallery-outdoor.png', alt: 'Merayakan kemerdekaan 17 Agustus lomba makan kerupuk', category: 'event', tag: '17 Agustusan' },
@@ -38,11 +38,24 @@ export default function Galeri() {
     <div className={styles.wrapper}>
       {/* Hero Header */}
       <section className={styles.hero}>
-        <div className="container">
+        <div className={styles.heroBg}>
+          <Image
+            src="/images/hero-galeri.png"
+            alt="Galeri Dokumentasi Amana Care Bintaro"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImg}
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+        <div className={`container ${styles.heroContent}`}>
           <ScrollReveal direction="up">
-            <span className="section-label">📸 Dokumentasi</span>
-            <h1 className="heading-1">Galeri Momen</h1>
-            <p className={styles.heroText}>
+            <span className={styles.heroBadge}>📸 Dokumentasi</span>
+            <h1 className="heading-1" style={{ color: 'var(--color-white)' }}>
+              Galeri Momen
+            </h1>
+            <p className={styles.heroSubtitle}>
               Kumpulan dokumentasi keceriaan aktivitas harian, fasilitas penunjang,
               dan berbagai acara perayaan hari besar di Amana Care Bintaro.
             </p>

@@ -31,11 +31,24 @@ export default function Layanan() {
     <div className={styles.wrapper}>
       {/* Hero Header */}
       <section className={styles.hero}>
-        <div className="container">
+        <div className={styles.heroBg}>
+          <Image
+            src="/images/hero-layanan.png"
+            alt="Layanan daycare dan parents working space premium Amana Care Bintaro"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImg}
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+        <div className={`container ${styles.heroContent}`}>
           <ScrollReveal direction="up">
-            <span className="section-label">📋 Program Layanan</span>
-            <h1 className="heading-1">Layanan Kami</h1>
-            <p className={styles.heroText}>
+            <span className={styles.heroBadge}>📋 Program Layanan</span>
+            <h1 className="heading-1" style={{ color: 'var(--color-white)' }}>
+              Layanan Kami
+            </h1>
+            <p className={styles.heroSubtitle}>
               Amana Care menawarkan perpaduan unik antara pengasuhan anak usia dini berkualitas tinggi
               dan ruang kerja produktif bagi orang tua bekerja.
             </p>

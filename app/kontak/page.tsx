@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Plus, Minus, MapPin, Clock, Phone, CheckCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
@@ -76,11 +77,24 @@ export default function Kontak() {
     <div className={styles.wrapper}>
       {/* Hero */}
       <section className={styles.hero}>
-        <div className="container">
+        <div className={styles.heroBg}>
+          <Image
+            src="/images/hero-kontak.png"
+            alt="Kontak Amana Care Bintaro"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImg}
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+        <div className={`container ${styles.heroContent}`}>
           <ScrollReveal direction="up">
-            <span className="section-label">📞 Kontak Kami</span>
-            <h1 className="heading-1">Hubungi Amana Care</h1>
-            <p className={styles.heroText}>
+            <span className={styles.heroBadge}>📞 Kontak Kami</span>
+            <h1 className="heading-1" style={{ color: 'var(--color-white)' }}>
+              Hubungi Amana Care
+            </h1>
+            <p className={styles.heroSubtitle}>
               Kami selalu senang mendengar dari Anda. Hubungi kami untuk kunjungan,
               informasi biaya daycare, atau pertanyaan lainnya.
             </p>

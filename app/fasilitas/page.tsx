@@ -45,11 +45,24 @@ export default function Fasilitas() {
     <div className={styles.wrapper}>
       {/* Hero */}
       <section className={styles.hero}>
-        <div className="container">
+        <div className={styles.heroBg}>
+          <Image
+            src="/images/hero-fasilitas.png"
+            alt="Tur Fasilitas premium Amana Care Bintaro"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImg}
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+        <div className={`container ${styles.heroContent}`}>
           <ScrollReveal direction="up">
-            <span className="section-label">🏡 Tur Fasilitas</span>
-            <h1 className="heading-1">Tur Fasilitas Kami</h1>
-            <p className={styles.heroText}>
+            <span className={styles.heroBadge}>🏡 Tur Fasilitas</span>
+            <h1 className="heading-1" style={{ color: 'var(--color-white)' }}>
+              Tur Fasilitas Kami
+            </h1>
+            <p className={styles.heroSubtitle}>
               Setiap sudut di Amana Care dirancang khusus dengan mengutamakan aspek keamanan, kebersihan,
               dan kenyamanan optimal si kecil serta produktivitas Anda.
             </p>
