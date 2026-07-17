@@ -14,22 +14,22 @@ const areas = [
   {
     title: 'Ruang Bermain & Eksplorasi',
     desc: 'Area bermain indoor yang luas dilengkapi dengan mainan kayu non-toxic edukatif untuk merangsang motorik halus dan kasar anak.',
-    img: '/images/hero-children-play.png',
+    img: '/images/hero-fasilitas.png',
   },
   {
     title: 'Ruang Belajar & Kelas',
     desc: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni, kerajinan tangan, dan belajar terstruktur.',
-    img: '/images/hero-daycare-room.png',
+    img: '/images/hero-galeri.png',
   },
   {
     title: 'Ruang Istirahat Bersih',
     desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/hero-daycare-room.png',
+    img: '/images/hero-sleep-area.png',
   },
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja premium khusus orang tua di lantai atas, dilengkapi dengan meja kerja ergonomis dan monitor pantau CCTV.',
-    img: '/images/working-space.png',
+    img: '/images/hero-layanan.png',
   },
 ]
 
