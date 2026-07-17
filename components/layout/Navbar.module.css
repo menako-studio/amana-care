@@ -31,38 +31,14 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
   flex-shrink: 0;
   text-decoration: none;
 }
 
-.logoIcon {
-  width: 2.25rem;
-  height: 2.25rem;
-  flex-shrink: 0;
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logoMain {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.15rem;
-  color: var(--color-charcoal);
-  letter-spacing: -0.02em;
-}
-
-.logoCare {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.7rem;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+.logoImage {
+  width: auto;
+  height: 42px;
+  display: block;
 }
 
 /* Desktop Nav Links */

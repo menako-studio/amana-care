@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
 import styles from './Footer.module.css'
 
@@ -46,17 +47,13 @@ export default function Footer() {
             {/* Brand Column */}
             <div className={styles.brand}>
               <Link href="/" className={styles.logo} aria-label="Amana Care">
-                <div className={styles.logoIcon}>
-                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="20" cy="20" r="20" fill="var(--color-primary)" />
-                    <path d="M20 10C20 10 12 15 12 22C12 26.4 15.6 30 20 30C24.4 30 28 26.4 28 22C28 15 20 10 20 10Z" fill="white" />
-                    <circle cx="20" cy="22" r="4" fill="var(--color-primary)" />
-                  </svg>
-                </div>
-                <div className={styles.logoText}>
-                  <span className={styles.logoMain}>amana</span>
-                  <span className={styles.logoCare}>care</span>
-                </div>
+                <Image
+                  src="/images/logo/logo-amanacare-horizontal-white.png"
+                  alt="Amana Care Logo"
+                  width={160}
+                  height={60}
+                  className={styles.logoImage}
+                />
               </Link>
               <p className={styles.tagline}>
                 Tempat anak tumbuh, dan orang tua berkarya. Daycare & working space terpercaya di Bintaro Sektor 7.
