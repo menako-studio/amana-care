@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { quicksand, inter } from '@/lib/fonts'
 import '@/app/globals.css'
 import Navbar from '@/components/layout/Navbar'
@@ -58,6 +59,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-5XW5TK1ND1'
+
   return (
     <html lang="id" className={`${quicksand.variable} ${inter.variable}`} data-scroll-behavior="smooth">
       <body>
@@ -70,6 +73,7 @@ export default function RootLayout({
           <WhatsAppFloat />
         </SmoothScroll>
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }
