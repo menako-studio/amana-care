@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 import styles from './AnnouncementBar.module.css'
+import { trackCTAClick } from '@/lib/analytics'
 
 export default function AnnouncementBar() {
   const [visible, setVisible] = useState(true)
@@ -33,6 +34,7 @@ export default function AnnouncementBar() {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.cta}
+          onClick={() => trackCTAClick('Daftar Announcement Bar', '/kontak')}
         >
           Daftar →
         </a>

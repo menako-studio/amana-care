@@ -7,6 +7,7 @@ import { X, ZoomIn, Calendar, Users, Award, Clock, ArrowRight } from 'lucide-rea
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import VideoReels from '@/components/home/VideoReels'
 import styles from './page.module.css'
+import { trackGalleryFilter, trackGalleryZoom } from '@/lib/analytics'
 
 const categories = [
   { id: 'semua', label: 'Semua Kategori' },
@@ -98,7 +99,10 @@ export default function Galeri() {
                       role="tab"
                       aria-selected={filter === cat.id}
                       className={`${styles.tab} ${filter === cat.id ? styles.tabActive : ''}`}
-                      onClick={() => setFilter(cat.id)}
+                      onClick={() => {
+                        setFilter(cat.id)
+                        trackGalleryFilter(cat.label)
+                      }}
                     >
                       {cat.label}
                     </button>
@@ -110,7 +114,10 @@ export default function Galeri() {
               <div className={styles.grid}>
                 {filteredItems.map((item, i) => (
                   <ScrollReveal key={i} direction="up" delay={i * 50}>
-                    <div className={styles.item} onClick={() => setLightbox({ src: item.src, alt: item.alt })}>
+                    <div className={styles.item} onClick={() => {
+                        setLightbox({ src: item.src, alt: item.alt })
+                        trackGalleryZoom(item.src, item.alt)
+                      }}>
                       <div className={styles.imgWrapper}>
                         <Image
                           src={item.src}

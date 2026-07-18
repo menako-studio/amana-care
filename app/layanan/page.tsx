@@ -4,10 +4,80 @@ import Link from 'next/link'
 import { Check, ShieldAlert, Award, Coffee, Wifi, Monitor, UserCheck } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
+import LayananWACTA from './LayananWACTA'
 
 export const metadata: Metadata = {
-  title: 'Layanan Kami',
-  description: 'Temukan pilihan layanan Amana Care: Daycare premium harian/bulanan untuk anak usia 0–6 tahun dan Parents Co-Working Space terintegrasi.',
+  title: 'Layanan Daycare & Co-Working Space — Amana Care Bintaro',
+  description:
+    'Pilihan layanan Amana Care: Daycare harian & bulanan untuk anak usia 0–6 tahun termasuk makan 3x, CCTV realtime, laporan WA harian, dan psikolog anak. Plus Parents Co-Working Space terintegrasi di Bintaro Sektor 7.',
+  alternates: {
+    canonical: 'https://amanacare.id/layanan',
+  },
+  openGraph: {
+    title: 'Layanan Daycare & Co-Working Space Amana Care Bintaro',
+    description:
+      'Daycare harian & bulanan 0–6 tahun + Parents Co-Working Space di Bintaro Sektor 7. CCTV realtime, makan bergizi 3x, laporan harian WhatsApp, skrining psikolog anak.',
+    url: 'https://amanacare.id/layanan',
+  },
+}
+
+const layananJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Layanan Daycare Amana Care',
+      description:
+        'Penitipan anak harian dan bulanan untuk usia 0–6 tahun. Fasilitas meliputi CCTV realtime, makan utama 3x sehari, snack sore, laporan harian via WhatsApp, skrining psikolog anak, dan akses photos aktivitas.',
+      provider: { '@id': 'https://amanacare.id/#organization' },
+      serviceType: 'Child Care',
+      areaServed: {
+        '@type': 'City',
+        name: 'Tangerang Selatan',
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Paket Daycare Amana Care',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Daycare Harian',
+              description: 'Layanan penitipan anak harian dengan seluruh fasilitas termasuk makan, CCTV, dan laporan WA.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Daycare Bulanan',
+              description: 'Paket bulanan dengan harga lebih hemat. Cocok untuk orang tua yang bekerja rutin.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Parents Co-Working Space',
+              description: 'Area kerja untuk orang tua terintegrasi dengan daycare. Dilengkapi WiFi, minuman gratis, dan monitor CCTV si kecil.',
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://amanacare.id/layanan',
+      url: 'https://amanacare.id/layanan',
+      name: 'Layanan Daycare & Co-Working Space Amana Care Bintaro',
+      isPartOf: { '@id': 'https://amanacare.id/#website' },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://amanacare.id/images/hero-layanan.png',
+      },
+    },
+  ],
 }
 
 const daycareInclusions = [
@@ -29,6 +99,10 @@ const workspaceFeatures = [
 export default function Layanan() {
   return (
     <div className={styles.wrapper}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(layananJsonLd) }}
+      />
       {/* Hero Header */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
@@ -260,14 +334,7 @@ export default function Layanan() {
               <p className={styles.ctaCardText}>
                 Hubungi kami sekarang untuk berkonsultasi mengenai paket daycare harian/bulanan yang paling sesuai untuk si kecil.
               </p>
-              <a
-                href="https://wa.me/6281513075155?text=Halo%20Amana%20Care!%20Saya%20ingin%20tahu%20lebih%20banyak%20tentang%20pilihan%20layanan."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-white btn-lg"
-              >
-                Hubungi Tim Layanan Kami 💬
-              </a>
+              <LayananWACTA />
             </div>
           </ScrollReveal>
         </div>

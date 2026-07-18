@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Plus, Minus, MapPin, Clock, Phone, CheckCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
+import { trackFormSubmit, trackFAQOpen, trackWhatsAppOpen } from '@/lib/analytics'
 
 const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { size?: number; className?: string; color?: string }) => (
   <svg
@@ -70,6 +71,8 @@ export default function Kontak() {
       `\nMohon dibantu ya! Terima kasih 🙏`
     )
     window.open(`https://wa.me/6281513075155?text=${msg}`, '_blank')
+    trackFormSubmit('kontak_page_form', form.usia)
+    trackWhatsAppOpen('kontak_form_submit')
     setSubmitted(true)
   }
 
@@ -336,7 +339,11 @@ export default function Kontak() {
               <ScrollReveal key={idx} direction="up" delay={idx * 60}>
                 <div
                   className={`${styles.faqItem} ${openFaq === idx ? styles.faqOpen : ''}`}
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  onClick={() => {
+                    const next = openFaq === idx ? null : idx
+                    setOpenFaq(next)
+                    if (next !== null) trackFAQOpen(faq.q, idx)
+                  }}
                 >
                   <button className={styles.faqQuestion}>
                     <span>{faq.q}</span>

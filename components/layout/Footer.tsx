@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
 import styles from './Footer.module.css'
+import { trackWhatsAppOpen } from '@/lib/analytics'
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -74,6 +77,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="WhatsApp Amana Care"
+                  onClick={() => trackWhatsAppOpen('footer_social_icon')}
                 >
                   <MessageCircle size={20} />
                 </a>
@@ -115,7 +119,7 @@ export default function Footer() {
                 </li>
                 <li className={styles.contactItem}>
                   <Phone size={16} className={styles.contactIcon} />
-                  <a href="https://wa.me/6281513075155" className={styles.contactLink}>
+                  <a href="https://wa.me/6281513075155" className={styles.contactLink} onClick={() => trackWhatsAppOpen('footer_phone_link')}>
                     +62 815-1307-5155
                   </a>
                 </li>
@@ -144,6 +148,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn btn-primary ${styles.ctaButton}`}
+                onClick={() => trackWhatsAppOpen('footer_cta_button')}
               >
                 Chat via WhatsApp
               </a>

@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import { MessageCircle } from 'lucide-react'
+'use client'
+
 import styles from './WhatsAppFloat.module.css'
+import { trackWhatsAppOpen } from '@/lib/analytics'
 
 export default function WhatsAppFloat() {
   return (
@@ -11,6 +12,7 @@ export default function WhatsAppFloat() {
       className={styles.float}
       aria-label="Chat dengan Amana Care via WhatsApp"
       id="whatsapp-float-btn"
+      onClick={() => trackWhatsAppOpen('float_button')}
     >
       <span className={styles.ring} aria-hidden="true" />
       <span className={styles.ring2} aria-hidden="true" />

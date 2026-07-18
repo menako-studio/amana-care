@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './HeroSection.module.css'
+import { trackCTAClick } from '@/lib/analytics'
 
 export default function HeroSection() {
   return (
@@ -49,6 +52,7 @@ export default function HeroSection() {
               href="/kontak"
               className="btn btn-primary btn-lg"
               id="hero-cta-daftar"
+              onClick={() => trackCTAClick('Daftar Sekarang Hero', '/kontak')}
             >
               Daftar Sekarang 🎉
             </Link>
@@ -56,6 +60,7 @@ export default function HeroSection() {
               href="/tentang-kami"
               className="btn btn-outline btn-lg"
               id="hero-cta-learn"
+              onClick={() => trackCTAClick('Pelajari Lebih Hero', '/tentang-kami')}
             >
               Pelajari Lebih
             </Link>

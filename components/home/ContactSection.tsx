@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { MapPin, Clock, Phone, CheckCircle, AlertCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './ContactSection.module.css'
+import { trackFormSubmit, trackWhatsAppOpen } from '@/lib/analytics'
 
 const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { size?: number; className?: string; color?: string }) => (
   <svg
@@ -45,6 +46,8 @@ export default function ContactSection() {
       `\nMohon info lebih lanjut ya! Terima kasih 🙏`
     )
     window.open(`https://wa.me/6281513075155?text=${msg}`, '_blank')
+    trackFormSubmit('home_contact_form', form.usia)
+    trackWhatsAppOpen('home_form_submit')
     setSubmitted(true)
   }
 
@@ -262,6 +265,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className={`btn btn-primary ${styles.waButton}`}
                   id="contact-whatsapp-btn"
+                  onClick={() => trackWhatsAppOpen('home_contact_section_cta')}
                 >
                   Chat WhatsApp Sekarang 💬
                 </a>
