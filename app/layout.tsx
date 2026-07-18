@@ -98,7 +98,8 @@ const jsonLd = {
       '@type': ['LocalBusiness', 'ChildCare'],
       '@id': `${siteUrl}/#organization`,
       name: 'Amana Care',
-      alternateName: ['Amana Care Bintaro', 'Daycare Amana Care'],
+      legalName: 'PT Amana Peduli Warga Indonesia',
+      alternateName: ['Amana Care Bintaro', 'Daycare Amana Care', 'PT Amana Peduli Warga Indonesia'],
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
