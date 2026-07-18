@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Kenali visi, misi, nilai, dan tim profesional di balik Amana Care — daycare & parents working space terpercaya di Bintaro Sektor 7, Tangerang Selatan sejak berdiri.',
   alternates: {
-    canonical: 'https://amanacare.id/tentang-kami',
+    canonical: 'https://www.amanacare.id/tentang-kami',
   },
   openGraph: {
     title: 'Tentang Kami — Amana Care Daycare Bintaro',

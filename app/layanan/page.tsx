@@ -9,9 +9,9 @@ import LayananWACTA from './LayananWACTA'
 export const metadata: Metadata = {
   title: 'Layanan Daycare & Co-Working Space — Amana Care Bintaro',
   description:
-    'Pilihan layanan Amana Care: Daycare harian & bulanan untuk anak usia 0–6 tahun termasuk makan 3x, CCTV realtime, laporan WA harian, dan psikolog anak. Plus Parents Co-Working Space terintegrasi di Bintaro Sektor 7.',
+    'Layanan Amana Care: daycare harian & bulanan untuk anak 0–6 tahun — CCTV realtime, makan 3x, laporan WA harian, psikolog anak. Plus Parents Co-Working Space di Bintaro Sektor 7.',
   alternates: {
-    canonical: 'https://amanacare.id/layanan',
+    canonical: 'https://www.amanacare.id/layanan',
   },
   openGraph: {
     title: 'Layanan Daycare & Co-Working Space Amana Care Bintaro',

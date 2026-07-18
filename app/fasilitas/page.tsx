@@ -6,17 +6,17 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Fasilitas Daycare Amana Care Bintaro — Ruang Bermain, CCTV & Co-Working',
+  title: 'Fasilitas Daycare Amana Care — CCTV, Play Room & Co-Working',
   description:
-    'Jelajahi fasilitas lengkap Amana Care: ruang bermain indoor non-toxic, ruang belajar, area tidur bersih, parents co-working space, CCTV realtime 24/7, dan protokol keamanan ketat di Bintaro Sektor 7.',
+    'Fasilitas lengkap Amana Care: play room indoor non-toxic, ruang belajar, area tidur bersih, CCTV realtime, parents co-working space di Bintaro Sektor 7.',
   alternates: {
-    canonical: 'https://amanacare.id/fasilitas',
+    canonical: 'https://www.amanacare.id/fasilitas',
   },
   openGraph: {
     title: 'Fasilitas Daycare Amana Care Bintaro — Ruang Bermain & Co-Working',
     description:
-      'Fasilitas lengkap daycare Amana Care di Bintaro Sektor 7: play room indoor, ruang belajar, kamar tidur bersih, CCTV realtime, parents co-working space, dan APE non-toxic.',
-    url: 'https://amanacare.id/fasilitas',
+      'Fasilitas lengkap Amana Care di Bintaro Sektor 7: play room indoor, ruang belajar, kamar tidur bersih, CCTV realtime, parents co-working space, dan APE non-toxic.',
+    url: 'https://www.amanacare.id/fasilitas',
   },
 }
 

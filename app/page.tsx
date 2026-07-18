@@ -13,9 +13,9 @@ import ContactSection from '@/components/home/ContactSection'
 export const metadata: Metadata = {
   title: 'Daycare & Parents Working Space Bintaro Sektor 7 | Amana Care',
   description:
-    'Amana Care — daycare terpercaya di Bintaro Sektor 7 untuk anak usia 0–6 tahun. CCTV realtime, daily report WhatsApp, makan bergizi 3x sehari, psikolog anak berkala. Plus co-working space untuk orang tua.',
+    'Amana Care — daycare terpercaya di Bintaro Sektor 7 untuk anak 0–6 tahun. CCTV realtime, daily report WhatsApp, makan 3x sehari, psikolog anak. Plus co-working space orang tua.',
   alternates: {
-    canonical: 'https://amanacare.id',
+    canonical: 'https://www.amanacare.id',
   },
   openGraph: {
     title: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
