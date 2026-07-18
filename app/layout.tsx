@@ -59,7 +59,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-5XW5TK1ND1'
+  const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   return (
     <html lang="id" className={`${quicksand.variable} ${inter.variable}`} data-scroll-behavior="smooth">
