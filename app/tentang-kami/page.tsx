@@ -4,8 +4,44 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Tentang Kami',
-  description: 'Kenali visi, misi, nilai-nilai utama, dan tim di balik Amana Care daycare & parents working space Bintaro Sektor 7.',
+  title: 'Tentang Kami — Visi, Misi & Tim Amana Care Bintaro',
+  description:
+    'Kenali visi, misi, nilai, dan tim profesional di balik Amana Care — daycare & parents working space terpercaya di Bintaro Sektor 7, Tangerang Selatan sejak berdiri.',
+  alternates: {
+    canonical: 'https://amanacare.id/tentang-kami',
+  },
+  openGraph: {
+    title: 'Tentang Kami — Amana Care Daycare Bintaro',
+    description:
+      'Kenali visi, misi, dan tim pengasuh profesional Amana Care. Daycare premium di Bintaro Sektor 7 dengan pendekatan play-based learning dan pengasuhan berbasis kasih sayang.',
+    url: 'https://amanacare.id/tentang-kami',
+  },
+}
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': 'https://amanacare.id/tentang-kami',
+      url: 'https://amanacare.id/tentang-kami',
+      name: 'Tentang Amana Care — Visi, Misi & Tim',
+      description:
+        'Halaman tentang Amana Care, daycare dan parents working space premium di Bintaro Sektor 7. Memuat visi, misi, nilai-nilai utama, dan profil tim pengasuh profesional.',
+      mainEntity: { '@id': 'https://amanacare.id/#organization' },
+    },
+    {
+      '@type': 'Person',
+      name: 'Adiwerti Sarahayu Lestari, S.H.',
+      jobTitle: 'Pendiri & Direktur',
+      worksFor: { '@id': 'https://amanacare.id/#organization' },
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'Universitas Indonesia',
+        department: 'Fakultas Hukum',
+      },
+    },
+  ],
 }
 
 const team = [
@@ -21,6 +57,10 @@ const team = [
 export default function TentangKami() {
   return (
     <div className={styles.wrapper}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
       {/* Banner / Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>

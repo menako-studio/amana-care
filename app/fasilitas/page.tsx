@@ -6,8 +6,30 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Fasilitas Kami',
-  description: 'Jelajahi area bermain anak (play room), ruang belajar, ruang istirahat bersih, parents working space, dan protokol keamanan CCTV di Amana Care.',
+  title: 'Fasilitas Daycare Amana Care Bintaro — Ruang Bermain, CCTV & Co-Working',
+  description:
+    'Jelajahi fasilitas lengkap Amana Care: ruang bermain indoor non-toxic, ruang belajar, area tidur bersih, parents co-working space, CCTV realtime 24/7, dan protokol keamanan ketat di Bintaro Sektor 7.',
+  alternates: {
+    canonical: 'https://amanacare.id/fasilitas',
+  },
+  openGraph: {
+    title: 'Fasilitas Daycare Amana Care Bintaro — Ruang Bermain & Co-Working',
+    description:
+      'Fasilitas lengkap daycare Amana Care di Bintaro Sektor 7: play room indoor, ruang belajar, kamar tidur bersih, CCTV realtime, parents co-working space, dan APE non-toxic.',
+    url: 'https://amanacare.id/fasilitas',
+  },
+}
+
+const fasilitasJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://amanacare.id/fasilitas',
+  url: 'https://amanacare.id/fasilitas',
+  name: 'Fasilitas Daycare & Parents Working Space Amana Care Bintaro',
+  description:
+    'Fasilitas lengkap Amana Care meliputi ruang bermain indoor, ruang belajar, area tidur, parents co-working space, CCTV realtime 24/7, dan APE non-toxic edukatif.',
+  isPartOf: { '@id': 'https://amanacare.id/#website' },
+  about: { '@id': 'https://amanacare.id/#organization' },
 }
 
 const areas = [
@@ -43,6 +65,10 @@ const safetyProtocols = [
 export default function Fasilitas() {
   return (
     <div className={styles.wrapper}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(fasilitasJsonLd) }}
+      />
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
