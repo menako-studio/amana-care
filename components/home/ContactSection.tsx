@@ -44,7 +44,7 @@ export default function ContactSection() {
       `${form.pesan ? `💬 Pesan: ${form.pesan}\n` : ''}` +
       `\nMohon info lebih lanjut ya! Terima kasih 🙏`
     )
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank')
+    window.open(`https://wa.me/6281513075155?text=${msg}`, '_blank')
     setSubmitted(true)
   }
 
@@ -232,8 +232,8 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className={styles.infoLabel}>WhatsApp</p>
-                      <a href="https://wa.me/6281234567890" className={styles.infoLink}>
-                        +62 812-3456-7890
+                      <a href="https://wa.me/6281513075155" className={styles.infoLink}>
+                        +62 815-1307-5155
                       </a>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default function ContactSection() {
                 </div>
 
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
+                  href="https://wa.me/6281513075155?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`btn btn-primary ${styles.waButton}`}

@@ -69,7 +69,7 @@ export default function Kontak() {
       `${form.pesan ? `💬 Pertanyaan: ${form.pesan}\n` : ''}` +
       `\nMohon dibantu ya! Terima kasih 🙏`
     )
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank')
+    window.open(`https://wa.me/6281513075155?text=${msg}`, '_blank')
     setSubmitted(true)
   }
 
@@ -147,8 +147,8 @@ export default function Kontak() {
                       </div>
                       <div>
                         <p className={styles.infoLabel}>WhatsApp</p>
-                        <a href="https://wa.me/6281234567890" className={styles.infoLink}>
-                          +62 812-3456-7890
+                        <a href="https://wa.me/6281513075155" className={styles.infoLink}>
+                          +62 815-1307-5155
                         </a>
                       </div>
                     </div>
