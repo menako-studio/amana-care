@@ -29,7 +29,7 @@ export default function AnnouncementBar() {
           <strong>Pendaftaran Agustus 2026 Dibuka!</strong> Slot terbatas — hubungi kami sekarang.
         </p>
         <a
-          href="https://wa.me/6281234567890?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
+          href="https://wa.me/6281513075155?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
           target="_blank"
           rel="noopener noreferrer"
           className={styles.cta}

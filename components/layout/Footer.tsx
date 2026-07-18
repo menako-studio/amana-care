@@ -69,7 +69,7 @@ export default function Footer() {
                   <InstagramIcon size={20} />
                 </a>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6281513075155"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -115,8 +115,8 @@ export default function Footer() {
                 </li>
                 <li className={styles.contactItem}>
                   <Phone size={16} className={styles.contactIcon} />
-                  <a href="https://wa.me/6281234567890" className={styles.contactLink}>
-                    +62 812-3456-7890
+                  <a href="https://wa.me/6281513075155" className={styles.contactLink}>
+                    +62 815-1307-5155
                   </a>
                 </li>
                 <li className={styles.contactItem}>
@@ -140,7 +140,7 @@ export default function Footer() {
                 Konsultasikan kebutuhan penitipan anak Anda bersama kami.
               </p>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
+                href="https://wa.me/6281513075155?text=Halo%20Amana%20Care!%20Saya%20ingin%20info%20pendaftaran."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn btn-primary ${styles.ctaButton}`}
