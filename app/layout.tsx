@@ -9,7 +9,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 import SmoothScroll from '@/components/layout/SmoothScroll'
 import LoadingScreen from '@/components/layout/LoadingScreen'
 
-const siteUrl = 'https://amanacare.id'
+const siteUrl = 'https://www.amanacare.id'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
   },
   description:
-    'Amana Care adalah daycare dan parents working space premium di Bintaro Sektor 7, Tangerang Selatan. Penitipan anak usia 0–6 tahun dengan daily report WhatsApp, CCTV realtime, dan skrining psikolog anak berkala.',
+    'Daycare premium di Bintaro Sektor 7 untuk anak 0–6 tahun. CCTV realtime, daily report WhatsApp, makan bergizi 3x, psikolog anak, dan parents co-working space terintegrasi.',
   keywords: [
     // Primary — tinggi volume
     'daycare bintaro',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   creator: 'Amana Care',
   publisher: 'Amana Care',
   alternates: {
-    canonical: siteUrl,
+    canonical: `${siteUrl}/`,
   },
   openGraph: {
     type: 'website',

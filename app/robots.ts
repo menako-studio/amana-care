@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://amanacare.id/sitemap.xml',
-    host: 'https://amanacare.id',
+    sitemap: 'https://www.amanacare.id/sitemap.xml',
+    host: 'https://www.amanacare.id',
   }
 }
