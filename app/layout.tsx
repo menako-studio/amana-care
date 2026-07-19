@@ -85,8 +85,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Isi jika sudah verifikasi Google Search Console
-    // google: 'XXXX',
+    google: 'AgFzWQEuuOoFpBcYb4wbpnIrRpKwDn1k4-5I9ouKfBQ',
   },
 }
 
