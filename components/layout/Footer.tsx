@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
 import styles from './Footer.module.css'
-import { trackWhatsAppOpen } from '@/lib/analytics'
+import { trackWhatsAppOpen, trackOutboundClick } from '@/lib/analytics'
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -68,6 +68,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="Instagram Amana Care"
+                  onClick={() => trackOutboundClick('https://www.instagram.com/haloamana', 'Footer Social Instagram')}
                 >
                   <InstagramIcon size={20} />
                 </a>
@@ -109,6 +110,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.contactLink}
+                    onClick={() => trackOutboundClick('https://share.google/IbDHnKDtXvBJQah2i', 'Footer Map Address')}
                   >
                     Bintaro Sektor 7, Tangerang Selatan, Banten
                   </a>
@@ -130,6 +132,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.contactLink}
+                    onClick={() => trackOutboundClick('https://www.instagram.com/haloamana', 'Footer Contact List Instagram')}
                   >
                     @haloamana
                   </a>

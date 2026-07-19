@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import styles from './Navbar.module.css'
+import { trackCTAClick } from '@/lib/analytics'
 
 const navLinks = [
   { href: '/tentang-kami', label: 'Tentang Kami' },
@@ -77,6 +78,7 @@ export default function Navbar() {
               href="/kontak"
               className="btn btn-primary btn-sm"
               id="nav-cta-daftar"
+              onClick={() => trackCTAClick('Navbar Desktop Daftar Sekarang', '/kontak')}
             >
               Daftar Sekarang
             </Link>
@@ -111,7 +113,10 @@ export default function Navbar() {
               <Link
                 href="/kontak"
                 className="btn btn-primary"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  setMenuOpen(false)
+                  trackCTAClick('Navbar Mobile Daftar Sekarang', '/kontak')
+                }}
               >
                 Daftar Sekarang 🎉
               </Link>
