@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import * as Sentry from '@sentry/nextjs'
 import { supabase } from '@/lib/supabase'
 import { contactSchema } from '@/lib/validations/contact'
 import { rateLimit } from '@/lib/rate-limit'
@@ -74,6 +75,7 @@ export async function POST(request: Request) {
     )
   } catch (error) {
     console.error('API Contact Error:', error)
+    Sentry.captureException(error)
     return NextResponse.json(
       { error: 'Terjadi kesalahan sistem internal.' },
       { status: 500 }

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 const securityHeaders = [
   {
@@ -34,4 +35,19 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  // Sentry project options
+  org: process.env.SENTRY_ORG || "amana-care",
+  project: process.env.SENTRY_PROJECT || "amana-care-web",
+
+  // Suppress warnings in non-Sentry build environments
+  silent: !process.env.CI,
+
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options
+  widenClientFileUpload: true,
+  tunnelRoute: "/monitoring",
+  sourcemaps: {
+    deleteSourcemapsAfterUpload: true,
+  },
+});
