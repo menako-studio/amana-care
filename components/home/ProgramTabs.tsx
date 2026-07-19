@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './ProgramTabs.module.css'
+import { trackSelectContent } from '@/lib/analytics'
 
 const programs = [
   {
@@ -92,7 +93,10 @@ export default function ProgramTabs() {
                 aria-controls={`panel-${prog.id}`}
                 id={`tab-${prog.id}`}
                 className={`${styles.tab} ${activeTab === prog.id ? styles.tabActive : ''}`}
-                onClick={() => setActiveTab(prog.id)}
+                onClick={() => {
+                  setActiveTab(prog.id)
+                  trackSelectContent('program_age_group', prog.id, prog.label)
+                }}
                 style={activeTab === prog.id ? { background: prog.color, borderColor: prog.color } : {}}
               >
                 <span className={styles.tabEmoji}>{prog.emoji}</span>

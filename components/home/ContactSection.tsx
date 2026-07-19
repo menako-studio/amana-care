@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { MapPin, Clock, Phone, CheckCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './ContactSection.module.css'
-import { trackFormSubmit, trackWhatsAppOpen } from '@/lib/analytics'
+import { trackFormSubmit, trackWhatsAppOpen, trackSelectContent, trackOutboundClick, trackContact } from '@/lib/analytics'
 
 const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { size?: number; className?: string; color?: string }) => (
   <svg
@@ -70,14 +70,20 @@ export default function ContactSection() {
                 <button
                   type="button"
                   className={`${styles.methodBtn} ${method === 'form' ? styles.methodBtnActive : ''}`}
-                  onClick={() => setMethod('form')}
+                  onClick={() => {
+                    setMethod('form')
+                    trackSelectContent('registration_method', 'form', 'Form Pendaftaran')
+                  }}
                 >
                   📝 Form Pendaftaran
                 </button>
                 <button
                   type="button"
                   className={`${styles.methodBtn} ${method === 'cal' ? styles.methodBtnActive : ''}`}
-                  onClick={() => setMethod('cal')}
+                  onClick={() => {
+                    setMethod('cal')
+                    trackSelectContent('registration_method', 'cal_site_visit', 'Jadwalkan Site Visit')
+                  }}
                 >
                   📅 Jadwalkan Site Visit
                 </button>
@@ -212,6 +218,7 @@ export default function ContactSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={styles.infoLink}
+                          onClick={() => trackOutboundClick('https://share.google/IbDHnKDtXvBJQah2i', 'Contact Section Map Address')}
                         >
                           Bintaro Sektor 7,<br />Tangerang Selatan, Banten
                         </a>
@@ -235,7 +242,11 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className={styles.infoLabel}>WhatsApp</p>
-                      <a href="https://wa.me/6281513075155" className={styles.infoLink}>
+                      <a
+                        href="https://wa.me/6281513075155"
+                        className={styles.infoLink}
+                        onClick={() => trackContact('whatsapp', 'https://wa.me/6281513075155', 'Contact Section Phone Text')}
+                      >
                         +62 815-1307-5155
                       </a>
                     </div>
@@ -252,6 +263,7 @@ export default function ContactSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.infoLink}
+                        onClick={() => trackOutboundClick('https://www.instagram.com/haloamana', 'Contact Section Instagram')}
                       >
                         @haloamana
                       </a>
