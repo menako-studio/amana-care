@@ -7,17 +7,17 @@ import styles from './page.module.css'
 import LayananWACTA from './LayananWACTA'
 
 export const metadata: Metadata = {
-  title: 'Layanan Daycare & Co-Working Space — Amana Care Bintaro',
+  title: 'Paket Daycare & Co-Working Space Bintaro | Harga & Fasilitas — Amana Care',
   description:
-    'Layanan Amana Care: daycare harian & bulanan untuk anak 0–6 tahun — CCTV realtime, makan 3x, laporan WA harian, psikolog anak. Plus Parents Co-Working Space di Bintaro Sektor 7.',
+    'Layanan Amana Care: daycare harian & bulanan untuk anak 0–6 tahun dengan CCTV realtime, makan bergizi 3x sehari, laporan WA harian, skrining psikolog anak berkala, dan kurikulum Montessori. Plus Parents Co-Working Space di Bintaro Sektor 7, Tangerang Selatan.',
   alternates: {
     canonical: 'https://www.amanacare.id/layanan',
   },
   openGraph: {
-    title: 'Layanan Daycare & Co-Working Space Amana Care Bintaro',
+    title: 'Paket Daycare & Co-Working Space Bintaro Sektor 7 — Amana Care',
     description:
-      'Daycare harian & bulanan 0–6 tahun + Parents Co-Working Space di Bintaro Sektor 7. CCTV realtime, makan bergizi 3x, laporan harian WhatsApp, skrining psikolog anak.',
-    url: 'https://amanacare.id/layanan',
+      'Daycare harian & bulanan 0–6 tahun + Parents Co-Working Space di Bintaro Sektor 7. CCTV realtime, makan bergizi 3x, laporan harian WhatsApp, kurikulum Montessori, skrining psikolog anak.',
+    url: 'https://www.amanacare.id/layanan',
   },
 }
 

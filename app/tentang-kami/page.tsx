@@ -4,17 +4,17 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Tentang Kami — Visi, Misi & Tim Amana Care Bintaro',
+  title: 'Tentang Amana Care — Daycare & Working Space Terpercaya Bintaro Sektor 7',
   description:
-    'Kenali visi, misi, nilai, dan tim profesional di balik Amana Care — daycare & parents working space terpercaya di Bintaro Sektor 7, Tangerang Selatan sejak berdiri.',
+    'Kenali kisah, visi misi, nilai pengasuhan, dan tim profesional di balik Amana Care — daycare & parents working space terpercaya di Bintaro Sektor 7, Tangerang Selatan. Berpengalaman mendampingi tumbuh kembang anak 0–6 tahun.',
   alternates: {
     canonical: 'https://www.amanacare.id/tentang-kami',
   },
   openGraph: {
-    title: 'Tentang Kami — Amana Care Daycare Bintaro',
+    title: 'Tentang Amana Care — Daycare Terpercaya di Bintaro Sektor 7',
     description:
-      'Kenali visi, misi, dan tim pengasuh profesional Amana Care. Daycare premium di Bintaro Sektor 7 dengan pendekatan play-based learning dan pengasuhan berbasis kasih sayang.',
-    url: 'https://amanacare.id/tentang-kami',
+      'Kenali visi, misi, dan tim pengasuh profesional Amana Care. Daycare premium di Bintaro Sektor 7 dengan pendekatan play-based learning, kurikulum Montessori, dan skrining psikolog anak berkala.',
+    url: 'https://www.amanacare.id/tentang-kami',
   },
 }
 

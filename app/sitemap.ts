@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/kontak`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/fasilitas`,
       lastModified,
       changeFrequency: 'monthly',
@@ -34,12 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/kontak`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
     },
   ]
 }
