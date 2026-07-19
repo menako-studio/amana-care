@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, ShieldAlert, Award, Coffee, Wifi, Monitor, UserCheck } from 'lucide-react'
+import { Check, Coffee, Wifi, Monitor, UserCheck } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 import LayananWACTA from './LayananWACTA'

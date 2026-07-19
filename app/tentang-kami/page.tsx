@@ -133,7 +133,7 @@ export default function TentangKami() {
                 <h2 className="heading-2">Mendedikasikan Kepercayaan &amp; Cinta</h2>
                 <div className={styles.founderQuoteBlock}>
                   <p className={styles.founderQuote}>
-                    "Amana Care didirikan atas dasar amanah dan kasih sayang. Sebagai orang tua bekerja, saya memahami betapa berharganya ketenangan pikiran saat menitipkan buah hati. Kami di Amana Care berkomitmen untuk memberikan lingkungan belajar berbasis bermain yang menstimulasi tumbuh kembang si kecil secara optimal, bersih, dan terpantau aman layaknya rumah kedua mereka."
+                    &quot;Amana Care didirikan atas dasar amanah dan kasih sayang. Sebagai orang tua bekerja, saya memahami betapa berharganya ketenangan pikiran saat menitipkan buah hati. Kami di Amana Care berkomitmen untuk memberikan lingkungan belajar berbasis bermain yang menstimulasi tumbuh kembang si kecil secara optimal, bersih, dan terpantau aman layaknya rumah kedua mereka.&quot;
                   </p>
                 </div>
                 <div className={styles.founderProfile}>

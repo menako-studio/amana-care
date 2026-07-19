@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { Play, Pause, Volume2, VolumeX, X, ZoomIn } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { Play, Volume2, VolumeX, X, ZoomIn } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './VideoReels.module.css'
 
@@ -98,7 +98,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     }
   }
 
-  const toggleMute = (e: React.MouseEvent, id: string) => {
+  const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation()
     const nextMuted = !globalMuted
     setGlobalMuted(nextMuted)
@@ -159,7 +159,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
                   
                   <button 
                     className={styles.muteButton} 
-                    onClick={(e) => toggleMute(e, reel.id)}
+                    onClick={toggleMute}
                     aria-label={globalMuted ? "Aktifkan suara video" : "Matikan suara video"}
                   >
                     {globalMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}

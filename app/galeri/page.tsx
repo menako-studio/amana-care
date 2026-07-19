@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { X, ZoomIn, Calendar, Users, Award, Clock, ArrowRight } from 'lucide-react'
+import { X, ZoomIn, Calendar, Users, Award, Clock } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import VideoReels from '@/components/home/VideoReels'
 import styles from './page.module.css'

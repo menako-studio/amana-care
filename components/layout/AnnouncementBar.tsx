@@ -7,12 +7,12 @@ import { trackCTAClick } from '@/lib/analytics'
 
 export default function AnnouncementBar() {
   const [visible, setVisible] = useState(true)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
     const dismissed = sessionStorage.getItem('amana-announcement-dismissed')
-    if (dismissed) setVisible(false)
+    if (dismissed) {
+      setTimeout(() => setVisible(false), 0)
+    }
   }, [])
 
   const handleDismiss = () => {
@@ -20,7 +20,7 @@ export default function AnnouncementBar() {
     sessionStorage.setItem('amana-announcement-dismissed', 'true')
   }
 
-  if (!mounted || !visible) return null
+  if (!visible) return null
 
   return (
     <div className={styles.bar} role="banner">

@@ -53,8 +53,12 @@ export default function TestimonialsCarousel() {
 
   useEffect(() => {
     if (!emblaApi) return
-    onSelect()
-    setScrollSnaps(emblaApi.scrollSnapList())
+
+    setTimeout(() => {
+      setScrollSnaps(emblaApi.scrollSnapList())
+      setSelectedIndex(emblaApi.selectedScrollSnap())
+    }, 0)
+
     emblaApi.on('select', onSelect)
     emblaApi.on('reInit', onSelect)
 
@@ -76,7 +80,7 @@ export default function TestimonialsCarousel() {
       aria-labelledby="testimonials-heading"
     >
       {/* Decorative quote */}
-      <div className={styles.bigQuote} aria-hidden="true">"</div>
+      <div className={styles.bigQuote} aria-hidden="true">&ldquo;</div>
 
       <div className="container">
         <ScrollReveal direction="up">
@@ -95,7 +99,7 @@ export default function TestimonialsCarousel() {
               {testimonials.map((item, index) => (
                 <div className={styles.slide} key={index}>
                   <div className={styles.slideContent}>
-                    <div className={styles.quoteIcon} aria-hidden="true">"</div>
+                    <div className={styles.quoteIcon} aria-hidden="true">&ldquo;</div>
                     <p className={styles.text}>{item.text}</p>
 
                     <div className={styles.stars} aria-label={`${item.rating} bintang dari 5`}>

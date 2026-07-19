@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MapPin, Clock, Phone, CheckCircle, AlertCircle } from 'lucide-react'
+import { MapPin, Clock, Phone, CheckCircle } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './ContactSection.module.css'
 import { trackFormSubmit, trackWhatsAppOpen } from '@/lib/analytics'
