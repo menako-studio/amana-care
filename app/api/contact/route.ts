@@ -1,22 +1,44 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { supabase } from '@/lib/supabase'
+import { contactSchema } from '@/lib/validations/contact'
+import { rateLimit } from '@/lib/rate-limit'
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder_key')
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { nama, namaAnak, usia, wa, pesan } = body
+    // 1. Rate Limiting Check (Max 5 submissions per minute per IP)
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || '127.0.0.1'
+    const limitResult = rateLimit(ip, 5, 60000)
 
-    if (!nama || !namaAnak || !usia || !wa) {
+    if (!limitResult.success) {
       return NextResponse.json(
-        { error: 'Mohon isi semua field wajib.' },
+        { error: 'Terlalu banyak permintaan. Silakan coba lagi beberapa saat lagi.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': Math.ceil((limitResult.reset - Date.now()) / 1000).toString(),
+          },
+        }
+      )
+    }
+
+    // 2. Body Parse & Zod Schema Validation
+    const body = await request.json()
+    const validationResult = contactSchema.safeParse(body)
+
+    if (!validationResult.success) {
+      const issues = validationResult.error.issues.map((issue) => issue.message)
+      return NextResponse.json(
+        { error: issues[0] || 'Mohon periksa kembali data pendaftaran Anda.', details: issues },
         { status: 400 }
       )
     }
 
-    // 1. Optional Database Storage (If Supabase key is configured)
+    const { nama, namaAnak, usia, wa, pesan } = validationResult.data
+
+    // 3. Optional Database Storage (If Supabase key is configured)
     if (process.env.NEXT_PUBLIC_SUPABASE_URL) {
       const { error: dbError } = await supabase
         .from('contacts')
@@ -26,11 +48,11 @@ export async function POST(request: Request) {
       }
     }
 
-    // 2. Email Notification using Resend
+    // 4. Email Notification using Resend
     if (process.env.RESEND_API_KEY) {
       const { error: emailError } = await resend.emails.send({
         from: 'Amana Care Website <onboarding@resend.dev>',
-        to: 'haloamana@gmail.com', // Change this to official email
+        to: 'haloamana@gmail.com',
         subject: `Pendaftaran Baru: ${namaAnak} (${usia})`,
         html: `
           <h3>Pendaftaran Calon Murid Baru</h3>
