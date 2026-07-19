@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { Play, Volume2, VolumeX, X, ZoomIn } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './VideoReels.module.css'
@@ -66,25 +66,68 @@ interface VideoReelsProps {
 
 export default function VideoReels({ filterCategory, limit, showTitle = true }: VideoReelsProps) {
   const [activeReel, setActiveReel] = useState<Reel | null>(null)
+  // Always start muted — user must explicitly opt-in to audio
   const [globalMuted, setGlobalMuted] = useState(true)
   const [playingId, setPlayingId] = useState<string | null>(null)
-  
-  // Ref map to manage individual video elements
-  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
 
-  // Filter and limit items
-  const filteredReels = filterCategory 
+  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
+  const lightboxVideoRef = useRef<HTMLVideoElement | null>(null)
+
+  const filteredReels = filterCategory
     ? REELS_DATA.filter(reel => reel.category.toLowerCase() === filterCategory.toLowerCase() || reel.id === filterCategory)
     : REELS_DATA
 
   const displayReels = limit ? filteredReels.slice(0, limit) : filteredReels
 
+  // Pause DOM videos only (no setState) — safe to call from effects
+  const pauseAllCardVideosDom = useCallback(() => {
+    Object.values(videoRefs.current).forEach(video => {
+      if (video) video.pause()
+    })
+  }, [])
+
+  // Stop all audio when tab is hidden or user navigates away (visibilitychange)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) pauseAllCardVideosDom()
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      // Critical: pause all on unmount (e.g., route change)
+      pauseAllCardVideosDom()
+    }
+  }, [pauseAllCardVideosDom])
+
+  // Lightbox open → pause card DOM videos; close → fully stop lightbox video
+  useEffect(() => {
+    if (activeReel) {
+      pauseAllCardVideosDom()
+      document.body.style.overflow = 'hidden'
+    } else {
+      if (lightboxVideoRef.current) {
+        lightboxVideoRef.current.pause()
+        lightboxVideoRef.current.currentTime = 0
+      }
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [activeReel, pauseAllCardVideosDom])
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveReel(null)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   const handleMouseEnter = (id: string) => {
     const video = videoRefs.current[id]
     if (video) {
-      video.play().then(() => {
-        setPlayingId(id)
-      }).catch(err => {
+      video.muted = true // card hover-play is always muted
+      video.play().then(() => setPlayingId(id)).catch(err => {
         console.log('Autoplay blocked:', err)
       })
     }
@@ -102,14 +145,12 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     e.stopPropagation()
     const nextMuted = !globalMuted
     setGlobalMuted(nextMuted)
-    
-    // Apply mute/unmute to all videos to keep them synced
     Object.values(videoRefs.current).forEach(video => {
-      if (video) {
-        video.muted = nextMuted
-      }
+      if (video) video.muted = nextMuted
     })
   }
+
+  const handleCloseLightbox = () => setActiveReel(null)
 
   return (
     <section className={`section ${styles.reelsSection}`} aria-labelledby="reels-heading">
@@ -131,7 +172,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
         <div className={styles.grid}>
           {displayReels.map((reel, i) => (
             <ScrollReveal key={reel.id} direction="up" delay={i * 80}>
-              <div 
+              <div
                 className={styles.card}
                 onMouseEnter={() => handleMouseEnter(reel.id)}
                 onMouseLeave={() => handleMouseLeave(reel.id)}
@@ -143,35 +184,31 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
                     src={reel.src}
                     className={styles.video}
                     loop
-                    muted={globalMuted}
+                    muted
                     playsInline
                     preload="metadata"
                     onContextMenu={(e) => e.preventDefault()}
                   />
-                  
-                  {/* Glassmorphism Badge */}
+
                   <span className={styles.categoryBadge}>{reel.category}</span>
-                  
-                  {/* Play & Mute Overlays */}
+
                   <div className={`${styles.playOverlay} ${playingId === reel.id ? styles.overlayPlaying : ''}`}>
                     <Play className={styles.playIcon} size={28} />
                   </div>
-                  
-                  <button 
-                    className={styles.muteButton} 
+
+                  <button
+                    className={styles.muteButton}
                     onClick={toggleMute}
                     aria-label={globalMuted ? "Aktifkan suara video" : "Matikan suara video"}
                   >
                     {globalMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
                   </button>
 
-                  {/* Zoom Overlay on Hover */}
                   <div className={styles.zoomOverlay}>
                     <ZoomIn size={24} className={styles.zoomIcon} />
                     <span className={styles.zoomText}>Tonton Reels</span>
                   </div>
 
-                  {/* Title Info bottom overlay */}
                   <div className={styles.infoOverlay}>
                     <h3 className={styles.cardTitle}>{reel.title}</h3>
                     <p className={styles.cardDesc}>{reel.description}</p>
@@ -183,30 +220,32 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
         </div>
       </div>
 
-      {/* Lightbox Video Modal */}
+      {/* Lightbox Video Modal — muted by default, user can unmute via native controls */}
       {activeReel && (
-        <div 
-          className={styles.lightbox} 
-          onClick={() => setActiveReel(null)}
+        <div
+          className={styles.lightbox}
+          onClick={handleCloseLightbox}
           role="dialog"
           aria-modal="true"
           aria-label={`Video ${activeReel.title}`}
         >
-          <button 
-            className={styles.closeBtn} 
-            onClick={() => setActiveReel(null)} 
+          <button
+            className={styles.closeBtn}
+            onClick={handleCloseLightbox}
             aria-label="Tutup video"
           >
             <X size={32} />
           </button>
-          
+
           <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.lightboxPlayerSide}>
               <div className={styles.lightboxVideoWrapper}>
                 <video
+                  ref={lightboxVideoRef}
                   src={activeReel.src}
                   className={styles.lightboxVideo}
                   autoPlay
+                  muted
                   controls
                   controlsList="nodownload"
                   loop
@@ -215,13 +254,13 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
                 />
               </div>
             </div>
-            
+
             <div className={styles.lightboxMetaSide}>
               <span className={styles.lightboxCategory}>{activeReel.category}</span>
               <h3 className={styles.lightboxTitle}>{activeReel.title}</h3>
               <div className={styles.lightboxDivider} />
               <p className={styles.lightboxDesc}>{activeReel.description}</p>
-              
+
               <div className={styles.lightboxTips}>
                 <span className={styles.tipsIcon}>💡</span>
                 <p className={styles.tipsText}>
