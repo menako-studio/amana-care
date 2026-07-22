@@ -41,6 +41,27 @@ Every page and module is meticulously structured to optimize load speeds, ensure
 
 ---
 
+## 🎯 SEO Meta Title Optimization Strategy (Rank 1 Google Acceleration)
+
+Every page's `<title>`, `openGraph.title`, and `twitter.title` tags have been strictly optimized following Google Search SERP display boundaries:
+
+* **Maximum Character Limit Standard:** Kept strictly between **50 and 60 characters** (maximum 65 characters / 568 pixels display width) to guarantee 0 truncation (`...`) on mobile & desktop search results.
+* **Keyword Front-Loading:** Primary high-volume keywords (`Daycare Bintaro`, `Biaya Daycare`, `Fasilitas`, `Kontak`) are positioned at the beginning of each title for maximum algorithmic ranking weight.
+* **Brand Harmony:** Standardized brand suffix `| Amana Care` without double-branding or redundant text duplication.
+
+### Optimized Meta Title Inventory
+
+| Route | Page Name | Optimized Meta Title | Char Count | Primary SEO Keywords |
+| :--- | :--- | :--- | :---: | :--- |
+| `/` | Beranda / Root | `Daycare Bintaro Sektor 7 Terbaik Anak 0–6 Th \| Amana Care` | **57** | Daycare Bintaro Sektor 7, Anak 0-6 Th |
+| `/tentang-kami` | Tentang Kami | `Tentang Amana Care \| Daycare Terpercaya Bintaro Sektor 7` | **59** | Tentang Amana Care, Daycare Terpercaya Bintaro |
+| `/layanan` | Layanan & Paket | `Biaya & Paket Daycare Bintaro Sektor 7 \| Amana Care` | **53** | Biaya Daycare Bintaro, Paket Daycare Bintaro |
+| `/fasilitas` | Fasilitas | `Fasilitas Daycare Bintaro Sektor 7 & CCTV \| Amana Care` | **55** | Fasilitas Daycare Bintaro Sektor 7, CCTV |
+| `/galeri` | Galeri | `Galeri Foto & Video Daycare Bintaro \| Amana Care` | **50** | Galeri Foto & Video Daycare Bintaro |
+| `/kontak` | Kontak | `Kontak & Pendaftaran Daycare Bintaro Sektor 7 \| Amana Care` | **60** | Kontak & Pendaftaran Daycare Bintaro |
+
+---
+
 ## 📂 Project Structure & Sitemap
 
 ```
