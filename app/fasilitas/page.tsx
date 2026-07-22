@@ -8,14 +8,14 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Fasilitas Daycare Bintaro — Play Room Non-Toxic, CCTV & Co-Working | Amana Care',
   description:
-    'Fasilitas lengkap Amana Care Bintaro Sektor 7: play room indoor non-toxic, ruang stimulasi belajar, area tidur bersih & ber-AC, CCTV realtime, musala, parents co-working space dengan WiFi kencang. Aman & higienis untuk anak 0–6 tahun.',
+    'Fasilitas Amana Care Bintaro Sektor 7: Playroom non-toxic, ruang tidur AC, CCTV realtime, & parents co-working space nyaman dengan WiFi kencang.',
   alternates: {
     canonical: 'https://www.amanacare.id/fasilitas',
   },
   openGraph: {
     title: 'Fasilitas Daycare Amana Care Bintaro Sektor 7 — CCTV, Play Room & Co-Working',
     description:
-      'Fasilitas premium Amana Care Bintaro Sektor 7: play room non-toxic, ruang belajar, tidur ber-AC, CCTV realtime, parents co-working WiFi, dan APE edukatif. Aman & higienis 100%.',
+      'Fasilitas Amana Care Bintaro Sektor 7: Playroom non-toxic, ruang tidur AC, CCTV realtime, & parents co-working space nyaman dengan WiFi kencang.',
     url: 'https://www.amanacare.id/fasilitas',
   },
 }
