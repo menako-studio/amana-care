@@ -3,14 +3,14 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Kontak & Pendaftaran Daycare Amana Care Bintaro',
   description:
-    'Hubungi Amana Care Bintaro — daftar daycare anak 0–6 tahun, jadwalkan site visit, atau tanya biaya via WhatsApp. Berlokasi di Bintaro Sektor 7, Tangerang Selatan.',
+    'Kontak & pendaftaran daycare Amana Care Bintaro Sektor 7. Tanya biaya, syarat pendaftaran, & jadwal kunjungan via WhatsApp +62 815-1307-5155.',
   alternates: {
     canonical: 'https://www.amanacare.id/kontak',
   },
   openGraph: {
     title: 'Kontak & Pendaftaran Daycare Amana Care Bintaro',
     description:
-      'Daftar daycare Amana Care, jadwalkan site visit, atau tanya info via WhatsApp. Berlokasi di Bintaro Sektor 7, Tangerang Selatan. Buka Senin–Jumat 07.00–19.00 WIB.',
+      'Kontak & pendaftaran daycare Amana Care Bintaro Sektor 7. Tanya biaya, syarat pendaftaran, & jadwal kunjungan via WhatsApp +62 815-1307-5155.',
     url: 'https://www.amanacare.id/kontak',
   },
 }
