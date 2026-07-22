@@ -80,6 +80,57 @@ const layananJsonLd = {
   ],
 }
 
+const daycarePackages = [
+  {
+    id: 'bulanan',
+    name: 'Daycare Bulanan',
+    emoji: '📅',
+    operasional: 'Senin–Jumat, 07:00–19:00',
+    usia: '1–6 tahun',
+    inclusions: ['3x makan', '1x snack buah'],
+    annualFee: 'Rp 3.000.000',
+    mainFee: 'Rp 3.450.000 / bulan',
+    mainFeeLabel: 'Monthly Fee',
+    color: '#00B4D8',
+  },
+  {
+    id: 'harian',
+    name: 'Daycare Harian',
+    emoji: '☀️',
+    operasional: 'Senin–Jumat, 07:00–19:00',
+    usia: '6–12 bulan & 1–6 tahun',
+    inclusions: ['6–12 bulan: Tidak termasuk MPASI & snack', '1–6 tahun: Termasuk 3x makan dan snack buah'],
+    annualFee: 'Rp 1.000.000',
+    mainFee: 'Rp 285.000 / hari',
+    mainFeeLabel: 'Fee per Hari',
+    color: '#FFD166',
+  },
+  {
+    id: 'afterschool',
+    name: 'After-School Daycare',
+    emoji: '🎒',
+    operasional: 'Senin–Jumat, 07:00–19:00',
+    usia: '1–6 tahun',
+    inclusions: ['1x makan sore', '1x snack buah'],
+    annualFee: 'Rp 2.500.000',
+    mainFee: 'Rp 2.950.000 / bulan',
+    mainFeeLabel: 'Monthly Fee',
+    color: '#06D6A0',
+  },
+  {
+    id: 'baby',
+    name: 'Baby Daycare',
+    emoji: '👶',
+    operasional: 'Senin–Jumat, 07:00–19:00',
+    usia: '6–12 bulan',
+    inclusions: ['Tidak termasuk MPASI dan snack buah'],
+    annualFee: 'Rp 3.000.000',
+    mainFee: 'Rp 3.450.000 / bulan',
+    mainFeeLabel: 'Monthly Fee',
+    color: '#EF8C8C',
+  },
+]
+
 const daycareInclusions = [
   'Makan Utama 3x sehari (sehat, bergizi & higienis)',
   'Snack & buah segar sore hari',
@@ -188,6 +239,68 @@ export default function Layanan() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Daycare Pricing Packages */}
+      <section className={`section ${styles.videoProgramSection}`} id="paket-daycare">
+        <div className="container">
+          <ScrollReveal direction="up">
+            <div className={styles.sectionHeader}>
+              <span className="section-label">💰 Paket &amp; Harga</span>
+              <h2 className="heading-2">Pilihan Paket Daycare</h2>
+              <p className={styles.sectionSubtitle}>
+                Pilih paket yang paling sesuai dengan kebutuhan si kecil dan jadwal Anda. Semua paket buka Senin–Jumat, 07:00–19:00.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid-4" style={{ marginTop: 'var(--space-12)' }}>
+            {daycarePackages.map((pkg, i) => (
+              <ScrollReveal key={pkg.id} direction="up" delay={i * 80}>
+                <div
+                  className={`card ${styles.videoProgramCard}`}
+                  style={{ borderTop: `4px solid ${pkg.color}`, height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{pkg.emoji}</div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.25rem', color: 'var(--color-text-primary)' }}>
+                    {pkg.name}
+                  </h3>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '0.75rem' }}>
+                    ⏰ {pkg.operasional}
+                  </p>
+                  <p style={{ fontSize: '0.85rem', fontWeight: 600, color: pkg.color, marginBottom: '0.5rem' }}>
+                    👶 Usia: {pkg.usia}
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 auto', fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
+                    {pkg.inclusions.map((inc) => (
+                      <li key={inc} style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.3rem', alignItems: 'flex-start' }}>
+                        <Check size={14} style={{ color: pkg.color, flexShrink: 0, marginTop: '2px' }} />
+                        <span>{inc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '0.75rem', marginTop: '1rem' }}>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Annual Fee (sekali bayar)</p>
+                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>{pkg.annualFee}</p>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>{pkg.mainFeeLabel}</p>
+                    <p style={{ fontSize: '1.25rem', fontWeight: 800, color: pkg.color }}>{pkg.mainFee}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal direction="up" delay={200}>
+            <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
+              <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)', fontSize: '0.9rem' }}>
+                * Annual Fee dibayarkan sekali di awal untuk registrasi tahunan
+              </p>
+              <Link href="/kontak" className="btn btn-primary btn-lg" id="layanan-cta-pricing">
+                Konsultasi &amp; Daftar Sekarang 💬
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

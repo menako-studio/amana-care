@@ -33,18 +33,18 @@ export default function HeroSection() {
           </div>
 
           <h1 className={styles.heading}>
-            <span className={styles.line1}>Tempat anak</span>
+            <span className={styles.line1}>Your No. 1</span>
             <span className={styles.line2}>
-              tumbuh,{' '}
+              Childcare Support{' '}
               <span className={styles.accent}>&amp;</span>
             </span>
-            <span className={styles.line3}>orang tua</span>
-            <span className={styles.line4}>berkarya.</span>
+            <span className={styles.line3}>Parenting</span>
+            <span className={styles.line4}>Partner</span>
           </h1>
 
           <p className={styles.subtext}>
-            Daycare premium dengan <strong>CCTV realtime</strong>, laporan harian,
-            dan skrining psikolog anak — plus <strong>working space</strong> nyaman untuk para orang tua.
+            Lebih dari <strong>3 tahun</strong> menjadi mitra terpercaya orang tua bekerja,
+            mendampingi si kecil tumbuh dengan <strong>aman dan penuh kasih</strong>.
           </p>
 
           <div className={styles.actions}>

@@ -220,7 +220,7 @@ export default function ContactSection() {
                           className={styles.infoLink}
                           onClick={() => trackOutboundClick('https://share.google/IbDHnKDtXvBJQah2i', 'Contact Section Map Address')}
                         >
-                          Bintaro Sektor 7,<br />Tangerang Selatan, Banten
+                          Ruko Kebayoran Square Blok D-01,<br />Bintaro Jaya Sektor 7, Pondok Aren,<br />Kota Tangerang Selatan, Banten
                         </a>
                       </p>
                     </div>

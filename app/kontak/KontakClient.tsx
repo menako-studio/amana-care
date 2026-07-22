@@ -128,7 +128,9 @@ export default function Kontak() {
                             rel="noopener noreferrer"
                             className={styles.infoLink}
                           >
-                            Bintaro Sektor 7, Tangerang Selatan, Banten
+                          Ruko Kebayoran Square Blok D-01,<br />
+                            Bintaro Jaya Sektor 7, Pondok Aren,<br />
+                            Kota Tangerang Selatan, Banten
                           </a>
                         </p>
                       </div>
