@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import { GraduationCap, HeartPulse, Laptop, ClipboardCheck, Sparkles } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
@@ -45,13 +46,12 @@ const aboutJsonLd = {
 }
 
 const team = [
-  { name: 'Kak Rosyi', role: 'Teacher', desc: 'Pendidik senior berpengalaman 4 tahun memandu kelas motorik & stimulasi di Amana Care.', avatar: '👩‍🏫' },
-  { name: 'Kak Via', role: 'Caregiver', desc: 'Caregiver senior berpengalaman 3 tahun mendampingi aktivitas balita & stimulasi dini.', avatar: '👩' },
-  { name: 'Kak Mara', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun fokus pada pengenalan bahasa, numerasi dasar, & bercerita.', avatar: '👩‍🏫' },
-  { name: 'Kak Fafa', role: 'Teacher', desc: 'Pendidik berdedikasi 2.5 tahun membawakan kurikulum bermain sensorik & eksplorasi alam.', avatar: '👩‍🏫' },
-  { name: 'Kak Daffa', role: 'Caregiver', desc: 'Caregiver ramah berpengalaman 2 tahun, terampil memandu aktivitas fisik motorik kasar anak.', avatar: '👩' },
-  { name: 'Kak Dinda', role: 'Caregiver', desc: 'Pendamping ceria berpengalaman 1.5 tahun menjaga kenyamanan & kebersihan harian buah hati.', avatar: '👩' },
-  { name: 'Kak Ola', role: 'Caregiver', desc: 'Pendamping terlatih berpengalaman 1.5 tahun mendampingi jam istirahat siang & stimulasi mandiri.', avatar: '👩' },
+  { name: 'Miss Rosyi, S.Pd.', role: 'Head Teacher', desc: 'Sudah mengajar 4 tahun di Amana Care. Sarjana Pendidikan Guru Anak Usia Dini di UNJ.', avatar: '👩‍🏫' },
+  { name: 'Miss Mara', role: 'Teacher', desc: 'Sudah mengajar 2.5 tahun di Amana Care. Pendidikan Guru Anak Usia Dini di UNJ.', avatar: '👩‍🏫' },
+  { name: 'Miss Dinda', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
+  { name: 'Miss Ola', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
+  { name: 'Miss Daffa', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 2 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
+  { name: 'Miss Mayla', role: 'Staf Bagian Umum & Rumah Tangga', desc: 'Lulusan SMK jurusan Akuntansi. Memastikan operasional dan kenyamanan harian berjalan optimal.', avatar: '👩' },
 ]
 
 export default function TentangKami() {
@@ -108,14 +108,10 @@ export default function TentangKami() {
                 <span className="section-label">🌱 Cerita Kami</span>
                 <h2 className="heading-2">Mengapa Amana Care Lahir?</h2>
                 <p className={styles.p}>
-                  Amana Care didirikan oleh sekelompok orang tua dan praktisi pendidikan anak yang menyadari
-                  tantangan nyata para orang tua bekerja di wilayah perkotaan seperti Bintaro. Menemukan tempat penitipan anak
-                  yang benar-benar tepercaya, aman, sekaligus menstimulasi tumbuh kembang anak dengan optimal bukanlah hal mudah.
+                  Amana Care berawal dari pengalaman pribadi sebagai orang tua bekerja – menyadari bahwa pendampingan yang tepat selama masa tumbuh kembang anak adalah kebutuhan, bukan pilihan.
                 </p>
                 <p className={styles.p}>
-                  Kami ingin menciptakan ruang di mana anak-anak merasa dicintai dan dapat bermain secara bebas
-                  namun terarah, sementara orang tua mereka dapat bekerja dengan fokus tanpa diliputi kecemasan. Oleh karena itu,
-                  kami mengintegrasikan <strong>Daycare premium</strong> dengan fasilitas <strong>Parents Working Space</strong> di lokasi yang sama.
+                  Kami hadir menjadi <strong>rumah kedua</strong> bagi anak usia 6 bulan hingga 6 tahun untuk tumbuh dalam suasana yang hangat dan terlindungi, sekaligus mitra terpercaya bagi para orang tua yang ingin tetap terlibat penuh dalam perjalanan tumbuh kembang si kecil.
                 </p>
               </div>
             </ScrollReveal>
@@ -166,34 +162,90 @@ export default function TentangKami() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Visi & Misi */}
       <section className={`section ${styles.valuesSection}`}>
         <div className="container">
           <ScrollReveal direction="up">
             <div className={styles.sectionHeader}>
-              <span className="section-label">💎 Nilai Utama</span>
-              <h2 className="heading-2">Prinsip Kerja Kami</h2>
+              <span className="section-label">🎯 Visi &amp; Misi</span>
+              <h2 className="heading-2">Visi &amp; Misi Kami</h2>
               <p className={styles.sectionSubtitle}>
-                Empat pilar utama yang mendasari setiap keputusan dan tindakan pelayanan kami sehari-hari.
+                Komitmen Amana Care dalam memberikan layanan daycare dan pengasuhan anak usia dini terbaik di Indonesia.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid-4">
+          {/* Visi Hero Card */}
+          <ScrollReveal direction="up" delay={80}>
+            <div className={styles.visiCard}>
+              <div className={styles.visiBadge}>
+                <Sparkles size={16} color="var(--color-primary-dark)" />
+                <span>Visi Utama</span>
+              </div>
+              <p className={styles.visiText}>
+                &ldquo;Menjadi rumah kedua terpercaya bagi anak Indonesia, dan mitra andalan bagi orang tua bekerja.&rdquo;
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Misi Cards Grid */}
+          <div className={styles.misiHeader}>
+            <h3 className={styles.misiTitle}>
+              4 Pilar Misi Kami
+            </h3>
+          </div>
+
+          <div className={styles.misiGrid}>
             {[
-              { title: 'Amanah', icon: '🤝', desc: 'Kami memegang teguh amanah dan kepercayaan dari orang tua untuk menjaga dan mendidik buah hatinya.' },
-              { title: 'Kasih', icon: '❤️', desc: 'Kasih sayang yang tulus menjadi motor utama pengasuhan kami di setiap sentuhan dan interaksi.' },
-              { title: 'Tumbuh', icon: '🌱', desc: 'Mendorong stimulasi aspek sensorik, motorik, kognitif, dan sosio-emosional anak di setiap usianya.' },
-              { title: 'Kreatif', icon: '🎨', desc: 'Menghadirkan kurikulum berbasis bermain (play-based learning) untuk eksplorasi tanpa batas.' },
-            ].map((value, i) => (
-              <ScrollReveal key={value.title} direction="up" delay={i * 80}>
-                <div className={`card ${styles.valueCard}`}>
-                  <span className={styles.valueIcon}>{value.icon}</span>
-                  <h3 className={styles.valueTitle}>{value.title}</h3>
-                  <p className={styles.valueDesc}>{value.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+              {
+                num: '01',
+                title: 'Pengasuhan & Pendidikan Terpadu',
+                desc: 'Menggabungkan pengasuhan dan pendidikan anak usia dini dalam satu layanan daycare terpadu, didukung tim guru berlatar belakang S1 PAUD dan caregiver berlatar pendidikan kesehatan/keperawatan minimal SMK.',
+                icon: GraduationCap,
+                color: 'var(--color-primary)',
+                bg: 'rgba(57, 194, 231, 0.12)',
+              },
+              {
+                num: '02',
+                title: 'Layanan Pengasuhan Menyeluruh',
+                desc: 'Menyediakan layanan pengasuhan anak yang menyeluruh, yakni durasi daycare 12 jam, penyediaan katering sehat untuk anak, termasuk screening tumbuh kembang bersama tim psikolog dan check-up dokter gigi, demi memastikan anak berkembang optimal secara fisik maupun psikologis.',
+                icon: HeartPulse,
+                color: '#10B981',
+                bg: 'rgba(16, 185, 129, 0.12)',
+              },
+              {
+                num: '03',
+                title: 'Dukungan Produktivitas Orang Tua',
+                desc: 'Mendukung produktivitas orang tua bekerja dengan fasilitas parents working space, sehingga orang tua tetap dapat menyelesaikan pekerjaan sembari tetap dekat dengan anak.',
+                icon: Laptop,
+                color: '#F59E0B',
+                bg: 'rgba(245, 158, 11, 0.12)',
+              },
+              {
+                num: '04',
+                title: 'Kemitraan Aktif & Laporan Harian',
+                desc: 'Membangun kemitraan aktif dengan orang tua dalam setiap tahap tumbuh kembang anak, dengan memberikan laporan harian yang terperinci, lengkap dengan dokumentasi, dan diskusi untuk mendukung proses tumbuh kembang anak.',
+                icon: ClipboardCheck,
+                color: '#8B5CF6',
+                bg: 'rgba(139, 92, 246, 0.12)',
+              },
+            ].map((misi, i) => {
+              const Icon = misi.icon
+              return (
+                <ScrollReveal key={misi.num} direction="up" delay={100 + i * 80}>
+                  <div className={styles.misiCard}>
+                    <div className={styles.misiCardTop}>
+                      <div className={styles.misiIconBox} style={{ background: misi.bg }}>
+                        <Icon size={24} color={misi.color} />
+                      </div>
+                      <span className={styles.misiNumber}>{misi.num}</span>
+                    </div>
+                    <h4 className={styles.misiCardTitle}>{misi.title}</h4>
+                    <p className={styles.misiCardDesc}>{misi.desc}</p>
+                  </div>
+                </ScrollReveal>
+              )
+            })}
           </div>
         </div>
       </section>
