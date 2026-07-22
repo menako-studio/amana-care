@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
   },
   description:
-    'Daycare premium di Bintaro Sektor 7 untuk anak 0–6 tahun. CCTV realtime, daily report WhatsApp, makan bergizi 3x, psikolog anak, dan parents co-working space terintegrasi.',
+    'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. Fasilitas CCTV realtime, makan 3x, psikolog anak, & co-working terintegrasi.',
   keywords: [
     // Primary — tinggi volume
     'daycare bintaro',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: 'Amana Care',
     title: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
     description:
-      'Daycare premium di Bintaro Sektor 7. CCTV realtime, daily report WhatsApp, makan bergizi 3x, dan skrining psikolog anak berkala. Tersedia parents co-working space terintegrasi.',
+      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space terintegrasi.',
     images: [
       {
         url: '/images/og-amanacare.png',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Amana Care — Daycare & Parents Working Space Bintaro',
     description:
-      'Daycare premium di Bintaro Sektor 7. CCTV realtime, laporan harian WA, psikolog anak berkala.',
+      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space.',
     images: ['/images/og-amanacare.png'],
   },
   robots: {
