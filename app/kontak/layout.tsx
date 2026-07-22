@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kontak & Pendaftaran Daycare Amana Care Bintaro',
+  title: {
+    absolute: 'Kontak & Pendaftaran Daycare Bintaro Sektor 7 | Amana Care',
+  },
   description:
     'Kontak & pendaftaran daycare Amana Care Bintaro Sektor 7. Tanya biaya, syarat pendaftaran, & jadwal kunjungan via WhatsApp +62 815-1307-5155.',
   alternates: {
     canonical: 'https://www.amanacare.id/kontak',
   },
   openGraph: {
-    title: 'Kontak & Pendaftaran Daycare Amana Care Bintaro',
+    title: 'Kontak & Pendaftaran Daycare Bintaro Sektor 7 | Amana Care',
     description:
       'Kontak & pendaftaran daycare Amana Care Bintaro Sektor 7. Tanya biaya, syarat pendaftaran, & jadwal kunjungan via WhatsApp +62 815-1307-5155.',
     url: 'https://www.amanacare.id/kontak',

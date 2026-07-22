@@ -5,14 +5,16 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Tentang Amana Care — Daycare & Working Space Terpercaya Bintaro Sektor 7',
+  title: {
+    absolute: 'Tentang Amana Care | Daycare Terpercaya Bintaro Sektor 7',
+  },
   description:
     'Profil Amana Care Bintaro Sektor 7: Visi, misi, nilai pengasuhan Montessori, & tim pengasuh profesional pendamping tumbuh kembang anak 0–6 th.',
   alternates: {
     canonical: 'https://www.amanacare.id/tentang-kami',
   },
   openGraph: {
-    title: 'Tentang Amana Care — Daycare Terpercaya di Bintaro Sektor 7',
+    title: 'Tentang Amana Care | Daycare Terpercaya Bintaro Sektor 7',
     description:
       'Profil Amana Care Bintaro Sektor 7: Visi, misi, nilai pengasuhan Montessori, & tim pengasuh profesional pendamping tumbuh kembang anak 0–6 th.',
     url: 'https://www.amanacare.id/tentang-kami',

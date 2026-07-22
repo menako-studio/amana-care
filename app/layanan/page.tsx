@@ -7,14 +7,16 @@ import styles from './page.module.css'
 import LayananWACTA from './LayananWACTA'
 
 export const metadata: Metadata = {
-  title: 'Paket Daycare & Co-Working Space Bintaro | Harga & Fasilitas — Amana Care',
+  title: {
+    absolute: 'Biaya & Paket Daycare Bintaro Sektor 7 | Amana Care',
+  },
   description:
     'Paket daycare harian & bulanan Bintaro Sektor 7 (0–6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
   alternates: {
     canonical: 'https://www.amanacare.id/layanan',
   },
   openGraph: {
-    title: 'Paket Daycare & Co-Working Space Bintaro Sektor 7 — Amana Care',
+    title: 'Biaya & Paket Daycare Bintaro Sektor 7 | Amana Care',
     description:
       'Paket daycare harian & bulanan Bintaro Sektor 7 (0–6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
     url: 'https://www.amanacare.id/layanan',

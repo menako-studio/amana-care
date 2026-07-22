@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Galeri Foto & Video Daycare Amana Care Bintaro',
+  title: {
+    absolute: 'Galeri Foto & Video Daycare Bintaro | Amana Care',
+  },
   description:
     'Galeri foto & video aktivitas anak, fasilitas daycare, & suasana parents co-working space di Amana Care Bintaro Sektor 7, Tangerang Selatan.',
   alternates: {
     canonical: 'https://www.amanacare.id/galeri',
   },
   openGraph: {
-    title: 'Galeri Foto & Video Daycare Amana Care Bintaro',
+    title: 'Galeri Foto & Video Daycare Bintaro | Amana Care',
     description:
       'Galeri foto & video aktivitas anak, fasilitas daycare, & suasana parents co-working space di Amana Care Bintaro Sektor 7, Tangerang Selatan.',
     url: 'https://www.amanacare.id/galeri',

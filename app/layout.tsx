@@ -14,8 +14,8 @@ const siteUrl = 'https://www.amanacare.id'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    template: '%s | Amana Care — Daycare & Working Space Bintaro',
-    default: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
+    template: '%s | Amana Care',
+    default: 'Daycare Bintaro & Parents Working Space | Amana Care',
   },
   description:
     'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. Fasilitas CCTV realtime, makan 3x, psikolog anak, & co-working terintegrasi.',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     url: siteUrl,
     siteName: 'Amana Care',
-    title: 'Amana Care — Daycare & Parents Working Space Bintaro Sektor 7',
+    title: 'Daycare Bintaro & Parents Working Space | Amana Care',
     description:
       'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space terintegrasi.',
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amana Care — Daycare & Parents Working Space Bintaro',
+    title: 'Daycare Bintaro & Parents Working Space | Amana Care',
     description:
       'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space.',
     images: ['/images/og-amanacare.png'],
