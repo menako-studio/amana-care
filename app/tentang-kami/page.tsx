@@ -48,12 +48,12 @@ const aboutJsonLd = {
 }
 
 const team = [
-  { name: 'Miss Rosyi, S.Pd.', role: 'Head Teacher', desc: 'Sudah mengajar 4 tahun di Amana Care. Sarjana Pendidikan Guru Anak Usia Dini di UNJ.', avatar: '👩‍🏫' },
-  { name: 'Miss Mara', role: 'Teacher', desc: 'Sudah mengajar 2.5 tahun di Amana Care. Pendidikan Guru Anak Usia Dini di UNJ.', avatar: '👩‍🏫' },
-  { name: 'Miss Dinda', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
-  { name: 'Miss Ola', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
-  { name: 'Miss Daffa', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 2 tahun. Lulusan SMK jurusan Layanan Kesehatan.', avatar: '👩' },
-  { name: 'Miss Mayla', role: 'Staf Bagian Umum & Rumah Tangga', desc: 'Lulusan SMK jurusan Akuntansi. Memastikan operasional dan kenyamanan harian berjalan optimal.', avatar: '👩' },
+  { name: 'Miss Rosyi, S.Pd.', role: 'Head Teacher', desc: 'Sudah mengajar 4 tahun di Amana Care. Sarjana Pendidikan Guru Anak Usia Dini di UNJ.', photo: '/images/team/miss-rosyi.webp' },
+  { name: 'Miss Mara', role: 'Teacher', desc: 'Sudah mengajar 2.5 tahun di Amana Care. Pendidikan Guru Anak Usia Dini di UNJ.', photo: '/images/team/miss-mara.webp' },
+  { name: 'Miss Dinda', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', photo: '/images/team/miss-dinda.webp' },
+  { name: 'Miss Ola', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 1.5 tahun. Lulusan SMK jurusan Layanan Kesehatan.', photo: '/images/team/miss-ola.webp' },
+  { name: 'Miss Daffa', role: 'Caregiver', desc: 'Sudah bekerja di Amana selama 2 tahun. Lulusan SMK jurusan Layanan Kesehatan.', photo: null },
+  { name: 'Miss Mayla', role: 'Staf Bagian Umum & Rumah Tangga', desc: 'Lulusan SMK jurusan Akuntansi. Memastikan operasional dan kenyamanan harian berjalan optimal.', photo: '/images/team/miss-mayla.webp' },
 ]
 
 export default function TentangKami() {
@@ -299,7 +299,21 @@ export default function TentangKami() {
             {team.map((member, i) => (
               <ScrollReveal key={member.name} direction="up" delay={i * 80}>
                 <div className={styles.teamCard}>
-                  <div className={styles.teamAvatar}>{member.avatar}</div>
+                  <div className={styles.teamAvatarWrapper}>
+                    {member.photo ? (
+                      <Image
+                        src={member.photo}
+                        alt={`Foto ${member.name} – ${member.role} Amana Care`}
+                        fill
+                        sizes="120px"
+                        className={styles.teamAvatarImg}
+                      />
+                    ) : (
+                      <div className={styles.teamAvatarFallback}>
+                        <span>{member.name.split(' ').slice(1, 2).join('').charAt(0)}</span>
+                      </div>
+                    )}
+                  </div>
                   <h3 className={styles.teamName}>{member.name}</h3>
                   <p className={styles.teamRole}>{member.role}</p>
                   <div className={styles.teamDivider} />
