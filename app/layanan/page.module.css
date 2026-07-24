@@ -400,3 +400,56 @@
     margin: 0 auto;
   }
 }
+
+/* Sensory School Section */
+.sensoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sensoryCard {
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-spring);
+  height: 100%;
+}
+
+.sensoryCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.sensoryMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.sensoryMetaItem {
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+  line-height: 1.5;
+}
+
+.sensoryMetaItem strong {
+  color: var(--color-charcoal);
+}
+
+@media (max-width: 640px) {
+  .sensoryGrid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}

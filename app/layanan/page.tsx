@@ -131,6 +131,28 @@ const daycarePackages = [
     mainFeeLabel: 'Monthly Fee',
     color: '#EF8C8C',
   },
+  {
+    id: 'dropin',
+    name: 'Drop-in Daycare',
+    emoji: '🎫',
+    operasional: 'Senin–Jumat, 07:00–19:00',
+    usia: '6–12 bulan & 1–6 tahun',
+    inclusions: [
+      '6–12 bulan: Tidak termasuk MPASI & snack',
+      '1–6 tahun: Termasuk 3x makan dan snack buah',
+      'Sifatnya pay per visit',
+      'Tanpa Annual Fee',
+    ],
+    annualFee: null,
+    mainFee: null,
+    mainFeeLabel: null,
+    dropinPackages: [
+      { label: '1-day package', price: 'Rp 325.000' },
+      { label: '3-day package', price: 'Rp 945.000' },
+      { label: '5-day package', price: 'Rp 1.550.000' },
+    ],
+    color: '#A78BFA',
+  },
 ]
 
 const daycareInclusions = [
@@ -140,6 +162,29 @@ const daycareInclusions = [
   'Skrining berkala oleh Psikolog Anak',
   'Dokumentasi foto & video aktivitas',
   'Akses CCTV realtime untuk orang tua',
+]
+
+const sensorySchoolPackages = [
+  {
+    id: 'baby-class',
+    name: 'Baby Class',
+    emoji: '🍼',
+    schedule: 'Sabtu, 09:00–10:00',
+    usia: '6–12 bulan',
+    duration: '8 sesi selama 8 minggu + final exhibition di minggu ke-9',
+    price: 'Rp 1.250.000',
+    color: '#EF8C8C',
+  },
+  {
+    id: 'toddler-class',
+    name: 'Toddler Class',
+    emoji: '🧒',
+    schedule: 'Sabtu, 10:30–11:30',
+    usia: '12–24 bulan',
+    duration: null,
+    price: null,
+    color: '#A78BFA',
+  },
 ]
 
 const workspaceFeatures = [
@@ -283,10 +328,23 @@ export default function Layanan() {
                     ))}
                   </ul>
                   <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '0.75rem', marginTop: '1rem' }}>
-                    <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Annual Fee (sekali bayar)</p>
-                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>{pkg.annualFee}</p>
-                    <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>{pkg.mainFeeLabel}</p>
-                    <p style={{ fontSize: '1.25rem', fontWeight: 800, color: pkg.color }}>{pkg.mainFee}</p>
+                    {'dropinPackages' in pkg && pkg.dropinPackages ? (
+                      <>
+                        {pkg.dropinPackages.map((dp) => (
+                          <div key={dp.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                            <span style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>{dp.label}</span>
+                            <span style={{ fontSize: '0.95rem', fontWeight: 800, color: pkg.color }}>{dp.price}</span>
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Annual Fee (sekali bayar)</p>
+                        <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>{pkg.annualFee}</p>
+                        <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>{pkg.mainFeeLabel}</p>
+                        <p style={{ fontSize: '1.25rem', fontWeight: 800, color: pkg.color }}>{pkg.mainFee}</p>
+                      </>
+                    )}
                   </div>
                 </div>
               </ScrollReveal>
@@ -375,7 +433,70 @@ export default function Layanan() {
         </div>
       </section>
 
-      {/* Parents Working Space Section */}
+      {/* Baby & Toddler Sensory School Section */}
+      <section className={`section ${styles.videoProgramSection}`} id="sensory-school">
+        <div className="container">
+          <ScrollReveal direction="up">
+            <div className={styles.sectionHeader}>
+              <span className="section-label">🌟 Program Sensori</span>
+              <h2 className="heading-2">Baby &amp; Toddler Sensory School</h2>
+              <p className={styles.sectionSubtitle}>
+                Program kelas sensori mingguan khusus bayi dan toddler yang dirancang untuk menstimulasi tumbuh kembang optimal melalui eksplorasi indera yang terarah dan menyenangkan.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className={styles.sensoryGrid} style={{ marginTop: 'var(--space-12)' }}>
+            {sensorySchoolPackages.map((cls, i) => (
+              <ScrollReveal key={cls.id} direction="up" delay={i * 100}>
+                <div
+                  className={`card ${styles.sensoryCard}`}
+                  style={{ borderTop: `4px solid ${cls.color}` }}
+                >
+                  <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{cls.emoji}</div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-charcoal)', marginBottom: '0.5rem' }}>
+                    {cls.name}
+                  </h3>
+                  <div className={styles.sensoryMeta}>
+                    <span className={styles.sensoryMetaItem}>
+                      🗓️ <strong>Jadwal:</strong> {cls.schedule}
+                    </span>
+                    <span className={styles.sensoryMetaItem}>
+                      👶 <strong>Usia:</strong> {cls.usia}
+                    </span>
+                    {cls.duration && (
+                      <span className={styles.sensoryMetaItem}>
+                        ⏱️ <strong>Durasi:</strong> {cls.duration}
+                      </span>
+                    )}
+                  </div>
+                  <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '0.75rem', marginTop: 'auto' }}>
+                    {cls.price ? (
+                      <>
+                        <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Biaya Program</p>
+                        <p style={{ fontSize: '1.5rem', fontWeight: 800, color: cls.color }}>{cls.price}</p>
+                      </>
+                    ) : (
+                      <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>Hubungi kami untuk informasi harga</p>
+                    )}
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal direction="up" delay={200}>
+            <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
+              <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)', fontSize: '0.9rem' }}>
+                * Kelas dilaksanakan setiap Sabtu. Tempat terbatas — daftar sekarang!
+              </p>
+              <Link href="/kontak" className="btn btn-primary" id="layanan-cta-sensory">
+                Daftar Sensory School 🌟
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
       <section className="section" id="working-space">
         <div className="container">
           <div className={styles.gridInverse}>
