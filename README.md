@@ -141,4 +141,5 @@ NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 RESEND_API_KEY=re_your_api_key
 ```
-*(Note: If these variables are not configured, the registration form dynamically switches to redirect parents to Amana Care's official WhatsApp chat handler).*
+*(Note: If these variables are not configured, the registration form dynamically switches to redirect parents to Amana Care's official WhatsApp chat handler. Notification emails are dispatched to the official email `amanacare.id@gmail.com` when configured).*
+

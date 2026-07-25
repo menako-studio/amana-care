@@ -20,7 +20,7 @@
 | **Icons & Typography** | Lucide React & Next Font | `lucide-react@1.24.0` | Fonts: `Quicksand` (Display/Headings) & `Inter` (Body) |
 | **Carousel** | Embla Carousel React | `embla-carousel-react@8.6.0` | Used in Testimonials Carousel |
 | **Database (Optional)** | Supabase JS Client | `@supabase/supabase-js@2.110.3` | Table `contacts` for optional lead persistence |
-| **Email Service** | Resend | `resend@6.17.2` | Automated email dispatch to `haloamana@gmail.com` |
+| **Email Service** | Resend | `resend@6.17.2` | Automated email dispatch to `amanacare.id@gmail.com` |
 | **Form & Validation** | React Hook Form & Zod | `react-hook-form@7.81.0`, `zod@4.4.3` | Schema-based validation via `@hookform/resolvers@5.4.0` |
 | **Analytics** | GA4 & GTM via `@next/third-parties` | `@next/third-parties@16.2.10` | Custom dispatcher in `lib/analytics.ts` |
 | **Error Monitoring** | Sentry Next.js | `@sentry/nextjs@10.66.0` | Configured in `next.config.ts`, tunnelRoute `/monitoring` |
@@ -134,7 +134,7 @@ amana-care/
        │        └── Insert to table `contacts`
        │
        ├──► 4. Resend Email Dispatch (Optional if RESEND_API_KEY set)
-       │        └── Send formatted HTML notification to `haloamana@gmail.com`
+       │        └── Send formatted HTML notification to `amanacare.id@gmail.com`
        │
        ▼
 [Return HTTP 200 JSON Response]
@@ -211,6 +211,22 @@ Step 5: Verification & Build Validation
    └── Run `npm run test` to verify all Vitest tests pass.
    └── Run `npm run build` to guarantee 0 TypeScript compilation or Next.js build errors.
 ```
+
+### Email Flow & Best Practices Guidelines
+
+All features or sections of the application that involve email notifications, text references, or hyperlinks must strictly adhere to the following best practices:
+1. **Recipient Address**: The official email is `amanacare.id@gmail.com`. Any form submission notifications, contact directories, or mailto links must use this address.
+2. **User Experience (UX)**:
+   - Use the `mailto:` protocol to open the default email client on the user's device.
+   - Accompany all email links with the standard `Mail` icon from `lucide-react`.
+3. **Analytics Tracking**:
+   - Every email contact interaction must be logged with the centralized `trackContact` function in `lib/analytics.ts`:
+     ```typescript
+     trackContact('email', 'amanacare.id@gmail.com', '<Source>')
+     ```
+4. **Security & Privacy**:
+   - Ensure the server-side dispatcher `/api/contact` does not expose sensitive credentials in the source code; use `process.env.RESEND_API_KEY` for dispatching.
+   - Gracefully degrade functionality when API keys are missing without exposing internal stack traces.
 
 ---
 *End of PROJECT_STATE.md — Single Source of Truth for Amana Care*
