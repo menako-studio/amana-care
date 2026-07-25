@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
+import { MessageCircle, MapPin, Clock, Phone, Mail } from 'lucide-react'
 import styles from './Footer.module.css'
-import { trackWhatsAppOpen, trackOutboundClick } from '@/lib/analytics'
+import { trackWhatsAppOpen, trackOutboundClick, trackContact } from '@/lib/analytics'
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -123,6 +123,16 @@ export default function Footer() {
                   <Phone size={16} className={styles.contactIcon} />
                   <a href="https://wa.me/6281513075155" className={styles.contactLink} onClick={() => trackWhatsAppOpen('footer_phone_link')}>
                     +62 815-1307-5155
+                  </a>
+                </li>
+                <li className={styles.contactItem}>
+                  <Mail size={16} className={styles.contactIcon} />
+                  <a
+                    href="mailto:amanacare.id@gmail.com"
+                    className={styles.contactLink}
+                    onClick={() => trackContact('email', 'amanacare.id@gmail.com', 'Footer Contact List Email')}
+                  >
+                    amanacare.id@gmail.com
                   </a>
                 </li>
                 <li className={styles.contactItem}>

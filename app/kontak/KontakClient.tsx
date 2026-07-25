@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Plus, Minus, MapPin, Clock, Phone, CheckCircle } from 'lucide-react'
+import { Plus, Minus, MapPin, Clock, Phone, CheckCircle, Mail } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
-import { trackFormSubmit, trackFAQOpen, trackWhatsAppOpen } from '@/lib/analytics'
+import { trackFormSubmit, trackFAQOpen, trackWhatsAppOpen, trackContact } from '@/lib/analytics'
 
 const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { size?: number; className?: string; color?: string }) => (
   <svg
@@ -152,8 +152,24 @@ export default function Kontak() {
                       </div>
                       <div>
                         <p className={styles.infoLabel}>WhatsApp</p>
-                        <a href="https://wa.me/6281513075155" className={styles.infoLink}>
+                        <a href="https://wa.me/6281513075155" className={styles.infoLink} onClick={() => trackWhatsAppOpen('contact_page_phone_link')}>
                           +62 815-1307-5155
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className={styles.infoItem}>
+                      <div className={`icon-container ${styles.infoIcon}`} style={{ background: 'rgba(57, 194, 231, 0.12)' }}>
+                        <Mail size={20} color="var(--color-primary)" />
+                      </div>
+                      <div>
+                        <p className={styles.infoLabel}>Email</p>
+                        <a
+                          href="mailto:amanacare.id@gmail.com"
+                          className={styles.infoLink}
+                          onClick={() => trackContact('email', 'amanacare.id@gmail.com', 'Contact Page Email Link')}
+                        >
+                          amanacare.id@gmail.com
                         </a>
                       </div>
                     </div>
