@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY) {
       const { error: emailError } = await resend.emails.send({
         from: 'Amana Care Website <onboarding@resend.dev>',
-        to: 'haloamana@gmail.com',
+        to: 'amanacare.id@gmail.com',
         subject: `Pendaftaran Baru: ${namaAnak} (${usia})`,
         html: `
           <h3>Pendaftaran Calon Murid Baru</h3>
