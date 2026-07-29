@@ -29,7 +29,7 @@ const features = [
     color: '#30F2B2',
     bg: 'rgba(48, 242, 178, 0.12)',
     title: 'Working Space',
-    desc: 'Ruang kerja nyaman dengan WiFi cepat dan AC — tetap produktif sambil si kecil bermain di sampingmu.',
+    desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
   },
   {
     icon: Shield,

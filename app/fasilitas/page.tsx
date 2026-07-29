@@ -52,7 +52,7 @@ const areas = [
   },
   {
     title: 'Parents Working Space',
-    desc: 'Ruang kerja premium khusus orang tua di lantai atas, dilengkapi dengan meja kerja ergonomis dan monitor pantau CCTV.',
+    desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
     img: '/images/hero-layanan.png',
   },
 ]

@@ -506,9 +506,7 @@ export default function Layanan() {
                 <span className={`${styles.badge} ${styles.badgeYellow}`}>Parents Workspace</span>
                 <h2 className="heading-2">Parents Working Space</h2>
                 <p className={styles.p}>
-                  Kami memahami kebutuhan para orang tua bekerja untuk tetap produktif. Di lantai terpisah, kami
-                  menyediakan Parents Working Space yang tenang, nyaman, dan terintegrasi penuh. Anda tetap bisa memantau
-                  aktivitas si kecil secara berkala tanpa mengganggu fokus kerja Anda.
+                  Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.
                 </p>
 
                 <div className={styles.workspaceGrid}>
