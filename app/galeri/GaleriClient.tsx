@@ -17,20 +17,22 @@ const categories = [
 ]
 
 const galleryItems = [
-  { src: '/images/gallery-craft-activity.webp', alt: 'Anak-anak beraktivitas seni dan kreativitas di ruang kelas Amana Care', category: 'aktivitas', tag: 'Aktivitas Seni' },
-  { src: '/images/gallery-toddler-class.webp', alt: 'Kelas toddler eksplorasi bermain di Amana Care', category: 'aktivitas', tag: 'Toddler Class' },
-  { src: '/images/gallery-baby-sensory.webp', alt: 'Pengasuhan & stimulasi sensorik kelas Baby 6–12 bulan', category: 'aktivitas', tag: 'Baby Class' },
-  { src: '/images/gallery-toddler-2.webp', alt: 'Eksplorasi motorik dan sensori anak toddler Amana Care', category: 'aktivitas', tag: 'Toddler Activity' },
-  { src: '/images/working-space.webp', alt: 'Suasana parents working space terintegrasi dengan daycare', category: 'fasilitas', tag: 'Co-Working' },
-  { src: '/images/facility-classroom.webp', alt: 'Ruang kelas toddlers yang ceria, rapi, dan edukatif', category: 'fasilitas', tag: 'Ruang Belajar' },
-  { src: '/images/gallery-sensory-2.webp', alt: 'Sensory play anak toddler dengan eksplorasi warna dan motorik', category: 'aktivitas', tag: 'Sensory Play' },
-  { src: '/images/gallery-art-activity.webp', alt: 'Aktivitas seni anak-anak di ruang kreativitas Amana Care', category: 'aktivitas', tag: 'Aktivitas Seni' },
-  { src: '/images/hero-daycare-room.webp', alt: 'Area tidur siang dengan kasur personal bersih', category: 'fasilitas', tag: 'Ruang Istirahat' },
-  { src: '/images/gallery-play-indoor.webp', alt: 'Bermain indoor bersama teman-teman di Amana Care', category: 'aktivitas', tag: 'Indoor Play' },
-  { src: '/images/gallery-event-popup.webp', alt: 'Keceriaan kegiatan event Pop-Up Daycare Amana Care', category: 'event', tag: 'Pop-Up Event' },
-  { src: '/images/gallery-popup-event-2.webp', alt: 'Kegiatan Pop-Up Daycare bersama komunitas & keluarga', category: 'event', tag: 'Pop-Up Event' },
-  { src: '/images/gallery-holiday-program.webp', alt: 'Aktivitas seru School Holiday Program Amana Care', category: 'event', tag: 'Holiday Program' },
-  { src: '/images/gallery-july-activity.webp', alt: 'Dokumentasi kegiatan operasional harian Amana Care', category: 'aktivitas', tag: 'Aktivitas Harian' },
+  { src: '/images/toddlers-sensory-orange-slices.webp', alt: 'Sensory play eksplorasi buah jeruk dan air untuk stimulasi indera toddler', category: 'aktivitas', tag: 'Sensory Play' },
+  { src: '/images/colorful-handprint-proud-boy.webp', alt: 'Aktivitas lukis telapak tangan (handprint art) meningkatkan kreativitas anak', category: 'aktivitas', tag: 'Aktivitas Seni' },
+  { src: '/images/kids-roleplay-doctor.webp', alt: 'Roleplay dokter & perawat edukatif melatih kecerdasan sosial dan kemandirian', category: 'aktivitas', tag: 'Roleplay Game' },
+  { src: '/images/baby-class-sensory-jelly.webp', alt: 'Kelas Baby stimulasi sensorik tekstur puding jelly berwarna untuk bayi & toddler', category: 'aktivitas', tag: 'Baby Class' },
+  { src: '/images/daycare-learning-materials.webp', alt: 'Fasilitas mainan edukatif, buku bacaan, dan flashcards stimulasi perkembangan anak', category: 'fasilitas', tag: 'Alat Edukasi' },
+  { src: '/images/science-learning-moon.webp', alt: 'Pembelajaran sains interaktif pengenalan luar angkasa & fase bulan bersama guru', category: 'aktivitas', tag: 'Sains & Edukasi' },
+  { src: '/images/storytelling-circle-time.webp', alt: 'Sesi storytelling & circle time mendengarkan cerita dengan hangat bersama pengasuh', category: 'aktivitas', tag: 'Storytelling' },
+  { src: '/images/daycare-teachers-staff-group.webp', alt: 'Tim pendidik dan pengasuh profesional Amana Care Daycare Bintaro', category: 'fasilitas', tag: 'Tim Pengasuh' },
+  { src: '/images/toddler-number-matching.webp', alt: 'Eksplorasi matematika awal mencocokkan angka dan warna ulat edukatif', category: 'aktivitas', tag: 'Motorik & Math' },
+  { src: '/images/working-space.jpg', alt: 'Suasana Parents Working Space terintegrasi dekat dengan area bermain anak', category: 'fasilitas', tag: 'Co-Working' },
+  { src: '/images/preschoolers-hospital-roleplay.webp', alt: 'Kegiatan bermain peran profesi kesehatan di ruang kelas Amana Care', category: 'aktivitas', tag: 'Roleplay Game' },
+  { src: '/images/facility-classroom.webp', alt: 'Ruang kelas belajar toddlers yang rapi, bersih, ceria, dan aman', category: 'fasilitas', tag: 'Ruang Belajar' },
+  { src: '/images/hero-daycare-room.jpg', alt: 'Area tidur siang dengan tempat tidur bersih personal untuk kenyamanan anak', category: 'fasilitas', tag: 'Ruang Istirahat' },
+  { src: '/images/gallery-event-popup.jpg', alt: 'Keceriaan kegiatan Pop-Up Daycare Amana Care bersama keluarga', category: 'event', tag: 'Pop-Up Event' },
+  { src: '/images/gallery-popup-event-2.jpg', alt: 'Dokumentasi acara Pop-Up Daycare bersama anak dan orang tua', category: 'event', tag: 'Pop-Up Event' },
+  { src: '/images/gallery-holiday-program.jpg', alt: 'Aktivitas seru School Holiday Program Amana Care Bintaro', category: 'event', tag: 'Holiday Program' },
 ]
 
 export default function Galeri() {
@@ -46,7 +48,7 @@ export default function Galeri() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-galeri.webp"
+            src="/images/hero-galeri.jpg"
             alt="Galeri Dokumentasi Amana Care Bintaro"
             fill
             priority
