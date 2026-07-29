@@ -5,12 +5,42 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './GalleryPreview.module.css'
 
 const photos = [
-  { src: '/images/gallery-craft-activity.webp', alt: 'Aktivitas seni dan kreativitas anak di Amana Care', span: 'tall' },
-  { src: '/images/gallery-toddler-class.webp', alt: 'Kelas toddler dan eksplorasi bermain di Amana Care', span: 'wide' },
-  { src: '/images/gallery-toddler-2.webp', alt: 'Aktivitas belajar motorik toddler Amana Care', span: 'normal' },
-  { src: '/images/facility-classroom.webp', alt: 'Ruang kelas belajar yang ceria dan edukatif di Amana Care', span: 'normal' },
-  { src: '/images/gallery-sensory-2.webp', alt: 'Sensory play dan eksplorasi indera anak di Amana Care', span: 'wide' },
-  { src: '/images/gallery-baby-sensory.webp', alt: 'Kelas Baby stimulasi sensorik untuk bayi 6–12 bulan', span: 'normal' },
+  { 
+    src: '/images/gallery-craft-activity.webp', 
+    alt: 'Aktivitas seni dan kreativitas anak bersama pengasuh di Amana Care', 
+    span: 'tall',
+    objectPosition: 'center 25%'
+  },
+  { 
+    src: '/images/hero-children-play.webp', 
+    alt: 'Keceriaan anak-anak bermain dan eksplorasi di Amana Care Bintaro', 
+    span: 'wide',
+    objectPosition: 'center 40%'
+  },
+  { 
+    src: '/images/gallery-toddler-2.webp', 
+    alt: 'Aktivitas bermain peran dan stimulasi motorik toddler Amana Care', 
+    span: 'normal',
+    objectPosition: 'center 20%'
+  },
+  { 
+    src: '/images/facility-classroom.webp', 
+    alt: 'Ruang kelas belajar yang ceria dan edukatif di Amana Care', 
+    span: 'normal',
+    objectPosition: 'center center'
+  },
+  { 
+    src: '/images/gallery-sensory-toddler.webp', 
+    alt: 'Sensory play dan eksplorasi indera anak di Amana Care', 
+    span: 'wide',
+    objectPosition: 'center 35%'
+  },
+  { 
+    src: '/images/gallery-baby-sensory.webp', 
+    alt: 'Kelas Baby stimulasi sensorik untuk bayi 6–12 bulan', 
+    span: 'normal',
+    objectPosition: 'center 25%'
+  },
 ]
 
 export default function GalleryPreview() {
@@ -41,8 +71,9 @@ export default function GalleryPreview() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className={styles.img}
+                style={{ objectPosition: photo.objectPosition }}
               />
               <div className={styles.overlay} />
             </ScrollReveal>
