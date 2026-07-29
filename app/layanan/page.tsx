@@ -268,7 +268,7 @@ export default function Layanan() {
               <div className={styles.visualSide}>
                 <div className={styles.imgWrapper}>
                   <Image
-                    src="/images/hero-children-play.webp"
+                    src="/images/daycare-activity.webp"
                     alt="Anak-anak daycare belajar dengan gembira di Amana Care Bintaro"
                     width={500}
                     height={400}

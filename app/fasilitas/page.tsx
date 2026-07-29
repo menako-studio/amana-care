@@ -38,12 +38,12 @@ const areas = [
   {
     title: 'Ruang Bermain & Eksplorasi',
     desc: 'Area bermain indoor yang luas dilengkapi dengan mainan kayu non-toxic edukatif untuk merangsang motorik halus dan kasar anak.',
-    img: '/images/hero-fasilitas.webp',
+    img: '/images/facility-classroom.webp',
   },
   {
     title: 'Ruang Belajar & Kelas',
     desc: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni, kerajinan tangan, dan belajar terstruktur.',
-    img: '/images/hero-galeri.webp',
+    img: '/images/preschool-classroom.webp',
   },
   {
     title: 'Ruang Istirahat Bersih',
@@ -53,7 +53,7 @@ const areas = [
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/hero-layanan.webp',
+    img: '/images/working-space.webp',
   },
 ]
 
