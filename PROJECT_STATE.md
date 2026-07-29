@@ -168,8 +168,10 @@ CREATE TABLE contacts (
 ### Technical Debt & Enhancements
 1. **Rate Limiter Storage**: `lib/rate-limit.ts` uses an in-memory `Map`. For multi-region serverless deployments (Vercel/Netlify), replacing this with Upstash Redis or Vercel KV will ensure state persistence across cold starts.
 2. **Image Asset Optimization [COMPLETED]**: All raw PNG/JPEG/HEIC images converted to WebP format (90%+ size reduction from ~52MB to ~4.2MB total). Real documentation photos curated directly from `Dokumentasi Anak - Final`.
-3. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
-4. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
+3. **Image Orientation Bug [FIXED — 2026-07-29]**: Five production WebP images were rendering upside-down due to pixel data being stored inverted (photos captured on phone upside-down, WebP strips EXIF orientation). Fixed by rotating 180° via Python Pillow and re-exporting: `hero-children-play.webp`, `working-space.webp`, `gallery-toddler-activity.webp`, `gallery-baby-class.webp`, `hero-galeri.webp`. Defensive CSS `image-orientation: from-image` added to `app/globals.css` for all future JPEG/HEIC assets.
+4. **Real Asset Migration [COMPLETED — 2026-07-29]**: 14 new curated WebP assets converted from raw JPEGs in `public/images/assets/`. All assets contextually mapped to their respective page sections by copywriting. Broken `hero-kontak.webp` (404) replaced in `GaleriClient.tsx`. See `public/images/` for the full asset inventory.
+5. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
+6. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
 
 ---
 

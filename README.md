@@ -42,6 +42,37 @@ Every page and module is meticulously structured to optimize load speeds, ensure
 
 ---
 
+## 🖼️ Asset Management
+
+### Directory Structure
+```
+public/
+├── images/                   # Production-ready WebP images (served by Next.js <Image>)
+│   ├── assets/               # Raw curated source images (JPEG/HEIC, NOT served directly)
+│   ├── team/                 # Team member portrait WebPs
+│   ├── logo/                 # Brand logo assets
+│   └── *.webp                # Optimized WebP images used by components
+└── videos/
+    ├── assets/               # Raw curated source videos (MOV/MP4, NOT served directly)
+    └── *.webm                # Optimized WebM video reels used by VideoReels component
+```
+
+### Adding New Images
+1. Place raw photos in `public/images/assets/` (JPEG/HEIC/PNG).
+2. Convert to WebP using the Python Pillow pipeline:
+   ```python
+   from PIL import Image
+   img = Image.open('public/images/assets/your-photo.jpg').convert('RGB')
+   img.save('public/images/your-photo.webp', 'WEBP', quality=88, method=6)
+   ```
+3. If images appear upside-down (common with phone camera photos), add `img.rotate(180)` before saving.
+4. Reference the new `.webp` in the relevant component using `src="/images/your-photo.webp"`.
+
+### EXIF Orientation
+All `<img>` and Next.js `<Image>` elements inherit `image-orientation: from-image` from `app/globals.css`, which auto-corrects EXIF orientation in JPEG files. WebP files do not carry EXIF orientation data — if a WebP renders upside-down, the pixel data itself must be rotated.
+
+---
+
 ## 🎯 SEO Meta Title Optimization Strategy (Rank 1 Google Acceleration)
 
 Every page's `<title>`, `openGraph.title`, and `twitter.title` tags have been strictly optimized following Google Search SERP display boundaries:
