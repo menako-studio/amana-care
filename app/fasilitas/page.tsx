@@ -53,7 +53,7 @@ const areas = [
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/assets/daycare_teachers_staff_group_photo_classroom.jpg',
+    img: '/images/assets/daycare_teachers_staff_group_photo_classroom-2.jpg',
   },
 ]
 
