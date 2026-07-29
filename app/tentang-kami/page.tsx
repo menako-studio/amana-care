@@ -67,7 +67,7 @@ export default function TentangKami() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-daycare-room.webp"
+            src="/images/hero-daycare-room.jpg"
             alt="Fasilitas daycare Amana Care yang bersih dan aman"
             fill
             priority

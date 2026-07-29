@@ -48,12 +48,12 @@ const areas = [
   {
     title: 'Ruang Istirahat Bersih',
     desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/hero-daycare-room.webp',
+    img: '/images/hero-daycare-room.jpg',
   },
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/working-space.webp',
+    img: '/images/working-space.jpg',
   },
 ]
 
@@ -75,7 +75,7 @@ export default function Fasilitas() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-fasilitas.webp"
+            src="/images/hero-fasilitas.jpg"
             alt="Tur Fasilitas premium Amana Care Bintaro"
             fill
             priority

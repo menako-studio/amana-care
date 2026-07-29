@@ -76,7 +76,7 @@ const layananJsonLd = {
       isPartOf: { '@id': 'https://amanacare.id/#website' },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: 'https://amanacare.id/images/hero-layanan.png',
+        url: 'https://amanacare.id/images/hero-layanan.jpg',
       },
     },
   ],
@@ -205,7 +205,7 @@ export default function Layanan() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-layanan.webp"
+            src="/images/hero-layanan.jpg"
             alt="Layanan daycare dan parents working space premium Amana Care Bintaro"
             fill
             priority
@@ -540,7 +540,7 @@ export default function Layanan() {
               <div className={styles.visualSide}>
                 <div className={styles.imgWrapper}>
                   <Image
-                    src="/images/working-space.webp"
+                    src="/images/working-space.jpg"
                     alt="Parents co-working space di Bintaro Sektor 7"
                     width={500}
                     height={400}

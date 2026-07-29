@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space terintegrasi.',
     images: [
       {
-        url: '/images/og-amanacare.png',
+        url: '/images/og-amanacare.jpg',
         width: 1200,
         height: 630,
         alt: 'Amana Care Daycare & Parents Working Space Bintaro Sektor 7',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: 'Daycare Bintaro & Parents Working Space | Amana Care',
     description:
       'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space.',
-    images: ['/images/og-amanacare.png'],
+    images: ['/images/og-amanacare.jpg'],
   },
   robots: {
     index: true,
@@ -106,7 +106,7 @@ const jsonLd = {
         width: 400,
         height: 174,
       },
-      image: `${siteUrl}/images/og-amanacare.png`,
+      image: `${siteUrl}/images/og-amanacare.jpg`,
       description:
         'Amana Care adalah daycare dan parents working space premium di Bintaro Sektor 7, Tangerang Selatan. Melayani penitipan anak usia 0–6 tahun dengan CCTV realtime, laporan harian WhatsApp, makan bergizi, dan skrining psikolog anak berkala.',
       address: {
