@@ -123,6 +123,8 @@ img, video {
   user-select: none;
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
+  /* Auto-correct EXIF orientation data in JPEG/HEIC images */
+  image-orientation: from-image;
 }
 
 a {
