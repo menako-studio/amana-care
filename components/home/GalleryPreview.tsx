@@ -5,12 +5,12 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './GalleryPreview.module.css'
 
 const photos = [
-  { src: '/images/hero-galeri.png', alt: 'Anak-anak beraktivitas seni di Amana Care', span: 'tall' },
-  { src: '/images/gallery-outdoor.png', alt: 'Bermain outdoor di area bermain Amana Care', span: 'wide' },
-  { src: '/images/hero-layanan.png', alt: 'Parents working space di Amana Care', span: 'normal' },
-  { src: '/images/hero-fasilitas.png', alt: 'Ruang belajar dan bermain Amana Care Bintaro', span: 'normal' },
-  { src: '/images/hero-kontak.png', alt: 'Lobi penerimaan anak yang nyaman', span: 'wide' },
-  { src: '/images/hero-daycare-room.png', alt: 'Ruang istirahat anak di Amana Care', span: 'normal' },
+  { src: '/images/hero-galeri.webp', alt: 'Anak-anak beraktivitas seni di Amana Care', span: 'tall' },
+  { src: '/images/gallery-outdoor.webp', alt: 'Bermain outdoor di area bermain Amana Care', span: 'wide' },
+  { src: '/images/gallery-toddler-activity.webp', alt: 'Aktivitas belajar dan bermain motorik toddler Amana Care', span: 'normal' },
+  { src: '/images/hero-fasilitas.webp', alt: 'Ruang belajar dan bermain Amana Care Bintaro', span: 'normal' },
+  { src: '/images/gallery-sensory-toddler.webp', alt: 'Sensory play dan eksplorasi anak di Amana Care', span: 'wide' },
+  { src: '/images/gallery-baby-class.webp', alt: 'Pengasuhan dan stimulasi lembut bayi kelas Baby 6-12 bulan', span: 'normal' },
 ]
 
 export default function GalleryPreview() {

@@ -67,7 +67,7 @@ export default function TentangKami() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-daycare-room.png"
+            src="/images/hero-daycare-room.webp"
             alt="Fasilitas daycare Amana Care yang bersih dan aman"
             fill
             priority
@@ -96,10 +96,11 @@ export default function TentangKami() {
             <ScrollReveal direction="left">
               <div className={styles.storyVisual}>
                 <Image
-                  src="/images/hero-layanan.png"
+                  src="/images/hero-layanan.webp"
                   alt="Anak-anak bermain gembira didampingi pengasuh sementara orang tua fokus bekerja di parents working space"
                   width={500}
                   height={400}
+                  style={{ width: '100%', height: 'auto' }}
                   className="img-rounded"
                 />
               </div>
@@ -146,7 +147,7 @@ export default function TentangKami() {
                 <div className={styles.founderImgFrame}>
                   <div className={styles.founderAvatarWrapper}>
                     <Image
-                      src="/images/team/adiwerti-sarahayu.jpeg"
+                      src="/images/team/adiwerti-sarahayu.webp"
                       alt="Adiwerti Sarahayu Lestari, S.H. - Founder & Owner Amana Care"
                       fill
                       sizes="128px"

@@ -17,15 +17,20 @@ const categories = [
 ]
 
 const galleryItems = [
-  { src: '/images/hero-galeri.png', alt: 'Anak-anak melukis mewarnai bersama pengasuh di ruang seni', category: 'aktivitas', tag: 'Aktivitas Seni' },
-  { src: '/images/gallery-outdoor.png', alt: 'Bermain perosotan di rumput sintetis outdoor', category: 'aktivitas', tag: 'Outdoor Play' },
-  { src: '/images/hero-layanan.png', alt: 'Suasana parents working space terintegrasi dengan daycare', category: 'fasilitas', tag: 'Co-Working' },
-  { src: '/images/hero-fasilitas.png', alt: 'Ruang kelas toddlers dengan loker mainan rapi dan bersih', category: 'fasilitas', tag: 'Ruang Belajar' },
-  { src: '/images/hero-children-play.png', alt: 'Sensory play dengan manik-manik air warna-warni', category: 'aktivitas', tag: 'Sensory Play' },
-  { src: '/images/hero-kontak.png', alt: 'Lobi resepsionis penerimaan anak yang aesthetic dan nyaman', category: 'fasilitas', tag: 'Lobi Penerimaan' },
-  { src: '/images/hero-daycare-room.png', alt: 'Area tidur siang dengan kasur personal bersih', category: 'fasilitas', tag: 'Ruang Istirahat' },
-  { src: '/images/working-space.png', alt: 'Monitor CCTV terpasang di area kerja orang tua', category: 'fasilitas', tag: 'CCTV Monitor' },
-  { src: '/images/gallery-outdoor.png', alt: 'Merayakan kemerdekaan 17 Agustus lomba makan kerupuk', category: 'event', tag: '17 Agustusan' },
+  { src: '/images/hero-galeri.webp', alt: 'Anak-anak melukis mewarnai bersama pengasuh di ruang seni', category: 'aktivitas', tag: 'Aktivitas Seni' },
+  { src: '/images/gallery-outdoor.webp', alt: 'Bermain outdoor di area bermain Amana Care', category: 'aktivitas', tag: 'Outdoor Play' },
+  { src: '/images/gallery-baby-class.webp', alt: 'Pengasuhan & stimulasi lembut kelas Baby 6-12 bulan', category: 'aktivitas', tag: 'Baby Class' },
+  { src: '/images/gallery-toddler-activity.webp', alt: 'Eksplorasi motorik dan sensori anak toddler Amana Care', category: 'aktivitas', tag: 'Toddler Class' },
+  { src: '/images/hero-layanan.webp', alt: 'Suasana parents working space terintegrasi dengan daycare', category: 'fasilitas', tag: 'Co-Working' },
+  { src: '/images/hero-fasilitas.webp', alt: 'Ruang kelas toddlers dengan loker mainan rapi dan bersih', category: 'fasilitas', tag: 'Ruang Belajar' },
+  { src: '/images/gallery-sensory-toddler.webp', alt: 'Sensory play anak toddler dengan eksplorasi warna dan motorik', category: 'aktivitas', tag: 'Sensory Play' },
+  { src: '/images/hero-kontak.webp', alt: 'Lobi resepsionis penerimaan anak yang aesthetic dan nyaman', category: 'fasilitas', tag: 'Lobi Penerimaan' },
+  { src: '/images/hero-daycare-room.webp', alt: 'Area tidur siang dengan kasur personal bersih', category: 'fasilitas', tag: 'Ruang Istirahat' },
+  { src: '/images/working-space.webp', alt: 'Monitor CCTV terpasang di area kerja orang tua', category: 'fasilitas', tag: 'CCTV Monitor' },
+  { src: '/images/gallery-event-popup.webp', alt: 'Keceriaan kegiatan event Pop-Up Daycare Amana Care', category: 'event', tag: 'Pop-Up Event' },
+  { src: '/images/gallery-popup-event-2.webp', alt: 'Kegiatan Pop-Up Daycare bersama komunitas & keluarga', category: 'event', tag: 'Pop-Up Event' },
+  { src: '/images/gallery-holiday-program.webp', alt: 'Aktivitas seru School Holiday Program Amana Care', category: 'event', tag: 'Holiday Program' },
+  { src: '/images/gallery-july-activity.webp', alt: 'Dokumentasi kegiatan operasional harian Amana Care', category: 'aktivitas', tag: 'Aktivitas Harian' },
 ]
 
 export default function Galeri() {
@@ -41,7 +46,7 @@ export default function Galeri() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-galeri.png"
+            src="/images/hero-galeri.webp"
             alt="Galeri Dokumentasi Amana Care Bintaro"
             fill
             priority

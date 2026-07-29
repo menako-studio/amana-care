@@ -38,22 +38,22 @@ const areas = [
   {
     title: 'Ruang Bermain & Eksplorasi',
     desc: 'Area bermain indoor yang luas dilengkapi dengan mainan kayu non-toxic edukatif untuk merangsang motorik halus dan kasar anak.',
-    img: '/images/hero-fasilitas.png',
+    img: '/images/hero-fasilitas.webp',
   },
   {
     title: 'Ruang Belajar & Kelas',
     desc: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni, kerajinan tangan, dan belajar terstruktur.',
-    img: '/images/hero-galeri.png',
+    img: '/images/hero-galeri.webp',
   },
   {
     title: 'Ruang Istirahat Bersih',
     desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/hero-sleep-area.png',
+    img: '/images/hero-sleep-area.webp',
   },
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/hero-layanan.png',
+    img: '/images/hero-layanan.webp',
   },
 ]
 
@@ -75,7 +75,7 @@ export default function Fasilitas() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-fasilitas.png"
+            src="/images/hero-fasilitas.webp"
             alt="Tur Fasilitas premium Amana Care Bintaro"
             fill
             priority
@@ -111,6 +111,7 @@ export default function Fasilitas() {
                       alt={area.title}
                       width={500}
                       height={340}
+                      style={{ width: '100%', height: 'auto' }}
                       className="img-rounded"
                       priority={i === 0}
                     />

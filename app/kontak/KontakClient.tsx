@@ -86,7 +86,7 @@ export default function Kontak() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-kontak.png"
+            src="/images/hero-kontak.webp"
             alt="Kontak Amana Care Bintaro"
             fill
             priority

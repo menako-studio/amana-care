@@ -205,7 +205,7 @@ export default function Layanan() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="/images/hero-layanan.png"
+            src="/images/hero-layanan.webp"
             alt="Layanan daycare dan parents working space premium Amana Care Bintaro"
             fill
             priority
@@ -268,10 +268,11 @@ export default function Layanan() {
               <div className={styles.visualSide}>
                 <div className={styles.imgWrapper}>
                   <Image
-                    src="/images/hero-children-play.png"
+                    src="/images/hero-children-play.webp"
                     alt="Anak-anak daycare belajar dengan gembira di Amana Care Bintaro"
                     width={500}
                     height={400}
+                    style={{ width: '100%', height: 'auto' }}
                     className="img-rounded"
                     priority
                   />
@@ -539,10 +540,11 @@ export default function Layanan() {
               <div className={styles.visualSide}>
                 <div className={styles.imgWrapper}>
                   <Image
-                    src="/images/working-space.png"
+                    src="/images/working-space.webp"
                     alt="Parents co-working space di Bintaro Sektor 7"
                     width={500}
                     height={400}
+                    style={{ width: '100%', height: 'auto' }}
                     className="img-rounded"
                   />
                 </div>
