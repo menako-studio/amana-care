@@ -9,37 +9,37 @@ const photos = [
     src: '/images/toddlers-sensory-orange-slices.webp', 
     alt: 'Aktivitas sensory play jeruk & air untuk stimulasi indera toddler di Amana Care', 
     span: 'tall',
-    objectPosition: 'center 25%'
+    objectPosition: 'center 70%'
   },
   { 
     src: '/images/preschoolers-hospital-roleplay.webp', 
     alt: 'Keceriaan anak-anak bermain peran rumah sakit di ruang kelas Amana Care', 
     span: 'wide',
-    objectPosition: 'center 30%'
+    objectPosition: 'center 25%'
   },
   { 
-    src: '/images/colorful-handprint-proud-boy.webp', 
+    src: '/images/assets/child_painting_handprint_craft_activity_table.jpg', 
     alt: 'Anak bangga menunjukkan karya seni lukis telapak tangan (handprint craft)', 
     span: 'normal',
-    objectPosition: 'center 20%'
+    objectPosition: 'center 50%'
   },
   { 
-    src: '/images/girl-painting-cotton-balls.webp', 
+    src: '/images/assets/preschool_girl_holding_blue_paper_cone_craft.jpg', 
     alt: 'Aktivitas melukis media kapas meningkatkan kreativitas & motorik halus anak', 
     span: 'normal',
-    objectPosition: 'center center'
+    objectPosition: 'center 40%'
   },
   { 
-    src: '/images/hero-children-play.jpg', 
+    src: '/images/assets/toddler_finger_painting_colorful_paper_plates_art.webp', 
     alt: 'Eksplorasi bermain dan komunikasi anak-anak di area Amana Care Bintaro', 
     span: 'wide',
-    objectPosition: 'center 40%'
+    objectPosition: 'center 70%'
   },
   { 
     src: '/images/daycare-learning-materials.webp', 
     alt: 'Fasilitas alat peraga edukatif, buku cerita, dan mainan stimulasi anak', 
     span: 'normal',
-    objectPosition: 'center 25%'
+    objectPosition: 'center 60%'
   },
 ]
 

@@ -26,12 +26,9 @@ const galleryItems = [
   { src: '/images/storytelling-circle-time.webp', alt: 'Sesi storytelling & circle time mendengarkan cerita dengan hangat bersama pengasuh', category: 'aktivitas', tag: 'Storytelling' },
   { src: '/images/daycare-teachers-staff-group.webp', alt: 'Tim pendidik dan pengasuh profesional Amana Care Daycare Bintaro', category: 'fasilitas', tag: 'Tim Pengasuh' },
   { src: '/images/toddler-number-matching.webp', alt: 'Eksplorasi matematika awal mencocokkan angka dan warna ulat edukatif', category: 'aktivitas', tag: 'Motorik & Math' },
-  { src: '/images/working-space.jpg', alt: 'Suasana Parents Working Space terintegrasi dekat dengan area bermain anak', category: 'fasilitas', tag: 'Co-Working' },
   { src: '/images/preschoolers-hospital-roleplay.webp', alt: 'Kegiatan bermain peran profesi kesehatan di ruang kelas Amana Care', category: 'aktivitas', tag: 'Roleplay Game' },
-  { src: '/images/facility-classroom.webp', alt: 'Ruang kelas belajar toddlers yang rapi, bersih, ceria, dan aman', category: 'fasilitas', tag: 'Ruang Belajar' },
   { src: '/images/hero-daycare-room.jpg', alt: 'Area tidur siang dengan tempat tidur bersih personal untuk kenyamanan anak', category: 'fasilitas', tag: 'Ruang Istirahat' },
   { src: '/images/gallery-event-popup.jpg', alt: 'Keceriaan kegiatan Pop-Up Daycare Amana Care bersama keluarga', category: 'event', tag: 'Pop-Up Event' },
-  { src: '/images/gallery-popup-event-2.jpg', alt: 'Dokumentasi acara Pop-Up Daycare bersama anak dan orang tua', category: 'event', tag: 'Pop-Up Event' },
   { src: '/images/gallery-holiday-program.jpg', alt: 'Aktivitas seru School Holiday Program Amana Care Bintaro', category: 'event', tag: 'Holiday Program' },
 ]
 
