@@ -96,7 +96,7 @@ export default function TentangKami() {
             <ScrollReveal direction="left">
               <div className={styles.storyVisual}>
                 <Image
-                  src="/images/hero-layanan.webp"
+                  src="/images/about-story.webp"
                   alt="Anak-anak bermain gembira didampingi pengasuh sementara orang tua fokus bekerja di parents working space"
                   width={500}
                   height={400}

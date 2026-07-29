@@ -88,8 +88,8 @@ export default function HeroSection() {
         <div className={styles.images}>
           <div className={`${styles.imgWrapper} ${styles.imgMain} animate-float`}>
             <Image
-              src="/images/hero-children-play.webp"
-              alt="Anak-anak bermain dan belajar di Amana Care Bintaro"
+              src="/images/daycare-children-group.webp"
+              alt="Anak-anak bermain aktif bersama pengasuh di Amana Care Bintaro"
               fill
               priority
               sizes="(max-width: 768px) 80vw, 380px"
@@ -98,8 +98,8 @@ export default function HeroSection() {
           </div>
           <div className={`${styles.imgWrapper} ${styles.imgSecond} animate-float-delayed`}>
             <Image
-              src="/images/working-space.webp"
-              alt="Parents working space di Amana Care — nyaman dan produktif"
+              src="/images/facility-classroom.webp"
+              alt="Suasana kelas dan ruang belajar Amana Care yang ceria dan edukatif"
               fill
               sizes="(max-width: 768px) 60vw, 260px"
               className={styles.img}
