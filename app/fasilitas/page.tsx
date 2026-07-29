@@ -48,12 +48,12 @@ const areas = [
   {
     title: 'Ruang Istirahat Bersih',
     desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/hero-daycare-room.jpg',
+    img: '/images/assets/toddlers_sorting_colorful_pompoms_learning_activity.jpg',
   },
   {
     title: 'Parents Working Space',
     desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/working-space.jpg',
+    img: '/images/assets/daycare_teachers_staff_group_photo_classroom.jpg',
   },
 ]
 

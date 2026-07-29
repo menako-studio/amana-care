@@ -540,7 +540,7 @@ export default function Layanan() {
               <div className={styles.visualSide}>
                 <div className={styles.imgWrapper}>
                   <Image
-                    src="/images/working-space.jpg"
+                    src="/images/assets/daycare_teachers_staff_group_photo_classroom.jpg"
                     alt="Parents co-working space di Bintaro Sektor 7"
                     width={500}
                     height={400}
