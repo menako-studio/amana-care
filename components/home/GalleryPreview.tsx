@@ -6,38 +6,38 @@ import styles from './GalleryPreview.module.css'
 
 const photos = [
   { 
-    src: '/images/gallery-craft-activity.webp', 
-    alt: 'Aktivitas seni dan kreativitas anak bersama pengasuh di Amana Care', 
+    src: '/images/toddlers-sensory-orange-slices.webp', 
+    alt: 'Aktivitas sensory play jeruk & air untuk stimulasi indera toddler di Amana Care', 
     span: 'tall',
     objectPosition: 'center 25%'
   },
   { 
-    src: '/images/hero-children-play.webp', 
-    alt: 'Keceriaan anak-anak bermain dan eksplorasi di Amana Care Bintaro', 
+    src: '/images/preschoolers-hospital-roleplay.webp', 
+    alt: 'Keceriaan anak-anak bermain peran rumah sakit di ruang kelas Amana Care', 
     span: 'wide',
-    objectPosition: 'center 40%'
+    objectPosition: 'center 30%'
   },
   { 
-    src: '/images/gallery-toddler-2.webp', 
-    alt: 'Aktivitas bermain peran dan stimulasi motorik toddler Amana Care', 
+    src: '/images/colorful-handprint-proud-boy.webp', 
+    alt: 'Anak bangga menunjukkan karya seni lukis telapak tangan (handprint craft)', 
     span: 'normal',
     objectPosition: 'center 20%'
   },
   { 
-    src: '/images/facility-classroom.webp', 
-    alt: 'Ruang kelas belajar yang ceria dan edukatif di Amana Care', 
+    src: '/images/girl-painting-cotton-balls.webp', 
+    alt: 'Aktivitas melukis media kapas meningkatkan kreativitas & motorik halus anak', 
     span: 'normal',
     objectPosition: 'center center'
   },
   { 
-    src: '/images/gallery-sensory-toddler.webp', 
-    alt: 'Sensory play dan eksplorasi indera anak di Amana Care', 
+    src: '/images/hero-children-play.jpg', 
+    alt: 'Eksplorasi bermain dan komunikasi anak-anak di area Amana Care Bintaro', 
     span: 'wide',
-    objectPosition: 'center 35%'
+    objectPosition: 'center 40%'
   },
   { 
-    src: '/images/gallery-baby-sensory.webp', 
-    alt: 'Kelas Baby stimulasi sensorik untuk bayi 6–12 bulan', 
+    src: '/images/daycare-learning-materials.webp', 
+    alt: 'Fasilitas alat peraga edukatif, buku cerita, dan mainan stimulasi anak', 
     span: 'normal',
     objectPosition: 'center 25%'
   },
