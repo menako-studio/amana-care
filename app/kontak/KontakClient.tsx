@@ -27,24 +27,28 @@ const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { 
 
 const faqs = [
   {
-    q: 'Apakah bisa berkunjung (site visit) sebelum mendaftar?',
-    a: 'Sangat bisa! Kami merekomendasikan orang tua untuk menjadwalkan kunjungan terlebih dahulu agar bisa melihat langsung fasilitas, lingkungan belajar, serta bertemu dengan staf kami. Silakan buat janji melalui form kontak atau WhatsApp.',
+    q: 'Selama seharian di daycare, kegiatannya apa saja?',
+    a: `Di pagi hari–setelah mandi pagi dan sarapan–ada kelas aktivitas anak, dengan kegiatan standar preschool/PAUD yang dipandu oleh Teacher. Dilanjutkan dengan makan siang, tidur siang, free play, mandi, dan makan sore, sebelum diakhiri dengan persiapan penjemputan.\n\nAda juga kegiatan ekstrakurikuler Happy Ngaji, yakni kelas mengaji dan pengenalan nilai-nilai Islami (huruf hijaiyah, fiqih, adab) untuk anak usia dini melalui metode yang menyenangkan dan ramah anak.`,
   },
   {
-    q: 'Berapa usia anak yang diterima di Amana Care?',
-    a: 'Kami menerima anak mulai dari usia bayi 3 bulan hingga pra-sekolah usia 6 tahun. Kurikulum serta pengelompokan ruang kelas disesuaikan khusus dengan kelompok umur si kecil.',
+    q: 'Berapa rasio antara pengasuh dan anak?',
+    a: `Untuk kelompok usia 6-12 bulan, rasionya adalah 1:2. Satu orang caregiver akan mendampingi maksimal 2 anak, terdiri dari 1 anak usia 6-12 bulan dan 1 anak yang lebih besar.\n\nUntuk kelompok usia 1-6 tahun, rasio pengasuh dan anak adalah 1:3, di mana 1 caregiver akan mendampingi maksimal 3 anak.`,
   },
   {
-    q: 'Bagaimana makanan dan nutrisi anak selama di daycare?',
-    a: 'Paket daycare kami sudah termasuk makan utama 3 kali sehari dan snack sore bergizi. Kami menyajikan makanan segar yang disiapkan secara higienis, bervariasi, serta bebas MSG. Harap infokan kepada tim kami jika si kecil memiliki alergi makanan tertentu.',
+    q: 'Apakah ada akses CCTV untuk orang tua?',
+    a: 'Pasti! Akses CCTV untuk orang tua tersedia melalui mobile app yang bisa diakses 24/7.',
   },
   {
-    q: 'Bagaimana keamanan CCTV bagi orang tua?',
-    a: 'Kami memiliki kamera CCTV online realtime yang mencakup seluruh ruang aktivitas utama anak. Orang tua akan diberikan akses masuk khusus (akun terenkripsi) untuk memantau aktivitas si kecil secara mandiri kapan saja.',
+    q: 'Makan yang disediakan di daycare seperti apa?',
+    a: 'Kami menyediakan masakan rumahan yang dimasak di dapur milik Amana Care, dengan menu sehat yang disusun dengan kebutuhan nutrisi anak.',
   },
   {
-    q: 'Bagaimana kualifikasi tim pengasuh (caregiver)?',
-    a: 'Seluruh tim pengasuh kami memiliki kualifikasi pendidikan di bidang PAUD atau Keperawatan anak, telah melalui sertifikasi pertolongan pertama (P3K) khusus anak, serta rutin mengikuti pelatihan psikologi anak berkala.',
+    q: 'Apakah bisa survei langsung ke lokasi?',
+    a: 'Bisa! Survei bisa dilakukan setiap hari Senin-Jumat, pukul 09:00-17:00, atau Sabtu, pukul 09:00-12:00, dengan perjanjian melalui WhatsApp.',
+  },
+  {
+    q: 'Apakah ada biaya trial sebelum mendaftar?',
+    a: 'Kami memiliki program free trial daycare untuk 1x kehadiran sehingga Amana Parents tidak perlu membayarkan biaya apapun sebelum mendaftar.',
   },
 ]
 
