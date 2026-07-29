@@ -8,32 +8,25 @@ import styles from './TestimonialsCarousel.module.css'
 
 const testimonials = [
   {
-    name: 'Ibu Sari Dewi',
-    role: 'Ibu dari Rafi (2,5 tahun)',
-    text: 'Amana Care benar-benar seperti rumah kedua untuk Rafi. Laporan hariannya sangat detail — dari makan, tidur, sampai foto aktivitas. Saya bisa kerja tenang karena CCTV-nya bisa saya pantau kapan saja!',
+    name: 'Fika',
+    role: 'Orang tua dari Alma',
+    text: 'Daycare yang rekomen banget untuk sekitaran area bintaro, attention to detail, daily activity/progress report, caregiver & teachernya ramah, berpengalaman di bidangnya dan aktivitasnya terstruktur, dari segi fasilitas full ac & cctv, dari segi waktu 7am to 7pm 👌🏻💯',
     rating: 5,
     avatar: '👩',
   },
   {
-    name: 'Bapak Dodi Santoso',
-    role: 'Ayah dari Aira (3 tahun)',
-    text: 'Working space-nya nyaman banget, WiFi-nya kencang dan ada colokan di mana-mana. Saya bisa meeting sambil sesekali lihat Aira main di monitor CCTV. Konsep ini yang saya cari-cari!',
-    rating: 5,
-    avatar: '👨',
-  },
-  {
-    name: 'Ibu Nina Kusuma',
-    role: 'Ibu dari Zaky (4 tahun)',
-    text: 'Laporan harian yang dikirim setiap sore membantu kami memantau perkembangan Zaky. Skrining psikolog anaknya juga sangat berguna — kami jadi tahu milestone apa yang perlu distimulasi lebih.',
+    name: 'Like',
+    role: 'Orang tua dari Naka',
+    text: 'No doubt for giving 5 stars! Udah setahun lebih anakku di Amana, dan sejauh ini ga pernah kepikiran untuk pindah saking terbantunya… tiap hari selalu dikirim progress report lengkap sama foto/video. Bonusnya ada cek tumbuh kembang dan dental check juga. Highly recommended!',
     rating: 5,
     avatar: '👩‍💼',
   },
   {
-    name: 'Ibu Retno & Bapak Budi',
-    role: 'Orang tua dari Caca (1,5 tahun)',
-    text: 'Awalnya khawatir ninggalin Caca yang masih kecil, tapi tim Amana Care sangat profesional dan penuh kasih. Caca sekarang bahkan lebih semangat pergi ke Amana daripada di rumah!',
+    name: 'Putri',
+    role: 'Orang tua dari Andaru',
+    text: 'Yang paling suka, semua Miss disini sabar dan peduli sama anak. Ada pembagian peran teacher dan caregiver. Jadi dalam sehari anak bakal dihandle oleh teacher+caregiver. Lalu jumlah anak dibatasi, jadi suasananya lebih kondusif dan perhatian ke anak lebih personal.',
     rating: 5,
-    avatar: '👨‍👩‍👧',
+    avatar: '👩',
   },
 ]
 
