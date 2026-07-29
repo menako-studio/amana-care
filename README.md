@@ -28,7 +28,7 @@ Every page and module is meticulously structured to optimize load speeds, ensure
    * **Production Security Headers:** Custom HTTP response headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) configured in [next.config.ts](file:///Users/adibwafi/Documents/Menako%20Studio/amana-care/next.config.ts).
 5. **Sentry APM & Exception Tracking:** Production observability with `@sentry/nextjs`, featuring client/server SDK initializers, Next.js 16 `instrumentation.ts` integration, global error boundary ([app/global-error.tsx](file:///Users/adibwafi/Documents/Menako%20Studio/amana-care/app/global-error.tsx)), and API exception capturing.
 6. **Lenis Scroll Engine & Motion:** Silky-smooth 60fps momentum scroll experience across all browsers and devices.
-7. **Embla Carousel:** Drag/swipe-enabled touch-responsive slider for parent reviews and testimonials.
+7. **Embla Carousel:** Drag/swipe-enabled touch-responsive slider for parent reviews and testimonials (Fika, Like, Putri).
 8. **Supabase & Resend API:** Production-grade serverless endpoint handling contacts, persisting registration logs to a PostgreSQL database, and triggering admin email notifications.
 
 ---

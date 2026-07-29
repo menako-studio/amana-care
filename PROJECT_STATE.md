@@ -108,12 +108,12 @@ amana-care/
 
 ### Active Built Modules
 
-- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel, photo gallery preview, vertical video reels preview, and inline contact section.
+- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel (real reviews from parents Fika, Like, Putri), photo gallery preview, vertical video reels preview, and inline contact section.
 - **About Us (`/tentang-kami`)**: Company vision & mission, founder message, embedded "Meet the Team" `.webm` video reel, team profiles grid with **real team member photos** (Next/Image circular avatars from `/public/images/team/`), and South Tangerang location map.
-- **Services (`/layanan`)**: Detailed daycare program breakdown with **5 Daycare packages** (Bulanan, Harian, After-School, Baby, Drop-in), **Baby & Toddler Sensory School** (Baby Class 6–12 bln & Toddler Class 12–24 bln), Parents Working Space features, "Kurikulum & Stimulasi dalam Aksi" video reels section (Montessori & Sensory Play), and dynamic WhatsApp CTA builder (`LayananWACTA.tsx`).
+- **Services (`/layanan`)**: Detailed daycare program breakdown with **5 Daycare packages** (Bulanan, Harian, After-School, Baby, Drop-in), **Baby & Toddler Sensory School** (Baby Class 6–12 bln & Toddler Class 12–24 bln), Parents Working Space features (AC, Wifi, smoke-free space close to children), "Kurikulum & Stimulasi dalam Aksi" video reels section (Montessori & Sensory Play), and dynamic WhatsApp CTA builder (`LayananWACTA.tsx`).
 - **Facilities (`/fasilitas`)**: Interactive room gallery (CCTV area, quiet nap room, indoor play, sensory garden, co-working area), safety standards grid, and virtual tour CTA.
 - **Gallery (`/galeri`)**: Category-filtered photo gallery (All, Activity, Facility, Events), Video Reels tab switcher with full-screen lightbox modal, and embedded YouTube documentation video with structured event metadata cards.
-- **Contact & Registration (`/kontak`)**: Interactive registration form with real-time field validation, direct WhatsApp consultation CTA, embedded Google Maps iframe, operating hours card, and interactive FAQ accordion.
+- **Contact & Registration (`/kontak`)**: Interactive registration form with real-time field validation, direct WhatsApp consultation CTA, embedded Google Maps iframe, operating hours card, and interactive FAQ accordion (6 official Q&As covering daily routine, caregiver ratio, 24/7 CCTV mobile app access, homecooked meals, survey hours, and free 1x trial).
 - **Unified Analytics System (`lib/analytics.ts`)**: Custom event tracking helpers dispatching events simultaneously to GA4 (`window.gtag`) and GTM (`window.dataLayer`). Key tracked events include: `generate_lead`, `contact`, `select_content`, `cta_click`, `whatsapp_open`, `faq_open`, `gallery_filter`, `gallery_zoom`.
 
 ### Data Flow & Database Schema
