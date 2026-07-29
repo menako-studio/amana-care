@@ -48,7 +48,7 @@ const areas = [
   {
     title: 'Ruang Istirahat Bersih',
     desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/hero-sleep-area.webp',
+    img: '/images/hero-daycare-room.webp',
   },
   {
     title: 'Parents Working Space',
