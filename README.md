@@ -35,6 +35,7 @@ Every page and module is meticulously structured to optimize load speeds, ensure
 
 ## ⚡ Google PageSpeed & UI Optimizations
 
+* **Real Asset Curation & WebP Pipeline:** All raw PNG, JPEG, and HEIC images curated from `Dokumentasi Anak - Final` converted to optimized `.webp` format (achieving >90% file size reduction from ~52MB down to ~4.2MB total).
 * **Responsive Image Delivery:** Standardized Next.js `<Image />` component properties with precise source configurations (`sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"`) to serve resized, compressed WebP layouts based on screen size.
 * **LCP & Preloading:** Above-the-fold banners, hero images, and brand logos are forced to preload using `priority` tags to minimize Largest Contentful Paint (LCP) delays.
 * **Zero-Error Code Quality:** Zero ESLint warnings, 100% strict TypeScript type checking, and zero React 19 hydration/effect warnings.

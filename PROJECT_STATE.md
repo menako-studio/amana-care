@@ -108,11 +108,11 @@ amana-care/
 
 ### Active Built Modules
 
-- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel (real reviews from parents Fika, Like, Putri), photo gallery preview, vertical video reels preview, and inline contact section.
-- **About Us (`/tentang-kami`)**: Company vision & mission, founder message, embedded "Meet the Team" `.webm` video reel, team profiles grid with **real team member photos** (Next/Image circular avatars from `/public/images/team/`), and South Tangerang location map.
-- **Services (`/layanan`)**: Detailed daycare program breakdown with **5 Daycare packages** (Bulanan, Harian, After-School, Baby, Drop-in), **Baby & Toddler Sensory School** (Baby Class 6–12 bln & Toddler Class 12–24 bln), Parents Working Space features (AC, Wifi, smoke-free space close to children), "Kurikulum & Stimulasi dalam Aksi" video reels section (Montessori & Sensory Play), and dynamic WhatsApp CTA builder (`LayananWACTA.tsx`).
-- **Facilities (`/fasilitas`)**: Interactive room gallery (CCTV area, quiet nap room, indoor play, sensory garden, co-working area), safety standards grid, and virtual tour CTA.
-- **Gallery (`/galeri`)**: Category-filtered photo gallery (All, Activity, Facility, Events), Video Reels tab switcher with full-screen lightbox modal, and embedded YouTube documentation video with structured event metadata cards.
+- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel (real reviews from parents Fika, Like, Putri), photo gallery preview with real WebP documentation photos (`hero-galeri.webp`, `gallery-outdoor.webp`, `gallery-toddler-activity.webp`, `gallery-baby-class.webp`), vertical video reels preview, and inline contact section.
+- **About Us (`/tentang-kami`)**: Company vision & mission, founder message (with optimized WebP portrait `adiwerti-sarahayu.webp`), embedded "Meet the Team" `.webm` video reel, team profiles grid with **real team member photos** (Next/Image circular WebP avatars from `/public/images/team/`), and South Tangerang location map.
+- **Services (`/layanan`)**: Detailed daycare program breakdown with **5 Daycare packages** (Bulanan, Harian, After-School, Baby, Drop-in), **Baby & Toddler Sensory School** (Baby Class 6–12 bln & Toddler Class 12–24 bln), Parents Working Space features (AC, Wifi, smoke-free space close to children with `working-space.webp`), "Kurikulum & Stimulasi dalam Aksi" video reels section (Montessori & Sensory Play), and dynamic WhatsApp CTA builder (`LayananWACTA.tsx`).
+- **Facilities (`/fasilitas`)**: Interactive room gallery (CCTV area, quiet nap room, indoor play, sensory garden, co-working area) with high-res optimized WebP facility photos (`hero-fasilitas.webp`, `hero-sleep-area.webp`), safety standards grid, and virtual tour CTA.
+- **Gallery (`/galeri`)**: Category-filtered photo gallery powered by real documentation WebP assets from `Dokumentasi Anak - Final` (Baby Class, Toddler Class, Preschoolers, Pop-Up Events, Holiday Program), Video Reels tab switcher with full-screen lightbox modal, and embedded YouTube documentation video with structured event metadata cards.
 - **Contact & Registration (`/kontak`)**: Interactive registration form with real-time field validation, direct WhatsApp consultation CTA, embedded Google Maps iframe, operating hours card, and interactive FAQ accordion (6 official Q&As covering daily routine, caregiver ratio, 24/7 CCTV mobile app access, homecooked meals, survey hours, and free 1x trial).
 - **Unified Analytics System (`lib/analytics.ts`)**: Custom event tracking helpers dispatching events simultaneously to GA4 (`window.gtag`) and GTM (`window.dataLayer`). Key tracked events include: `generate_lead`, `contact`, `select_content`, `cta_click`, `whatsapp_open`, `faq_open`, `gallery_filter`, `gallery_zoom`.
 
@@ -167,8 +167,9 @@ CREATE TABLE contacts (
 
 ### Technical Debt & Enhancements
 1. **Rate Limiter Storage**: `lib/rate-limit.ts` uses an in-memory `Map`. For multi-region serverless deployments (Vercel/Netlify), replacing this with Upstash Redis or Vercel KV will ensure state persistence across cold starts.
-2. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
-3. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
+2. **Image Asset Optimization [COMPLETED]**: All raw PNG/JPEG/HEIC images converted to WebP format (90%+ size reduction from ~52MB to ~4.2MB total). Real documentation photos curated directly from `Dokumentasi Anak - Final`.
+3. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
+4. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
 
 ---
 
