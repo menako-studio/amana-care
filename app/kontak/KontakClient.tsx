@@ -52,7 +52,7 @@ const faqs = [
   },
 ]
 
-const ageGroups = ['0–6 bulan', '6–12 bulan', '1–2 tahun', '2–3 tahun', '3–4 tahun', '4–6 tahun']
+const ageGroups = ['6–12 bulan', '1–2 tahun', '2–3 tahun', '3–4 tahun', '4–6 tahun']
 
 export default function Kontak() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)

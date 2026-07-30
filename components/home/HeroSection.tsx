@@ -68,8 +68,8 @@ export default function HeroSection() {
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.statNum}>0–6</span>
-              <span className={styles.statLabel}>Tahun</span>
+              <span className={styles.statNum}>6 Bln – 6 Thn</span>
+              <span className={styles.statLabel}>Usia Anak</span>
             </div>
             <div className={styles.statDivider} />
             <div className={styles.stat}>

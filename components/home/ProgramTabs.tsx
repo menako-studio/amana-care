@@ -9,7 +9,7 @@ import { trackSelectContent } from '@/lib/analytics'
 const programs = [
   {
     id: 'infant',
-    label: 'Bayi 0–1 Thn',
+    label: 'Bayi 6 Bln – 1 Thn',
     emoji: '👶',
     title: 'Program Bayi',
     subtitle: 'Fondasi tumbuh kembang yang kuat',
@@ -23,7 +23,7 @@ const programs = [
     ],
     color: '#00B4D8',
     bg: 'rgba(0, 180, 216, 0.08)',
-    desc: 'Di usia 0–1 tahun, kami menyediakan lingkungan yang penuh kasih dengan stimulasi sensorik yang tepat, rutinitas yang konsisten, dan pengasuhan personal.',
+    desc: 'Di usia 6 bulan – 1 tahun, kami menyediakan lingkungan yang penuh kasih dengan stimulasi sensorik yang tepat, rutinitas yang konsisten, dan pengasuhan personal.',
   },
   {
     id: 'toddler',
@@ -143,9 +143,9 @@ export default function ProgramTabs() {
                   <div className={styles.visualStats}>
                     <div className={styles.visualStat}>
                       <span className={styles.vsNum} style={{ color: active.color }}>
-                        {active.id === 'infant' ? '0–12' : active.id === 'toddler' ? '1–3' : '3–6'}
+                        {active.id === 'infant' ? '6–12' : active.id === 'toddler' ? '1–3' : '3–6'}
                       </span>
-                      <span className={styles.vsLabel}>Tahun</span>
+                      <span className={styles.vsLabel}>{active.id === 'infant' ? 'Bulan' : 'Tahun'}</span>
                     </div>
                     <div className={styles.vsDivider} />
                     <div className={styles.visualStat}>

@@ -24,7 +24,7 @@ const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { 
   </svg>
 )
 
-const ageGroups = ['0–6 bulan', '6–12 bulan', '1–2 tahun', '2–3 tahun', '3–4 tahun', '4–6 tahun']
+const ageGroups = ['6–12 bulan', '1–2 tahun', '2–3 tahun', '3–4 tahun', '4–6 tahun']
 
 export default function ContactSection() {
   const [form, setForm] = useState({ nama: '', namaAnak: '', usia: '', wa: '', pesan: '' })

@@ -4,7 +4,7 @@ const items = [
   { icon: '📋', text: 'Daily Report' },
   { icon: '📹', text: 'Realtime CCTV' },
   { icon: '🧠', text: 'Psikolog Anak' },
-  { icon: '👶', text: 'Usia 0–6 Tahun' },
+  { icon: '👶', text: 'Usia 6 Bulan – 6 Tahun' },
   { icon: '⏰', text: '07.00–19.00 WIB' },
   { icon: '📍', text: 'Bintaro Sektor 7' },
   { icon: '🏡', text: 'Working Space' },
