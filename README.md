@@ -85,7 +85,7 @@ Every page's `<title>`, `openGraph.title`, and `twitter.title` tags have been st
 
 | Route | Page Name | Optimized Meta Title | Char Count | Primary SEO Keywords |
 | :--- | :--- | :--- | :---: | :--- |
-| `/` | Beranda / Root | `Daycare Bintaro Sektor 7 Terbaik Anak 0–6 Th \| Amana Care` | **57** | Daycare Bintaro Sektor 7, Anak 0-6 Th |
+| `/` | Beranda / Root | `Daycare Bintaro Sektor 7 Terbaik Anak 6 Bln–6 Th \| Amana Care` | **61** | Daycare Bintaro Sektor 7, Anak 6 Bln-6 Th |
 | `/tentang-kami` | Tentang Kami | `Tentang Amana Care \| Daycare Terpercaya Bintaro Sektor 7` | **59** | Tentang Amana Care, Daycare Terpercaya Bintaro |
 | `/layanan` | Layanan & Paket | `Biaya & Paket Daycare Bintaro Sektor 7 \| Amana Care` | **53** | Biaya Daycare Bintaro, Paket Daycare Bintaro |
 | `/fasilitas` | Fasilitas | `Fasilitas Daycare Bintaro Sektor 7 & CCTV \| Amana Care` | **55** | Fasilitas Daycare Bintaro Sektor 7, CCTV |

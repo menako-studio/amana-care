@@ -7,7 +7,7 @@
 ## 1. EXECUTIVE SUMMARY & TECH STACK
 
 ### Core Purpose & Scope
-**Amana Care** (`PT Amana Peduli Warga Indonesia`) is a web platform for a premium Daycare & Parents Working Space located in Bintaro Sektor 7, Tangerang Selatan. The application serves parents of children aged 0–6 years by presenting daycare features (real-time CCTV, 3x nutritious meals, child psychologist screening, daily WhatsApp reports), integrated co-working space details, interactive media galleries (vertical `.webm` video reels & YouTube event embeds), and a lead capture registration pipeline.
+**Amana Care** (`PT Amana Peduli Warga Indonesia`) is a web platform for a premium Daycare & Parents Working Space located in Bintaro Sektor 7, Tangerang Selatan. The application serves parents of children aged 6 months – 6 years by presenting daycare features (real-time CCTV, 3x nutritious meals, child psychologist screening, daily WhatsApp reports), integrated co-working space details, interactive media galleries (vertical `.webm` video reels & YouTube event embeds), and a lead capture registration pipeline.
 
 ### Complete Technology Stack
 
