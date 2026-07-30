@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     absolute: 'Biaya & Paket Daycare Bintaro Sektor 7 | Amana Care',
   },
   description:
-    'Paket daycare harian & bulanan Bintaro Sektor 7 (0–6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
+    'Paket daycare harian & bulanan Bintaro Sektor 7 (6 bln – 6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
   alternates: {
     canonical: 'https://www.amanacare.id/layanan',
   },
   openGraph: {
     title: 'Biaya & Paket Daycare Bintaro Sektor 7 | Amana Care',
     description:
-      'Paket daycare harian & bulanan Bintaro Sektor 7 (0–6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
+      'Paket daycare harian & bulanan Bintaro Sektor 7 (6 bln – 6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
     url: 'https://www.amanacare.id/layanan',
   },
 }
@@ -30,7 +30,7 @@ const layananJsonLd = {
       '@type': 'Service',
       name: 'Layanan Daycare Amana Care',
       description:
-        'Penitipan anak harian dan bulanan untuk usia 0–6 tahun. Fasilitas meliputi CCTV realtime, makan utama 3x sehari, snack sore, laporan harian via WhatsApp, skrining psikolog anak, dan akses photos aktivitas.',
+        'Penitipan anak harian dan bulanan untuk usia 6 bulan – 6 tahun. Fasilitas meliputi CCTV realtime, makan utama 3x sehari, snack sore, laporan harian via WhatsApp, skrining psikolog anak, dan akses photos aktivitas.',
       provider: { '@id': 'https://amanacare.id/#organization' },
       serviceType: 'Child Care',
       areaServed: {

@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     absolute: 'Kontak & Pendaftaran Daycare Bintaro Sektor 7 | Amana Care',
   },
   description:
-    'Hubungi Amana Care Bintaro Sektor 7. Jadwalkan site visit gratis, info pendaftaran daycare 0–6 th & parents co-working space via WhatsApp.',
+    'Hubungi Amana Care Bintaro Sektor 7. Jadwalkan site visit gratis, info pendaftaran daycare 6 bln – 6 th & parents co-working space via WhatsApp.',
   alternates: {
     canonical: 'https://www.amanacare.id/kontak',
   },
   openGraph: {
     title: 'Kontak & Pendaftaran Daycare Bintaro Sektor 7 | Amana Care',
     description:
-      'Hubungi Amana Care Bintaro Sektor 7. Jadwalkan site visit gratis, info pendaftaran daycare 0–6 th & parents co-working space via WhatsApp.',
+      'Hubungi Amana Care Bintaro Sektor 7. Jadwalkan site visit gratis, info pendaftaran daycare 6 bln – 6 th & parents co-working space via WhatsApp.',
     url: 'https://www.amanacare.id/kontak',
   },
 }

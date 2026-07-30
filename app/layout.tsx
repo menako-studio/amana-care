@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: 'Daycare Bintaro & Parents Working Space | Amana Care',
   },
   description:
-    'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. Fasilitas CCTV realtime, makan 3x, psikolog anak, & co-working terintegrasi.',
+    'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 6 bulan – 6 th. Fasilitas CCTV realtime, makan 3x, psikolog anak, & co-working terintegrasi.',
   keywords: [
     // Primary — tinggi volume
     'daycare bintaro',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: 'Amana Care',
     title: 'Daycare Bintaro & Parents Working Space | Amana Care',
     description:
-      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space terintegrasi.',
+      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 6 bulan – 6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space terintegrasi.',
     images: [
       {
         url: '/images/og-amanacare.jpg',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daycare Bintaro & Parents Working Space | Amana Care',
     description:
-      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 0–6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space.',
+      'Daycare Bintaro Sektor 7 & Parents Working Space untuk anak 6 bulan – 6 th. CCTV realtime, makan 3x, psikolog anak, & co-working space.',
     images: ['/images/og-amanacare.jpg'],
   },
   robots: {
@@ -108,7 +108,7 @@ const jsonLd = {
       },
       image: `${siteUrl}/images/og-amanacare.jpg`,
       description:
-        'Amana Care adalah daycare dan parents working space premium di Bintaro Sektor 7, Tangerang Selatan. Melayani penitipan anak usia 0–6 tahun dengan CCTV realtime, laporan harian WhatsApp, makan bergizi, dan skrining psikolog anak berkala.',
+        'Amana Care adalah daycare dan parents working space premium di Bintaro Sektor 7, Tangerang Selatan. Melayani penitipan anak usia 6 bulan – 6 tahun dengan CCTV realtime, laporan harian WhatsApp, makan bergizi, dan skrining psikolog anak berkala.',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Bintaro Sektor 7',

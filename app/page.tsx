@@ -12,17 +12,17 @@ import ContactSection from '@/components/home/ContactSection'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Daycare Bintaro Sektor 7 Terbaik Anak 0–6 Th | Amana Care',
+    absolute: 'Daycare Bintaro Sektor 7 Terbaik Anak 6 Bln – 6 Th | Amana Care',
   },
   description:
-    'Daycare Bintaro Sektor 7 terbaik untuk anak 0–6 th. Dilengkapi CCTV realtime, laporan WA, makan 3x, psikolog anak, & parents co-working space.',
+    'Daycare Bintaro Sektor 7 terbaik untuk anak 6 bulan – 6 tahun. Dilengkapi CCTV realtime, laporan WA, makan 3x, psikolog anak, & parents co-working space.',
   alternates: {
     canonical: 'https://www.amanacare.id',
   },
   openGraph: {
-    title: 'Daycare Bintaro Sektor 7 Terbaik Anak 0–6 Th | Amana Care',
+    title: 'Daycare Bintaro Sektor 7 Terbaik Anak 6 Bln – 6 Th | Amana Care',
     description:
-      'Daycare Bintaro Sektor 7 terbaik untuk anak 0–6 th. Dilengkapi CCTV realtime, laporan WA, makan 3x, psikolog anak, & parents co-working space.',
+      'Daycare Bintaro Sektor 7 terbaik untuk anak 6 bulan – 6 tahun. Dilengkapi CCTV realtime, laporan WA, makan 3x, psikolog anak, & parents co-working space.',
     url: 'https://www.amanacare.id',
   },
 }
