@@ -2,16 +2,14 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './DayTimeline.module.css'
 
 const schedule = [
-  { time: '07:00', title: 'Kedatangan & Check-in', desc: 'Penyambutan si kecil oleh tim pengasuh, transisi pagi yang hangat.', color: '#00B4D8', emoji: '🌅' },
-  { time: '08:00', title: 'Sarapan & Morning Circle', desc: 'Sarapan bergizi bersama, dilanjutkan circle time untuk memulai hari.', color: '#FFD166', emoji: '🍳' },
-  { time: '09:30', title: 'Kegiatan Belajar', desc: 'Aktivitas pembelajaran terstruktur sesuai usia: sensorik, bahasa, atau kognitif.', color: '#EF8C8C', emoji: '📚' },
-  { time: '11:00', title: 'Bermain Bebas', desc: 'Eksplorasi bebas di area bermain indoor maupun outdoor yang aman.', color: '#06D6A0', emoji: '🎪' },
-  { time: '12:00', title: 'Makan Siang & Tidur Siang', desc: 'Makan siang bergizi, lalu istirahat siang yang nyaman.', color: '#B47CBA', emoji: '🍱' },
-  { time: '14:30', title: 'Aktivitas Seni & Kreativitas', desc: 'Mewarnai, melukis, bercerita, atau bermain peran untuk kreativitas.', color: '#FFD166', emoji: '🎨' },
-  { time: '16:00', title: 'Snack Sore', desc: 'Camilan sehat sore hari untuk mengisi kembali energi si kecil.', color: '#00B4D8', emoji: '🍎' },
-  { time: '17:00', title: 'Outdoor Play', desc: 'Bermain di luar ruangan, melatih motorik kasar dan sosial anak.', color: '#EF8C8C', emoji: '🌳' },
-  { time: '18:00', title: 'Wind Down', desc: 'Waktu tenang: membaca buku, musik lembut, atau aktivitas calming.', color: '#06D6A0', emoji: '🌙' },
-  { time: '19:00', title: 'Penjemputan', desc: 'Laporan harian diberikan kepada orang tua saat penjemputan.', color: '#00B4D8', emoji: '👋' },
+  { time: '07:00', title: 'Kehadiran & Mandi Pagi', desc: 'Penyambutan hangat si kecil, dilanjutkan dengan persiapan dan mandi pagi agar segar memulai hari.', color: '#00B4D8', emoji: '🌅' },
+  { time: '08:00', title: 'Sarapan', desc: 'Sarapan bergizi bersama di Playroom lantai 1.', color: '#FFD166', emoji: '🍳' },
+  { time: '08:30', title: 'Morning Activity & Snack', desc: 'Aktivitas pagi yang terstruktur dan menyenangkan di Classroom, diselingi snack time.', color: '#EF8C8C', emoji: '📚' },
+  { time: '12:00', title: 'Makan Siang', desc: 'Makan siang bergizi bersama teman-teman, dilanjutkan bersih-bersih persiapan tidur.', color: '#06D6A0', emoji: '🍱' },
+  { time: '13:00', title: 'Tidur Siang', desc: 'Istirahat dan tidur siang yang nyaman di kamar tidur.', color: '#B47CBA', emoji: '😴' },
+  { time: '15:00', title: 'Free Play & Snack', desc: 'Bermain bebas dan menikmati camilan sore hari.', color: '#FFD166', emoji: '🎪' },
+  { time: '15:30', title: 'Mandi & Makan Sore', desc: 'Mandi sore agar kembali segar, dilanjutkan dengan makan sore.', color: '#00B4D8', emoji: '🛁' },
+  { time: '17:30', title: 'Free Play & Penjemputan', desc: 'Waktu bermain bebas, persiapan kepulangan, dan penjemputan oleh orang tua.', color: '#06D6A0', emoji: '👋' },
 ]
 
 export default function DayTimeline() {
