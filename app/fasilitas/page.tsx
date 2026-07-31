@@ -45,23 +45,23 @@ const areas = [
     desc: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni, kerajinan tangan, dan belajar terstruktur.',
     img: '/images/preschool-classroom.webp',
   },
-  {
-    title: 'Ruang Istirahat Bersih',
-    desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-    img: '/images/assets/toddlers_sorting_colorful_pompoms_learning_activity.jpg',
-  },
-  {
-    title: 'Parents Working Space',
-    desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-    img: '/images/assets/daycare_teachers_staff_group_photo_classroom-2.jpg',
-  },
+  // {
+  //   title: 'Ruang Tidur Nyaman',
+  //   desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
+  //   img: '/images/assets/toddlers_sorting_colorful_pompoms_learning_activity.jpg',
+  // },
+  // {
+  //   title: 'Parents Working Space',
+  //   desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
+  //   img: '/images/assets/daycare_teachers_staff_group_photo_classroom-2.jpg',
+  // },
 ]
 
 const safetyProtocols = [
   { icon: ShieldCheck, title: 'CCTV Online 24/7', desc: 'Seluruh area bermain dipantau kamera CCTV dengan enkripsi aman yang dapat diakses orang tua kapan saja.' },
-  { icon: Wind, title: 'HEPA Air Purifier & AC', desc: 'Setiap ruangan dilengkapi penjernih udara HEPA filter dan AC bersuhu stabil untuk menjaga kualitas udara bersih.' },
+  { icon: Wind, title: 'HEPA Air Purifier & AC', desc: 'AC bersuhu stabil tersedia di seluruh ruangan untuk kenyamanan si kecil. Khusus di ruang kelas dan kamar tidur, dilengkapi juga penjernih udara HEPA Filter untuk menjaga kualitas udara tetap bersih di area istirahat dan belajar.' },
   { icon: Sparkles, title: 'Disinfeksi Harian', desc: 'Semua mainan dan perabotan dibersihkan dengan cairan disinfektan ramah anak (food grade) setiap hari.' },
-  { icon: HeartHandshake, title: 'Proteksi Childproof', desc: 'Perabotan tumpul, stop kontak terproteksi pengaman, dan lantai dilapisi matras bermain EVA tebal pencegah cedera.' },
+  { icon: HeartHandshake, title: 'Proteksi Childproof', desc: 'Perabotan tumpul, pagar pengaman tangga, karpet anti-slip di kamar mandi, dan pelindung sudut anak tangga untuk melindungi si kecil di setiap langkahnya.' },
 ]
 
 export default function Fasilitas() {

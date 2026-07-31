@@ -36,7 +36,7 @@ const aboutJsonLd = {
     {
       '@type': 'Person',
       name: 'Adiwerti Sarahayu Lestari, S.H.',
-      jobTitle: 'Pendiri & Direktur',
+      jobTitle: 'Co-Founder & Owner',
       worksFor: { '@id': 'https://amanacare.id/#organization' },
       alumniOf: {
         '@type': 'EducationalOrganization',
@@ -128,7 +128,7 @@ export default function TentangKami() {
           <div className={styles.founderGrid}>
             <ScrollReveal direction="left">
               <div className={styles.founderMessage}>
-                <span className="section-label">👩‍💼 Sambutan Pendiri</span>
+                <span className="section-label">👩‍💼 Sambutan Founder</span>
                 <h2 className="heading-2">Mendedikasikan Kepercayaan &amp; Cinta</h2>
                 <div className={styles.founderQuoteBlock}>
                   <p className={styles.founderQuote}>
@@ -137,7 +137,7 @@ export default function TentangKami() {
                 </div>
                 <div className={styles.founderProfile}>
                   <p className={styles.founderName}>Adiwerti Sarahayu Lestari, S.H.</p>
-                  <p className={styles.founderTitle}>Pendiri &amp; Direktur Amana Care</p>
+                  <p className={styles.founderTitle}>Co-Founder &amp; Owner Amana Care</p>
                   <p className={styles.founderMeta}>Fakultas Hukum, Universitas Indonesia</p>
                 </div>
               </div>
