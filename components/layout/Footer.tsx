@@ -106,18 +106,18 @@ export default function Footer() {
                 <li className={styles.contactItem}>
                   <MapPin size={16} className={styles.contactIcon} />
                   <a
-                    href="https://share.google/IbDHnKDtXvBJQah2i"
+                    href="https://maps.app.goo.gl/wDcVkLnHHKspT3239"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.contactLink}
-                    onClick={() => trackOutboundClick('https://share.google/IbDHnKDtXvBJQah2i', 'Footer Map Address')}
+                    onClick={() => trackOutboundClick('https://maps.app.goo.gl/wDcVkLnHHKspT3239', 'Footer Map Address')}
                   >
                     Bintaro Sektor 7, Tangerang Selatan, Banten
                   </a>
                 </li>
                 <li className={styles.contactItem}>
                   <Clock size={16} className={styles.contactIcon} />
-                  <span>Senin–Jumat: 07.00–19.00 WIB</span>
+                  <span className={styles.contactLink}>Senin–Jumat: 07.00–19.00 WIB</span>
                 </li>
                 <li className={styles.contactItem}>
                   <Phone size={16} className={styles.contactIcon} />

@@ -127,7 +127,7 @@ export default function Kontak() {
                         <p className={styles.infoLabel}>Alamat</p>
                         <p className={styles.infoValue}>
                           <a
-                            href="https://share.google/IbDHnKDtXvBJQah2i"
+                            href="https://maps.app.goo.gl/wDcVkLnHHKspT3239"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.infoLink}
@@ -146,7 +146,7 @@ export default function Kontak() {
                       </div>
                       <div>
                         <p className={styles.infoLabel}>Jam Operasional</p>
-                        <p className={styles.infoValue}>Senin–Jumat: 07.00–19.00 WIB</p>
+                        <p className={styles.infoLink}>Senin–Jumat: 07.00–19.00 WIB</p>
                       </div>
                     </div>
 
