@@ -550,10 +550,10 @@ export default function Layanan() {
                   />
                 </div>
                 <div className={`${styles.floatingCard} ${styles.flCardYellow}`}>
-                  <span className={styles.flEmoji}>☕</span>
+                  <span className={styles.flEmoji}>📶</span>
                   <div>
-                    <p className={styles.flTitle}>Free Flow Refreshment</p>
-                    <p className={styles.flText}>Coffee, tea & snacks included</p>
+                    <p className={styles.flTitle}>High-Speed WiFi</p>
+                    <p className={styles.flText}>Koneksi cepat & stabil</p>
                   </div>
                 </div>
               </div>
