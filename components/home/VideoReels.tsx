@@ -15,25 +15,32 @@ export interface Reel {
 
 export const REELS_DATA: Reel[] = [
   {
+    id: 'baby-first-senses',
+    src: '/videos/amanacare-baby-first-senses.webm',
+    title: 'Baby First Senses',
+    category: 'Aktivitas Bayi',
+    description: 'Program yang dirancang khusus untuk bayi, membantu si kecil mengenal dunia lewat sentuhan, suara, dan warna, untuk merangsang perkembangan otak di usia emas tumbuh kembangnya.',
+  },
+  {
+    id: 'baby-sensory-play',
+    src: '/videos/amanacare-program-baby-sensory-play.webm',
+    title: 'Sensory Explorers',
+    category: 'Stimulasi Bayi',
+    description: 'Mengajak si kecil aktif bereksplorasi lewat berbagai tekstur, warna, dan aktivitas hands-on yang merangsang rasa ingin tahu dan membangun kemandirian.',
+  },
+  {
+    id: 'montessori-practical-life',
+    src: '/videos/amanacare-curriculum-montessori-practical-life.webm',
+    title: 'Montessori-inspired Practical Life',
+    category: 'Kurikulum',
+    description: 'Melatih kemandirian, fokus, dan koordinasi motorik anak sejak dini menggunakan aparatus Montessori terstandarisasi.',
+  },
+  {
     id: 'day-in-the-life',
     src: '/videos/amanacare-experience-day-in-the-life.webm',
     title: 'A Day in the Life',
     category: 'Aktivitas Harian',
     description: 'Melihat keseharian anak-anak bermain, belajar, bersosialisasi, dan beristirahat dengan penuh keceriaan di Amana Care.',
-  },
-  {
-    id: 'baby-sensory-play',
-    src: '/videos/amanacare-program-baby-sensory-play.webm',
-    title: 'Baby Sensory Play',
-    category: 'Stimulasi Bayi',
-    description: 'Aktivitas stimulasi sensorik terarah yang aman untuk melatih kemampuan motorik halus dan rasa ingin tahu bayi.',
-  },
-  {
-    id: 'montessori-practical-life',
-    src: '/videos/amanacare-curriculum-montessori-practical-life.webm',
-    title: 'Montessori Practical Life',
-    category: 'Kurikulum',
-    description: 'Melatih kemandirian, fokus, dan koordinasi motorik anak sejak dini menggunakan aparatus Montessori terstandarisasi.',
   },
   {
     id: 'dental-visit-01',
