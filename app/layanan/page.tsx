@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, Coffee, Wifi, Monitor, UserCheck } from 'lucide-react'
+import { Check, Wifi, UserCheck, Wind, Baby, Zap } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 import LayananWACTA from './LayananWACTA'
@@ -167,20 +167,20 @@ const daycareInclusions = [
 const sensorySchoolPackages = [
   {
     id: 'baby-class',
-    name: 'Baby Class',
+    name: 'Little Wonders–Baby Sensory School',
     emoji: '🍼',
-    schedule: 'Sabtu, 09:00–10:00',
+    schedule: 'Sabtu, 09:00-10:00',
     usia: '6–12 bulan',
-    duration: '8 sesi selama 8 minggu + final exhibition di minggu ke-9',
-    price: 'Rp 1.250.000',
+    duration: null,
+    price: null,
     color: '#EF8C8C',
   },
   {
     id: 'toddler-class',
-    name: 'Toddler Class',
+    name: 'Little Learners–Toddler Sensory School',
     emoji: '🧒',
-    schedule: 'Sabtu, 10:30–11:30',
-    usia: '12–24 bulan',
+    schedule: 'Senin, Rabu, Jumat, 09:00-11:30',
+    usia: '2-4 tahun',
     duration: null,
     price: null,
     color: '#A78BFA',
@@ -189,9 +189,10 @@ const sensorySchoolPackages = [
 
 const workspaceFeatures = [
   { icon: Wifi, title: 'WiFi Cepat', desc: 'Koneksi internet serat optik berkecepatan tinggi tanpa hambatan.' },
-  { icon: Coffee, title: 'Kopi & Teh', desc: 'Free flow minuman hangat untuk menemani hari produktif Anda.' },
-  { icon: Monitor, title: 'Monitor CCTV', desc: 'Layar monitor khusus terpasang untuk memantau si kecil bermain secara realtime.' },
-  { icon: UserCheck, title: 'Suasana Tenang', desc: 'Area kerja kedap suara terpisah dari ruang bermain anak.' },
+  { icon: UserCheck, title: 'Suasana Tenang', desc: 'Area kerja terpisah dari ruang bermain anak, sehingga tetap kondusif untuk fokus bekerja.' },
+  { icon: Wind, title: 'AC Full — Ruangan Sejuk', desc: 'Ruang kerja full AC yang nyaman, mendukung fokus kerja sepanjang hari.' },
+  { icon: Baby, title: 'Dekat dengan Si Kecil', desc: 'Lokasi ruang kerja berada satu area dengan daycare, jadi Anda tetap bisa dekat dan tenang tanpa harus jauh dari si kecil.' },
+  { icon: Zap, title: 'Stop Kontak Tersedia', desc: 'Tersedia akses stop kontak untuk kebutuhan charging laptop dan gadget Amana Parents selama bekerja.' },
 ]
 
 export default function Layanan() {
@@ -355,7 +356,7 @@ export default function Layanan() {
           <ScrollReveal direction="up" delay={200}>
             <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
               <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)', fontSize: '0.9rem' }}>
-                * Annual Fee dibayarkan sekali di awal untuk registrasi tahunan
+                * Annual Fee: 1x per tahun untuk perpanjangan registrasi si kecil
               </p>
               <Link href="/kontak" className="btn btn-primary btn-lg" id="layanan-cta-pricing">
                 Konsultasi &amp; Daftar Sekarang 💬
@@ -397,7 +398,7 @@ export default function Layanan() {
                   <span className={styles.videoBadge}>Montessori Curriculum</span>
                 </div>
                 <div className={styles.videoCardContent}>
-                  <h3 className={styles.videoCardTitle}>Montessori Practical Life</h3>
+                  <h3 className={styles.videoCardTitle}>Montessori-inspired Practical Life</h3>
                   <p className={styles.videoCardDesc}>
                     Melatih kemandirian, konsentrasi, koordinasi fisik, dan rasa percaya diri anak dengan menyiram tanaman, merapikan mainan, serta aktivitas motorik halus lainnya.
                   </p>
@@ -423,9 +424,9 @@ export default function Layanan() {
                   <span className={styles.videoBadge}>Baby Stimulation</span>
                 </div>
                 <div className={styles.videoCardContent}>
-                  <h3 className={styles.videoCardTitle}>Baby Sensory Play</h3>
+                  <h3 className={styles.videoCardTitle}>Sensory Explorers</h3>
                   <p className={styles.videoCardDesc}>
-                    Eksplorasi bertekstur, warna-warni, suara, dan stimulasi taktil terarah yang aman bagi bayi untuk merangsang hubungan sinapsis otak di usia emas tumbuh kembangnya.
+                   Mengajak si kecil aktif bereksplorasi lewat berbagai tekstur, warna, dan aktivitas hands-on yang merangsang rasa ingin tahu dan membangun kemandirian.
                   </p>
                 </div>
               </div>
