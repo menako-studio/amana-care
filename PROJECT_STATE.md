@@ -178,8 +178,11 @@ CREATE TABLE contacts (
    - Converted 21 high-resolution curated raw assets from `public/images/assets/` to production WebP format in `public/images/` (`toddlers-sensory-orange-slices.webp`, `preschoolers-hospital-roleplay.webp`, `colorful-handprint-proud-boy.webp`, `kids-roleplay-doctor.webp`, `daycare-learning-materials.webp`, `daycare-teachers-staff-group.webp`, `science-learning-moon.webp`, `storytelling-circle-time.webp`, `toddler-number-matching.webp`, `girl-painting-cotton-balls.webp`, etc.).
    - Updated `galleryItems` in `app/galeri/GaleriClient.tsx` to display 16 high-resolution assets with accurate categories (`aktivitas`, `fasilitas`, `event`), tags, and rich Indonesian alt descriptions.
    - Redesigned `GalleryPreview` grid layout (`components/home/GalleryPreview.module.css`) to use `grid-auto-rows: 240px;` and updated `GalleryPreview.tsx` with high-resolution landing page assets, perfect aspect ratio matching, and precise `objectPosition` framing so no photos are cropped or warped.
-5. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
-6. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
+5. **Website Copy & Data Revisions [COMPLETED — 2026-07-31]**:
+   - **Layanan Page**: Updated `workspaceFeatures` with 'AC Full — Ruangan Sejuk', 'Dekat dengan Si Kecil', and 'Stop Kontak Tersedia'.
+   - **DayTimeline Component**: Realigned daily schedule with actual operations (Kehadiran & Mandi Pagi, Sarapan, Morning Activity, Tidur Siang, Mandi & Makan Sore, Free Play).
+6. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
+7. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
 
 ---
 

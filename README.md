@@ -104,7 +104,7 @@ amana-care/
 ├── app/
 │   ├── page.tsx            # Landing Page (Hero, Timeline, Programs, Reviews, Gallery, Video Reels)
 │   ├── tentang-kami/       # About Profile & Founder Message
-│   ├── layanan/            # Services details (Daycare packages, Drop-in, Sensory School & Parents Co-Working)
+│   ├── layanan/            # Services details (Daycare packages, Drop-in, Sensory School & Parents Co-Working with AC & Stop Kontak)
 │   ├── fasilitas/          # Facility room tour & safety protocols
 │   ├── galeri/             # Filterable Photo gallery & Video Reels Lightbox Modal
 │   ├── kontak/             # Contact Form & FAQ Accordion
