@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { Play, Volume2, VolumeX, X, ZoomIn } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './VideoReels.module.css'
+import { trackVideoEvent } from '@/lib/analytics'
 
 export interface Reel {
   id: string
@@ -101,7 +102,6 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     document.addEventListener('visibilitychange', handleVisibilityChange)
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange)
-      // Critical: pause all on unmount (e.g., route change)
       pauseAllCardVideosDom()
     }
   }, [pauseAllCardVideosDom])
@@ -111,6 +111,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     if (activeReel) {
       pauseAllCardVideosDom()
       document.body.style.overflow = 'hidden'
+      trackVideoEvent('open_lightbox', activeReel.title, activeReel.id)
     } else {
       if (lightboxVideoRef.current) {
         lightboxVideoRef.current.pause()
@@ -134,7 +135,9 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     const video = videoRefs.current[id]
     if (video) {
       video.muted = true // card hover-play is always muted
-      video.play().then(() => setPlayingId(id)).catch(err => {
+      video.play().then(() => {
+        setPlayingId(id)
+      }).catch(err => {
         console.log('Autoplay blocked:', err)
       })
     }
@@ -152,6 +155,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
     e.stopPropagation()
     const nextMuted = !globalMuted
     setGlobalMuted(nextMuted)
+    trackVideoEvent(nextMuted ? 'mute' : 'unmute', 'All Video Reels')
     Object.values(videoRefs.current).forEach(video => {
       if (video) video.muted = nextMuted
     })
@@ -227,7 +231,7 @@ export default function VideoReels({ filterCategory, limit, showTitle = true }: 
         </div>
       </div>
 
-      {/* Lightbox Video Modal — muted by default, user can unmute via native controls */}
+      {/* Lightbox Video Modal */}
       {activeReel && (
         <div
           className={styles.lightbox}

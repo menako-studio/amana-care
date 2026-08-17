@@ -1,8 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './GalleryPreview.module.css'
+import { trackCTAClick } from '@/lib/analytics'
 
 const photos = [
   { 
@@ -82,7 +85,12 @@ export default function GalleryPreview() {
 
         <ScrollReveal direction="up" delay={200}>
           <div className={styles.cta}>
-            <Link href="/galeri" className="btn btn-outline" id="gallery-lihat-semua">
+            <Link
+              href="/galeri"
+              className="btn btn-outline"
+              id="gallery-lihat-semua"
+              onClick={() => trackCTAClick('Lihat Semua Foto (Home Preview)', '/galeri', 'Home Gallery Preview')}
+            >
               Lihat Semua Foto
               <ArrowRight size={18} />
             </Link>

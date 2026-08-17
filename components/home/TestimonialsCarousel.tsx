@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './TestimonialsCarousel.module.css'
+import { trackCarouselInteraction } from '@/lib/analytics'
 
 const testimonials = [
   {
@@ -35,9 +36,23 @@ export default function TestimonialsCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
-  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi])
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return
+    emblaApi.scrollPrev()
+    trackCarouselInteraction('testimonials', emblaApi.selectedScrollSnap(), 'prev')
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return
+    emblaApi.scrollNext()
+    trackCarouselInteraction('testimonials', emblaApi.selectedScrollSnap(), 'next')
+  }, [emblaApi])
+
+  const scrollTo = useCallback((index: number) => {
+    if (!emblaApi) return
+    emblaApi.scrollTo(index)
+    trackCarouselInteraction('testimonials', index, 'dot')
+  }, [emblaApi])
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return
