@@ -29,7 +29,8 @@ Every page and module is meticulously structured to optimize load speeds, ensure
 5. **Sentry APM & Exception Tracking:** Production observability with `@sentry/nextjs`, featuring client/server SDK initializers, Next.js 16 `instrumentation.ts` integration, global error boundary ([app/global-error.tsx](file:///Users/adibwafi/Documents/Menako%20Studio/amana-care/app/global-error.tsx)), and API exception capturing.
 6. **Lenis Scroll Engine & Motion:** Silky-smooth 60fps momentum scroll experience across all browsers and devices.
 7. **Embla Carousel:** Drag/swipe-enabled touch-responsive slider for parent reviews and testimonials (Fika, Like, Putri).
-8. **Supabase & Resend API:** Production-grade serverless endpoint handling contacts, persisting registration logs to a PostgreSQL database, and triggering admin email notifications.
+8. **Interactive Dual-Mode WhatsApp Forms:** Direct WhatsApp registration & site visit scheduler on Homepage (`ContactSection.tsx`) and Contact page (`KontakClient.tsx`), capturing parent & child details, visit dates, and preferred sessions with integrated analytics.
+9. **Supabase & Resend API:** Production-grade serverless endpoint handling contacts, persisting registration logs to a PostgreSQL database, and triggering admin email notifications.
 
 ---
 
@@ -84,7 +85,7 @@ Every page's `<title>`, `openGraph.title`, and `twitter.title` tags have been st
 ### Optimized Meta Title Inventory
 
 | Route | Page Name | Optimized Meta Title | Char Count | Primary SEO Keywords |
-| :--- | :--- | :--- | :---: | :--- |
+| :--- | :--- | :--- | :--- | :--- |
 | `/` | Beranda / Root | `Daycare Bintaro Sektor 7 Terbaik Anak 6 Bln–6 Th \| Amana Care` | **61** | Daycare Bintaro Sektor 7, Anak 6 Bln-6 Th |
 | `/tentang-kami` | Tentang Kami | `Tentang Amana Care \| Daycare Terpercaya Bintaro Sektor 7` | **59** | Tentang Amana Care, Daycare Terpercaya Bintaro |
 | `/layanan` | Layanan & Paket | `Biaya & Paket Daycare Bintaro Sektor 7 \| Amana Care` | **53** | Biaya Daycare Bintaro, Paket Daycare Bintaro |
@@ -102,16 +103,16 @@ amana-care/
 │   └── workflows/
 │       └── ci.yml          # GitHub Actions CI/CD Pipeline (Node 22, Lint, TSC, Tests, Build)
 ├── app/
-│   ├── page.tsx            # Landing Page (Hero, Timeline, Programs, Reviews, Gallery, Video Reels)
+│   ├── page.tsx            # Landing Page (Hero, Timeline, Programs, Reviews, Gallery, Video Reels, Contact)
 │   ├── tentang-kami/       # About Profile & Founder Message
 │   ├── layanan/            # Services details (Daycare packages, Drop-in, Sensory School & Parents Co-Working with AC & Stop Kontak)
 │   ├── fasilitas/          # Facility room tour & safety protocols
 │   ├── galeri/             # Filterable Photo gallery & Video Reels Lightbox Modal
-│   ├── kontak/             # Contact Form & FAQ Accordion
+│   ├── kontak/             # Dual-mode Contact Form & FAQ Accordion
 │   └── api/contact/        # Serverless contact handler (Zod, Rate-Limiting, Supabase, Resend)
 ├── components/
 │   ├── layout/             # Shared elements: Navbar, Footer, AnnouncementBar, Lenis Scroll
-│   ├── home/               # Homepage sections (VideoReels, TestimonialsCarousel, etc.)
+│   ├── home/               # Homepage sections (ContactSection, VideoReels, TestimonialsCarousel, etc.)
 │   └── ui/                 # Reusable UI wrappers (ScrollReveal)
 ├── lib/
 │   ├── validations/        # Centralized Zod validation schemas

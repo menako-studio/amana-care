@@ -108,17 +108,15 @@ amana-care/
 
 ### Active Built Modules
 
-- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel (real reviews from parents Fika, Like, Putri), photo gallery preview with real WebP documentation photos (`hero-galeri.jpg`, `gallery-outdoor.webp`, `gallery-toddler-activity.jpg`, `gallery-baby-class.jpg`), vertical video reels preview, and inline contact section.
+- **Homepage (`/`)**: Hero section, trust ticker metrics, mission statement, 4-pillar features grid, daily routine timeline, interactive program tabs, parent testimonials carousel (real reviews from parents Fika, Like, Putri), photo gallery preview with real WebP documentation photos (`hero-galeri.jpg`, `gallery-outdoor.webp`, `gallery-toddler-activity.jpg`, `gallery-baby-class.jpg`), vertical video reels preview, and dual-mode contact section (`ContactSection.tsx`: Form Pendaftaran WhatsApp & Form Jadwalkan Site Visit WhatsApp).
 - **About Us (`/tentang-kami`)**: Company vision & mission, founder message (with optimized WebP portrait `adiwerti-sarahayu.webp`), embedded "Meet the Team" `.webm` video reel, team profiles grid with **real team member photos** (Next/Image circular WebP avatars from `/public/images/team/`), and South Tangerang location map.
 - **Services (`/layanan`)**: Detailed daycare program breakdown with **5 Daycare packages** (Bulanan, Harian, After-School, Baby, Drop-in), **Baby & Toddler Sensory School** (Baby Class 6–12 bln & Toddler Class 12–24 bln), Parents Working Space features (AC, Wifi, smoke-free space close to children with `working-space.jpg`), "Kurikulum & Stimulasi dalam Aksi" video reels section (Montessori & Sensory Play), and dynamic WhatsApp CTA builder (`LayananWACTA.tsx`).
 - **Facilities (`/fasilitas`)**: Interactive room gallery (CCTV area, quiet nap room, indoor play, sensory garden, co-working area) with high-res optimized WebP facility photos (`hero-fasilitas.jpg`, `hero-sleep-area.jpg`), safety standards grid, and virtual tour CTA.
 - **Gallery (`/galeri`)**: Category-filtered photo gallery powered by real documentation WebP assets from `Dokumentasi Anak - Final` (Baby Class, Toddler Class, Preschoolers, Pop-Up Events, Holiday Program), Video Reels tab switcher with full-screen lightbox modal, and embedded YouTube documentation video with structured event metadata cards.
-- **Contact & Registration (`/kontak`)**: Interactive registration form with real-time field validation, direct WhatsApp consultation CTA, embedded Google Maps iframe, operating hours card, and interactive FAQ accordion (6 official Q&As covering daily routine, caregiver ratio, 24/7 CCTV mobile app access, homecooked meals, survey hours, and free 1x trial).
+- **Contact & Registration (`/kontak`)**: Dual-mode interactive registration & site visit scheduler (`KontakClient.tsx`) with real-time field validation, direct WhatsApp consultation CTA, embedded Google Maps iframe, operating hours card, and interactive FAQ accordion (6 official Q&As covering daily routine, caregiver ratio, 24/7 CCTV mobile app access, homecooked meals, survey hours, and free 1x trial).
 - **Unified Analytics System (`lib/analytics.ts`)**: Custom event tracking helpers dispatching events simultaneously to GA4 (`window.gtag`) and GTM (`window.dataLayer`). Key tracked events include: `generate_lead`, `contact`, `select_content`, `cta_click`, `whatsapp_open`, `faq_open`, `gallery_filter`, `gallery_zoom`.
 
 ### Data Flow & Database Schema
-
-#### Contact Lead Submission Pipeline
 
 ```
 [User Form Submission] 
@@ -181,8 +179,13 @@ CREATE TABLE contacts (
 5. **Website Copy & Data Revisions [COMPLETED — 2026-07-31]**:
    - **Layanan Page**: Updated `workspaceFeatures` with 'AC Full — Ruangan Sejuk', 'Dekat dengan Si Kecil', and 'Stop Kontak Tersedia'.
    - **DayTimeline Component**: Realigned daily schedule with actual operations (Kehadiran & Mandi Pagi, Sarapan, Morning Activity, Tidur Siang, Mandi & Makan Sore, Free Play).
-6. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
-7. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
+6. **Cal.com Replacement to WhatsApp Site Visit Form [COMPLETED & VERIFIED — 2026-08-17]**:
+   - Replaced third-party Cal.com iframe embed (`https://cal.com/amanacare/site-visit?embed=true`) in `components/home/ContactSection.tsx` and `app/kontak/KontakClient.tsx` with a direct interactive React form for scheduling site visits.
+   - Form collects Parent Name, Child Name, Child Age, Planned Visit Date, Preferred Visit Session (Pagi 09:00–11:00 WIB, Siang 13:00–15:00 WIB, Fleksibel), WhatsApp Number, and optional notes.
+   - Generates and dispatches a structured WhatsApp template message to Amana Care official WhatsApp (`081513075155`) with full analytics tracking (`home_site_visit_form`, `kontak_site_visit_form`, `trackWhatsAppOpen`, `trackSelectContent`).
+   - Verified zero TypeScript compilation errors, successful production build, and all unit/integration tests passing.
+7. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
+8. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
 
 ---
 
