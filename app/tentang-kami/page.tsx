@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       'Profil Amana Care Bintaro Sektor 7: Visi, misi, nilai pengasuhan Montessori, & tim pengasuh profesional pendamping tumbuh kembang anak 6 bln – 6 th.',
     url: 'https://www.amanacare.id/tentang-kami',
+    type: 'website',
   },
 }
 
@@ -25,19 +26,40 @@ const aboutJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.amanacare.id/tentang-kami#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Beranda',
+          item: 'https://www.amanacare.id',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Tentang Kami',
+          item: 'https://www.amanacare.id/tentang-kami',
+        },
+      ],
+    },
+    {
       '@type': 'AboutPage',
-      '@id': 'https://amanacare.id/tentang-kami',
-      url: 'https://amanacare.id/tentang-kami',
+      '@id': 'https://www.amanacare.id/tentang-kami#webpage',
+      url: 'https://www.amanacare.id/tentang-kami',
       name: 'Tentang Amana Care — Visi, Misi & Tim',
       description:
         'Halaman tentang Amana Care, daycare dan parents working space premium di Bintaro Sektor 7. Memuat visi, misi, nilai-nilai utama, dan profil tim pengasuh profesional.',
-      mainEntity: { '@id': 'https://amanacare.id/#organization' },
+      isPartOf: { '@id': 'https://www.amanacare.id/#website' },
+      breadcrumb: { '@id': 'https://www.amanacare.id/tentang-kami#breadcrumb' },
+      mainEntity: { '@id': 'https://www.amanacare.id/#organization' },
     },
     {
       '@type': 'Person',
+      '@id': 'https://www.amanacare.id/#founder',
       name: 'Adiwerti Sarahayu Lestari, S.H.',
       jobTitle: 'Co-Founder & Owner',
-      worksFor: { '@id': 'https://amanacare.id/#organization' },
+      worksFor: { '@id': 'https://www.amanacare.id/#organization' },
       alumniOf: {
         '@type': 'EducationalOrganization',
         name: 'Universitas Indonesia',

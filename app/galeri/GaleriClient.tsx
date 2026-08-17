@@ -7,7 +7,7 @@ import { X, ZoomIn, Calendar, Users, Award, Clock } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import VideoReels from '@/components/home/VideoReels'
 import styles from './page.module.css'
-import { trackGalleryFilter, trackGalleryZoom } from '@/lib/analytics'
+import { trackGalleryFilter, trackGalleryZoom, trackSelectContent, trackCTAClick } from '@/lib/analytics'
 
 const categories = [
   { id: 'semua', label: 'Semua Kategori' },
@@ -32,12 +32,17 @@ const galleryItems = [
   { src: '/images/gallery-holiday-program.jpg', alt: 'Aktivitas seru School Holiday Program Amana Care Bintaro', category: 'event', tag: 'Holiday Program' },
 ]
 
-export default function Galeri() {
+export default function GaleriClient() {
   const [mediaType, setMediaType] = useState<'foto' | 'video'>('foto')
   const [filter, setFilter] = useState('semua')
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   const filteredItems = filter === 'semua' ? galleryItems : galleryItems.filter((item) => item.category === filter)
+
+  const handleMediaTypeChange = (type: 'foto' | 'video') => {
+    setMediaType(type)
+    trackSelectContent('galeri_media_type', type, type === 'foto' ? 'Galeri Foto' : 'Video Reels')
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -75,13 +80,13 @@ export default function Galeri() {
             <div className={styles.mediaTypeSelector}>
               <button 
                 className={`${styles.mediaTypeBtn} ${mediaType === 'foto' ? styles.mediaTypeBtnActive : ''}`}
-                onClick={() => setMediaType('foto')}
+                onClick={() => handleMediaTypeChange('foto')}
               >
                 📸 Galeri Foto
               </button>
               <button 
                 className={`${styles.mediaTypeBtn} ${mediaType === 'video' ? styles.mediaTypeBtnActive : ''}`}
-                onClick={() => setMediaType('video')}
+                onClick={() => handleMediaTypeChange('video')}
               >
                 🎥 Video Reels
               </button>
@@ -204,7 +209,7 @@ export default function Galeri() {
                     </div>
                     <div>
                       <p className={styles.metaLabel}>Aktivitas Anak</p>
-                      <p className={styles.metaValue}>1.5 Jam Art & Craft + 1.5 Jam Free Play</p>
+                      <p className={styles.metaValue}>1.5 Jam Art &amp; Craft + 1.5 Jam Free Play</p>
                     </div>
                   </div>
 
@@ -230,7 +235,12 @@ export default function Galeri() {
                 </div>
 
                 <div className={styles.ctaWrapper}>
-                  <Link href="/kontak" className="btn btn-primary" id="youtube-cta-kontak">
+                  <Link
+                    href="/kontak"
+                    className="btn btn-primary"
+                    id="youtube-cta-kontak"
+                    onClick={() => trackCTAClick('Hubungi untuk Layanan Event (YouTube Section)', '/kontak', 'Galeri Event Section')}
+                  >
                     Hubungi untuk Layanan Event 💬
                   </Link>
                 </div>
@@ -270,4 +280,3 @@ export default function Galeri() {
     </div>
   )
 }
-

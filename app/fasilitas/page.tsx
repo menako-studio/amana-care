@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { ShieldCheck, Wind, HeartHandshake, Sparkles } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
+import { FasilitasTrackedCTA } from './FasilitasCTA'
 
 export const metadata: Metadata = {
   title: {
@@ -19,19 +19,74 @@ export const metadata: Metadata = {
     description:
       'Fasilitas Amana Care Bintaro Sektor 7: Playroom non-toxic, ruang tidur AC, CCTV realtime, & parents co-working space nyaman dengan WiFi kencang.',
     url: 'https://www.amanacare.id/fasilitas',
+    type: 'website',
   },
 }
 
 const fasilitasJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://amanacare.id/fasilitas',
-  url: 'https://amanacare.id/fasilitas',
-  name: 'Fasilitas Daycare & Parents Working Space Amana Care Bintaro',
-  description:
-    'Fasilitas lengkap Amana Care meliputi ruang bermain indoor, ruang belajar, area tidur, parents co-working space, CCTV realtime 24/7, dan APE non-toxic edukatif.',
-  isPartOf: { '@id': 'https://amanacare.id/#website' },
-  about: { '@id': 'https://amanacare.id/#organization' },
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.amanacare.id/fasilitas#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Beranda',
+          item: 'https://www.amanacare.id',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Fasilitas',
+          item: 'https://www.amanacare.id/fasilitas',
+        },
+      ],
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.amanacare.id/fasilitas#webpage',
+      url: 'https://www.amanacare.id/fasilitas',
+      name: 'Fasilitas Daycare & Parents Working Space Amana Care Bintaro',
+      description:
+        'Fasilitas lengkap Amana Care meliputi ruang bermain indoor, ruang belajar, area tidur, parents co-working space, CCTV realtime 24/7, dan APE non-toxic edukatif.',
+      isPartOf: { '@id': 'https://www.amanacare.id/#website' },
+      breadcrumb: { '@id': 'https://www.amanacare.id/fasilitas#breadcrumb' },
+      about: { '@id': 'https://www.amanacare.id/#organization' },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': 'https://www.amanacare.id/fasilitas#facilities-list',
+      name: 'Daftar Fasilitas & Standar Keamanan Amana Care',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Ruang Bermain & Eksplorasi',
+          description: 'Area bermain indoor yang luas dilengkapi mainan kayu non-toxic edukatif.',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Ruang Belajar & Kelas',
+          description: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni dan belajar.',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'CCTV Online 24/7',
+          description: 'Seluruh area bermain dipantau kamera CCTV dengan enkripsi aman yang dapat diakses orang tua.',
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'HEPA Air Purifier & AC',
+          description: 'AC bersuhu stabil dan penjernih udara HEPA Filter untuk menjaga kualitas udara.',
+        },
+      ],
+    },
+  ],
 }
 
 const areas = [
@@ -45,16 +100,6 @@ const areas = [
     desc: 'Ruang kelas terang benderang dengan meja kursi ramah anak untuk kegiatan seni, kerajinan tangan, dan belajar terstruktur.',
     img: '/images/preschool-classroom.webp',
   },
-  // {
-  //   title: 'Ruang Tidur Nyaman',
-  //   desc: 'Kamar tidur tenang ber-AC dengan kasur individual berseprai katun steril yang diganti berkala untuk kenyamanan tidur siang.',
-  //   img: '/images/assets/toddlers_sorting_colorful_pompoms_learning_activity.jpg',
-  // },
-  // {
-  //   title: 'Parents Working Space',
-  //   desc: 'Ruang kerja nyaman bagi Amana Parents, dilengkapi dengan AC, wifi, dan bebas asap rokok, agar tetap produktif dan bisa berada dekat dengan anak.',
-  //   img: '/images/assets/daycare_teachers_staff_group_photo_classroom-2.jpg',
-  // },
 ]
 
 const safetyProtocols = [
@@ -171,9 +216,7 @@ export default function Fasilitas() {
               <p className={styles.ctaCardText}>
                 Hubungi kami untuk mengatur jadwal kunjungan (site visit) secara langsung ke lokasi kami di Bintaro Sektor 7.
               </p>
-              <Link href="/kontak" className="btn btn-primary btn-lg" id="fasilitas-cta-daftar">
-                Jadwalkan Kunjungan 📍
-              </Link>
+              <FasilitasTrackedCTA />
             </div>
           </ScrollReveal>
         </div>

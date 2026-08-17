@@ -5,7 +5,14 @@ import Image from 'next/image'
 import { Plus, Minus, MapPin, Clock, Phone, CheckCircle, Mail } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
-import { trackFormSubmit, trackFAQOpen, trackWhatsAppOpen, trackContact } from '@/lib/analytics'
+import {
+  trackFormSubmit,
+  trackFAQOpen,
+  trackWhatsAppOpen,
+  trackContact,
+  trackSelectContent,
+  trackOutboundClick,
+} from '@/lib/analytics'
 
 const InstagramIcon = ({ size = 20, className = '', color = 'currentColor' }: { size?: number; className?: string; color?: string }) => (
   <svg
@@ -68,6 +75,15 @@ export default function Kontak() {
 
   const handleVisitChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setVisitForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleMethodChange = (newMethod: 'form' | 'visit') => {
+    setMethod(newMethod)
+    trackSelectContent(
+      'contact_method_tab',
+      newMethod,
+      newMethod === 'form' ? 'Form Pendaftaran' : 'Jadwalkan Site Visit'
+    )
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -157,8 +173,9 @@ export default function Kontak() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.infoLink}
+                            onClick={() => trackOutboundClick('https://maps.app.goo.gl/wDcVkLnHHKspT3239', 'Kontak Page Address Map')}
                           >
-                          Ruko Kebayoran Square Blok D-01,<br />
+                            Ruko Kebayoran Square Blok D-01,<br />
                             Bintaro Jaya Sektor 7, Pondok Aren,<br />
                             Kota Tangerang Selatan, Banten
                           </a>
@@ -182,7 +199,11 @@ export default function Kontak() {
                       </div>
                       <div>
                         <p className={styles.infoLabel}>WhatsApp</p>
-                        <a href="https://wa.me/6281513075155" className={styles.infoLink} onClick={() => trackWhatsAppOpen('contact_page_phone_link')}>
+                        <a
+                          href="https://wa.me/6281513075155"
+                          className={styles.infoLink}
+                          onClick={() => trackWhatsAppOpen('contact_page_phone_link')}
+                        >
                           +62 815-1307-5155
                         </a>
                       </div>
@@ -206,7 +227,7 @@ export default function Kontak() {
 
                     <div className={styles.infoItem}>
                       <div className={`icon-container ${styles.infoIcon}`} style={{ background: 'rgba(239, 140, 140, 0.12)' }}>
-                      <InstagramIcon size={20} color="#E1306C" />
+                        <InstagramIcon size={20} color="#E1306C" />
                       </div>
                       <div>
                         <p className={styles.infoLabel}>Instagram</p>
@@ -215,6 +236,7 @@ export default function Kontak() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={styles.infoLink}
+                          onClick={() => trackOutboundClick('https://www.instagram.com/haloamana', 'Kontak Page Instagram Link')}
                         >
                           @haloamana
                         </a>
@@ -245,14 +267,14 @@ export default function Kontak() {
                   <button
                     type="button"
                     className={`${styles.methodBtn} ${method === 'form' ? styles.methodBtnActive : ''}`}
-                    onClick={() => setMethod('form')}
+                    onClick={() => handleMethodChange('form')}
                   >
                     📝 Form Pendaftaran
                   </button>
                   <button
                     type="button"
                     className={`${styles.methodBtn} ${method === 'visit' ? styles.methodBtnActive : ''}`}
-                    onClick={() => setMethod('visit')}
+                    onClick={() => handleMethodChange('visit')}
                   >
                     📅 Jadwalkan Site Visit
                   </button>

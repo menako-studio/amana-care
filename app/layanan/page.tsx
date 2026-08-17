@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Check, Wifi, UserCheck, Wind, Baby, Zap } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './page.module.css'
 import LayananWACTA from './LayananWACTA'
+import { LayananTrackedLink } from './LayananClientButtons'
 
 export const metadata: Metadata = {
   title: {
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description:
       'Paket daycare harian & bulanan Bintaro Sektor 7 (6 bln – 6 th) + Parents Working Space. Termasuk CCTV, makan 3x, laporan WA, & psikolog anak.',
     url: 'https://www.amanacare.id/layanan',
+    type: 'website',
   },
 }
 
@@ -27,11 +28,30 @@ const layananJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.amanacare.id/layanan#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Beranda',
+          item: 'https://www.amanacare.id',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Layanan',
+          item: 'https://www.amanacare.id/layanan',
+        },
+      ],
+    },
+    {
       '@type': 'Service',
+      '@id': 'https://www.amanacare.id/layanan#service',
       name: 'Layanan Daycare Amana Care',
       description:
         'Penitipan anak harian dan bulanan untuk usia 6 bulan – 6 tahun. Fasilitas meliputi CCTV realtime, makan utama 3x sehari, snack sore, laporan harian via WhatsApp, skrining psikolog anak, dan akses photos aktivitas.',
-      provider: { '@id': 'https://amanacare.id/#organization' },
+      provider: { '@id': 'https://www.amanacare.id/#organization' },
       serviceType: 'Child Care',
       areaServed: {
         '@type': 'City',
@@ -45,6 +65,14 @@ const layananJsonLd = {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
+              name: 'Daycare Bulanan',
+              description: 'Paket bulanan dengan harga lebih hemat. Termasuk 3x makan, snack, CCTV realtime, dan laporan harian WA.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
               name: 'Daycare Harian',
               description: 'Layanan penitipan anak harian dengan seluruh fasilitas termasuk makan, CCTV, dan laporan WA.',
             },
@@ -53,8 +81,16 @@ const layananJsonLd = {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Daycare Bulanan',
-              description: 'Paket bulanan dengan harga lebih hemat. Cocok untuk orang tua yang bekerja rutin.',
+              name: 'After-School Daycare',
+              description: 'Penitipan anak sepulang sekolah dengan pendampingan belajar, 1x makan sore, dan snack buah.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Baby Daycare',
+              description: 'Penitipan khusus bayi usia 6-12 bulan dengan rasio pendampingan 1:2 dan stimulasi sensorik intensif.',
             },
           },
           {
@@ -62,7 +98,7 @@ const layananJsonLd = {
             itemOffered: {
               '@type': 'Service',
               name: 'Parents Co-Working Space',
-              description: 'Area kerja untuk orang tua terintegrasi dengan daycare. Dilengkapi WiFi, minuman gratis, dan monitor CCTV si kecil.',
+              description: 'Area kerja untuk orang tua terintegrasi dengan daycare. Dilengkapi WiFi, stop kontak, AC sejuk, dan dekat dengan si kecil.',
             },
           },
         ],
@@ -70,13 +106,14 @@ const layananJsonLd = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://amanacare.id/layanan',
-      url: 'https://amanacare.id/layanan',
+      '@id': 'https://www.amanacare.id/layanan#webpage',
+      url: 'https://www.amanacare.id/layanan',
       name: 'Layanan Daycare & Co-Working Space Amana Care Bintaro',
-      isPartOf: { '@id': 'https://amanacare.id/#website' },
+      isPartOf: { '@id': 'https://www.amanacare.id/#website' },
+      breadcrumb: { '@id': 'https://www.amanacare.id/layanan#breadcrumb' },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: 'https://amanacare.id/images/hero-layanan.jpg',
+        url: 'https://www.amanacare.id/images/hero-layanan.jpg',
       },
     },
   ],
@@ -257,9 +294,15 @@ export default function Layanan() {
                 </div>
 
                 <div className={styles.action}>
-                  <Link href="/kontak" className="btn btn-primary" id="layanan-cta-daycare">
+                  <LayananTrackedLink
+                    href="/kontak"
+                    className="btn btn-primary"
+                    id="layanan-cta-daycare"
+                    label="Tanyakan Biaya Daycare"
+                    section="Layanan Daycare Overview"
+                  >
                     Tanyakan Biaya Daycare
-                  </Link>
+                  </LayananTrackedLink>
                 </div>
               </div>
             </ScrollReveal>
@@ -358,9 +401,15 @@ export default function Layanan() {
               <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)', fontSize: '0.9rem' }}>
                 * Annual Fee: 1x per tahun untuk perpanjangan registrasi si kecil
               </p>
-              <Link href="/kontak" className="btn btn-primary btn-lg" id="layanan-cta-pricing">
+              <LayananTrackedLink
+                href="/kontak"
+                className="btn btn-primary btn-lg"
+                id="layanan-cta-pricing"
+                label="Konsultasi & Daftar Sekarang (Pricing Grid)"
+                section="Layanan Pricing Grid"
+              >
                 Konsultasi &amp; Daftar Sekarang 💬
-              </Link>
+              </LayananTrackedLink>
             </div>
           </ScrollReveal>
         </div>
@@ -492,13 +541,21 @@ export default function Layanan() {
               <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-4)', fontSize: '0.9rem' }}>
                 * Kelas dilaksanakan setiap Sabtu. Tempat terbatas — daftar sekarang!
               </p>
-              <Link href="/kontak" className="btn btn-primary" id="layanan-cta-sensory">
+              <LayananTrackedLink
+                href="/kontak"
+                className="btn btn-primary"
+                id="layanan-cta-sensory"
+                label="Daftar Sensory School"
+                section="Sensory School Section"
+              >
                 Daftar Sensory School 🌟
-              </Link>
+              </LayananTrackedLink>
             </div>
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Parents Working Space */}
       <section className="section" id="working-space">
         <div className="container">
           <div className={styles.gridInverse}>
@@ -529,9 +586,15 @@ export default function Layanan() {
                 </div>
 
                 <div className={styles.action}>
-                  <Link href="/kontak" className="btn btn-outline" id="layanan-cta-workspace">
+                  <LayananTrackedLink
+                    href="/kontak"
+                    className="btn btn-outline"
+                    id="layanan-cta-workspace"
+                    label="Pesan Ruang Kerja"
+                    section="Parents Working Space Section"
+                  >
                     Pesan Ruang Kerja
-                  </Link>
+                  </LayananTrackedLink>
                 </div>
               </div>
             </ScrollReveal>
@@ -553,7 +616,7 @@ export default function Layanan() {
                   <span className={styles.flEmoji}>📶</span>
                   <div>
                     <p className={styles.flTitle}>High-Speed WiFi</p>
-                    <p className={styles.flText}>Koneksi cepat & stabil</p>
+                    <p className={styles.flText}>Koneksi cepat &amp; stabil</p>
                   </div>
                 </div>
               </div>
