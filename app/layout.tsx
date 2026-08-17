@@ -8,6 +8,7 @@ import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import SmoothScroll from '@/components/layout/SmoothScroll'
 import LoadingScreen from '@/components/layout/LoadingScreen'
+import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
 
 const siteUrl = 'https://www.amanacare.id'
 
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
   },
 }
 
-// JSON-LD: LocalBusiness + ChildCare (sangat penting untuk local SEO)
+// JSON-LD: LocalBusiness + ChildCare (sangat penting untuk local SEO & Google Search Console)
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -111,7 +112,7 @@ const jsonLd = {
         'Amana Care adalah daycare dan parents working space premium di Bintaro Sektor 7, Tangerang Selatan. Melayani penitipan anak usia 6 bulan – 6 tahun dengan CCTV realtime, laporan harian WhatsApp, makan bergizi, dan skrining psikolog anak berkala.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Bintaro Sektor 7',
+        streetAddress: 'Bintaro Sektor 7, Ruko Kebayoran Square Blok D-01, Pondok Aren',
         addressLocality: 'Tangerang Selatan',
         addressRegion: 'Banten',
         postalCode: '15416',
@@ -184,6 +185,7 @@ export default function RootLayout({
       </head>
       <body>
         <LoadingScreen />
+        <AnalyticsTracker />
         <SmoothScroll>
           <AnnouncementBar />
           <Navbar />

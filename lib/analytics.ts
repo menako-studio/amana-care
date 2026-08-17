@@ -15,9 +15,9 @@ declare global {
 export const trackEvent = (eventName: string, params?: Record<string, unknown>) => {
   if (typeof window === 'undefined') return
 
-  const payload = {
+  const payload: Record<string, unknown> = {
     event: eventName,
-    event_category: 'engagement',
+    event_category: params?.event_category || 'engagement',
     timestamp: new Date().toISOString(),
     page_location: window.location.href,
     page_path: window.location.pathname,
@@ -30,8 +30,41 @@ export const trackEvent = (eventName: string, params?: Record<string, unknown>) 
   }
 
   // GTM dataLayer dispatch
-  if (Array.isArray(window.dataLayer)) {
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || []
     window.dataLayer.push(payload)
+  }
+}
+
+/**
+ * GA4 & GTM SPA Pageview Dispatcher
+ * Tracks virtual pageviews when navigating client-side in Next.js App Router
+ */
+export const trackPageView = (url: string, title?: string) => {
+  if (typeof window === 'undefined') return
+
+  const pageTitle = title || (typeof document !== 'undefined' ? document.title : '')
+  const pageLocation = typeof window !== 'undefined' ? window.location.href : url
+
+  // GA4 standard config / page_view
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'page_view', {
+      page_path: url,
+      page_location: pageLocation,
+      page_title: pageTitle,
+    })
+  }
+
+  // GTM standard virtual pageview
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'virtual_pageview',
+      page_path: url,
+      page_location: pageLocation,
+      page_title: pageTitle,
+      timestamp: new Date().toISOString(),
+    })
   }
 }
 
@@ -39,19 +72,27 @@ export const trackEvent = (eventName: string, params?: Record<string, unknown>) 
  * GA4 Recommended Event: generate_lead
  * Fired when user submits a contact form, site visit request, or pendaftaran.
  */
-export const trackLead = (formName: string, ageGroup?: string, method = 'whatsapp') => {
+export const trackLead = (
+  formName: string,
+  ageGroup?: string,
+  method = 'whatsapp',
+  extraParams?: Record<string, unknown>
+) => {
   trackEvent('generate_lead', {
     event_category: 'conversion',
     form_name: formName,
     method,
     ...(ageGroup ? { age_group: ageGroup } : {}),
+    ...extraParams,
   })
 
   // Backwards compatibility custom event
   trackEvent('form_submit', {
     event_category: 'conversion',
     form_name: formName,
+    method,
     ...(ageGroup ? { age_group: ageGroup } : {}),
+    ...extraParams,
   })
 }
 
@@ -59,18 +100,26 @@ export const trackLead = (formName: string, ageGroup?: string, method = 'whatsap
  * GA4 Recommended Event: contact
  * Fired when user clicks WhatsApp, phone number, email, or contact button.
  */
-export const trackContact = (contactType: 'whatsapp' | 'phone' | 'email', destination: string, source: string) => {
+export const trackContact = (
+  contactType: 'whatsapp' | 'phone' | 'email',
+  destination: string,
+  source: string,
+  extraParams?: Record<string, unknown>
+) => {
   trackEvent('contact', {
     event_category: 'conversion',
     contact_type: contactType,
     destination,
     source,
+    ...extraParams,
   })
 
   if (contactType === 'whatsapp') {
     trackEvent('whatsapp_open', {
       event_category: 'conversion',
       source,
+      destination,
+      ...extraParams,
     })
   }
 }
@@ -89,23 +138,24 @@ export const trackSelectContent = (contentType: string, itemId: string, label?: 
 }
 
 /** CTA button click (Daftar Sekarang, Konsultasi, dll) */
-export const trackCTAClick = (label: string, destination: string) => {
+export const trackCTAClick = (label: string, destination: string, section?: string) => {
   trackEvent('cta_click', {
     event_category: 'conversion',
     event_label: label,
     destination,
+    ...(section ? { section_name: section } : {}),
   })
   trackSelectContent('cta_button', label, destination)
 }
 
 /** WhatsApp button click wrapper */
-export const trackWhatsAppOpen = (source: string) => {
-  trackContact('whatsapp', 'https://wa.me/6281513075155', source)
+export const trackWhatsAppOpen = (source: string, metadata?: Record<string, unknown>) => {
+  trackContact('whatsapp', 'https://wa.me/6281513075155', source, metadata)
 }
 
 /** Form submission wrapper */
-export const trackFormSubmit = (formName: string, ageGroup?: string) => {
-  trackLead(formName, ageGroup)
+export const trackFormSubmit = (formName: string, ageGroup?: string, extraParams?: Record<string, unknown>) => {
+  trackLead(formName, ageGroup, 'whatsapp', extraParams)
 }
 
 /** Outbound link click (Google Maps, Instagram, etc) */
@@ -118,13 +168,47 @@ export const trackOutboundClick = (url: string, label: string) => {
   })
 }
 
-/** FAQ accordion opened */
+/** Daycare package / service selection */
+export const trackPackageClick = (packageName: string, price?: string | null, feeType?: string | null) => {
+  trackEvent('select_package', {
+    event_category: 'engagement',
+    package_name: packageName,
+    ...(price ? { price } : {}),
+    ...(feeType ? { fee_type: feeType } : {}),
+  })
+  trackSelectContent('package_pricing', packageName, price || 'Consultation')
+}
+
+/** Video interaction (Video reels & YouTube embeds) */
+export const trackVideoEvent = (
+  action: 'play' | 'pause' | 'complete' | 'open_lightbox' | 'mute' | 'unmute',
+  videoTitle: string,
+  videoId?: string
+) => {
+  trackEvent(`video_${action}`, {
+    event_category: 'video',
+    video_title: videoTitle,
+    ...(videoId ? { video_id: videoId } : {}),
+  })
+}
+
+/** FAQ accordion interaction */
 export const trackFAQOpen = (question: string, index: number) => {
   trackSelectContent('faq', `faq_${index}`, question.substring(0, 100))
   trackEvent('faq_open', {
     event_category: 'engagement',
     event_label: question.substring(0, 100),
     faq_index: index,
+  })
+}
+
+/** Carousel interaction */
+export const trackCarouselInteraction = (carouselName: string, slideIndex: number, action: 'next' | 'prev' | 'dot') => {
+  trackEvent('carousel_interaction', {
+    event_category: 'engagement',
+    carousel_name: carouselName,
+    slide_index: slideIndex,
+    action,
   })
 }
 
@@ -148,3 +232,11 @@ export const trackGalleryZoom = (imageSrc: string, altText: string) => {
   })
 }
 
+/** 404 / Error exception tracking */
+export const trackException = (description: string, isFatal = false) => {
+  trackEvent('exception', {
+    event_category: 'error',
+    description,
+    fatal: isFatal,
+  })
+}
