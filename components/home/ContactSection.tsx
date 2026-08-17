@@ -28,11 +28,17 @@ const ageGroups = ['6–12 bulan', '1–2 tahun', '2–3 tahun', '3–4 tahun', 
 
 export default function ContactSection() {
   const [form, setForm] = useState({ nama: '', namaAnak: '', usia: '', wa: '', pesan: '' })
+  const [visitForm, setVisitForm] = useState({ nama: '', namaAnak: '', usia: '', tanggal: '', waktu: 'Pagi (09:00 – 11:00 WIB)', wa: '', pesan: '' })
   const [submitted, setSubmitted] = useState(false)
-  const [method, setMethod] = useState<'form' | 'cal'>('form')
+  const [submittedVisit, setSubmittedVisit] = useState(false)
+  const [method, setMethod] = useState<'form' | 'visit'>('form')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleVisitChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setVisitForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,6 +57,26 @@ export default function ContactSection() {
     setSubmitted(true)
   }
 
+  const handleVisitSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const msg = encodeURIComponent(
+      `Halo Amana Care! 👋\n\n` +
+      `Saya ingin mengajukan jadwal Site Visit / Kunjungan ke Amana Care Bintaro:\n\n` +
+      `👤 Nama Orang Tua: ${visitForm.nama}\n` +
+      `👶 Nama Anak: ${visitForm.namaAnak}\n` +
+      `🎂 Usia Anak: ${visitForm.usia}\n` +
+      `📅 Rencana Tanggal Kunjungan: ${visitForm.tanggal}\n` +
+      `⏰ Waktu Sesi: ${visitForm.waktu}\n` +
+      `📱 Nomor WA: ${visitForm.wa}\n` +
+      `${visitForm.pesan ? `💬 Catatan: ${visitForm.pesan}\n` : ''}` +
+      `\nMohon konfirmasi ketersediaan jadwalnya ya! Terima kasih 🙏`
+    )
+    window.open(`https://wa.me/6281513075155?text=${msg}`, '_blank')
+    trackFormSubmit('home_site_visit_form', visitForm.usia)
+    trackWhatsAppOpen('home_site_visit_submit')
+    setSubmittedVisit(true)
+  }
+
   return (
     <section className={`section ${styles.section}`} aria-labelledby="contact-heading">
       <div className="container">
@@ -63,7 +89,7 @@ export default function ContactSection() {
                 Siap mendaftarkan<br />si kecil?
               </h2>
               <p className={styles.formSubtitle}>
-                Pilih cara pendaftaran yang paling nyaman untuk Anda di bawah ini.
+                Pilih cara pendaftaran atau kunjungan yang paling nyaman untuk Anda di bawah ini.
               </p>
 
               <div className={styles.methodSelector}>
@@ -79,27 +105,143 @@ export default function ContactSection() {
                 </button>
                 <button
                   type="button"
-                  className={`${styles.methodBtn} ${method === 'cal' ? styles.methodBtnActive : ''}`}
+                  className={`${styles.methodBtn} ${method === 'visit' ? styles.methodBtnActive : ''}`}
                   onClick={() => {
-                    setMethod('cal')
-                    trackSelectContent('registration_method', 'cal_site_visit', 'Jadwalkan Site Visit')
+                    setMethod('visit')
+                    trackSelectContent('registration_method', 'site_visit_form', 'Jadwalkan Site Visit')
                   }}
                 >
                   📅 Jadwalkan Site Visit
                 </button>
               </div>
 
-              {method === 'cal' ? (
-                <div className={styles.calWrapper}>
-                  <iframe
-                    src="https://cal.com/amanacare/site-visit?embed=true"
-                    width="100%"
-                    height="500"
-                    frameBorder="0"
-                    title="Jadwalkan Kunjungan Amana Care Bintaro"
-                    className={styles.calFrame}
-                  />
-                </div>
+              {method === 'visit' ? (
+                !submittedVisit ? (
+                  <form className={styles.form} onSubmit={handleVisitSubmit} noValidate>
+                    <div className={styles.row}>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-nama" className={styles.label}>Nama Orang Tua *</label>
+                        <input
+                          type="text"
+                          id="visit-nama"
+                          name="nama"
+                          className={styles.input}
+                          placeholder="Nama lengkap"
+                          value={visitForm.nama}
+                          onChange={handleVisitChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-namaAnak" className={styles.label}>Nama Anak *</label>
+                        <input
+                          type="text"
+                          id="visit-namaAnak"
+                          name="namaAnak"
+                          className={styles.input}
+                          placeholder="Nama si kecil"
+                          value={visitForm.namaAnak}
+                          onChange={handleVisitChange}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className={styles.row}>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-usia" className={styles.label}>Usia Anak *</label>
+                        <select
+                          id="visit-usia"
+                          name="usia"
+                          className={styles.input}
+                          value={visitForm.usia}
+                          onChange={handleVisitChange}
+                          required
+                        >
+                          <option value="">Pilih usia</option>
+                          {ageGroups.map((age) => (
+                            <option key={age} value={age}>{age}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-tanggal" className={styles.label}>Rencana Tanggal *</label>
+                        <input
+                          type="date"
+                          id="visit-tanggal"
+                          name="tanggal"
+                          className={styles.input}
+                          value={visitForm.tanggal}
+                          onChange={handleVisitChange}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className={styles.row}>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-waktu" className={styles.label}>Pilihan Sesi Waktu *</label>
+                        <select
+                          id="visit-waktu"
+                          name="waktu"
+                          className={styles.input}
+                          value={visitForm.waktu}
+                          onChange={handleVisitChange}
+                          required
+                        >
+                          <option value="Pagi (09:00 – 11:00 WIB)">Sesi Pagi (09.00 – 11.00 WIB)</option>
+                          <option value="Siang (13:00 – 15:00 WIB)">Sesi Siang (13.00 – 15.00 WIB)</option>
+                          <option value="Fleksibel / Sesuai Kesepakatan">Fleksibel / Sesuai Kesepakatan</option>
+                        </select>
+                      </div>
+                      <div className={styles.field}>
+                        <label htmlFor="visit-wa" className={styles.label}>Nomor WhatsApp *</label>
+                        <input
+                          type="tel"
+                          id="visit-wa"
+                          name="wa"
+                          className={styles.input}
+                          placeholder="08xxxxxxxxxx"
+                          value={visitForm.wa}
+                          onChange={handleVisitChange}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className={styles.field}>
+                      <label htmlFor="visit-pesan" className={styles.label}>Catatan Tambahan (Opsional)</label>
+                      <textarea
+                        id="visit-pesan"
+                        name="pesan"
+                        className={`${styles.input} ${styles.textarea}`}
+                        placeholder="Catatan atau pertanyaan terkait kunjungan?"
+                        rows={3}
+                        value={visitForm.pesan}
+                        onChange={handleVisitChange}
+                      />
+                    </div>
+
+                    <button type="submit" className={`btn btn-primary btn-lg ${styles.submitBtn}`} id="site-visit-form-submit">
+                      Jadwalkan Kunjungan via WhatsApp 📅
+                    </button>
+
+                    <p className={styles.disclaimer}>
+                      Dengan mengirim form ini, Anda menyetujui kami menghubungi Anda via WhatsApp untuk konfirmasi jadwal.
+                    </p>
+                  </form>
+                ) : (
+                  <div className={styles.success}>
+                    <CheckCircle size={48} color="var(--color-green)" />
+                    <h3 className={styles.successTitle}>Pengajuan Kunjungan Terkirim!</h3>
+                    <p className={styles.successText}>
+                      WhatsApp sedang terbuka. Tim Amana Care akan segera membalas dan mengonfirmasi jadwal kunjungan Anda. 🎉
+                    </p>
+                    <button className="btn btn-outline" onClick={() => setSubmittedVisit(false)}>
+                      Jadwalkan Lagi
+                    </button>
+                  </div>
+                )
               ) : !submitted ? (
                 <form className={styles.form} onSubmit={handleSubmit} noValidate>
                   <div className={styles.row}>
