@@ -184,8 +184,14 @@ CREATE TABLE contacts (
    - Form collects Parent Name, Child Name, Child Age, Planned Visit Date, Preferred Visit Session (Pagi 09:00–11:00 WIB, Siang 13:00–15:00 WIB, Fleksibel), WhatsApp Number, and optional notes.
    - Generates and dispatches a structured WhatsApp template message to Amana Care official WhatsApp (`081513075155`) with full analytics tracking (`home_site_visit_form`, `kontak_site_visit_form`, `trackWhatsAppOpen`, `trackSelectContent`).
    - Verified zero TypeScript compilation errors, successful production build, and all unit/integration tests passing.
-7. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
-8. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
+7. **GA4, GTM & Google Search Console Optimization [COMPLETED & VERIFIED — 2026-08-17]**:
+   - Implemented SPA client-side route tracking via `<AnalyticsTracker />` (`usePathname`, `useSearchParams`, `trackPageView`).
+   - Standardized Schema.org JSON-LD structured data across ALL pages (`LocalBusiness`, `ChildCare`, `Organization`, `WebSite`, `BreadcrumbList`, `Service`, `OfferCatalog`, `ItemList`, `AboutPage`, `Person`, `CollectionPage`, `ImageGallery`, `VideoObject`, `ContactPage`, `FAQPage`) with unified canonical domain `https://www.amanacare.id`.
+   - Connected comprehensive tracking for all CTAs, package selectors, video reels lightbox/controls, testimonials carousel slides, media tab switchers, and form methods.
+   - Verified Google Search Console verification meta tag, updated `sitemap.ts` and `robots.ts` with Googlebot rules and accurate priorities.
+   - Automated unit tests in `tests/unit/analytics.test.ts` (18/18 tests passing) and 0 TypeScript compilation errors in production build.
+8. **Video Asset Optimization**: `.webm` files in `/public/videos/` reach up to ~19MB (e.g. `amanacare-activity-dental-visit-beam-dental-01.webm`). Delivering video reels via a CDN or HLS adaptive streaming will optimize first-load performance on mobile networks.
+9. **Database Type Safety**: Supabase JS client in `lib/supabase.ts` is instantiated without generated database type definitions (`Database` generic type).
 
 ---
 
