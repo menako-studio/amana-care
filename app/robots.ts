@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/_next/'],
       },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+      },
     ],
     sitemap: 'https://www.amanacare.id/sitemap.xml',
     host: 'https://www.amanacare.id',

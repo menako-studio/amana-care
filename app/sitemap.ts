@@ -14,13 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/layanan`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kontak`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/galeri`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
   ]
 }

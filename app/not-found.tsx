@@ -1,12 +1,17 @@
 'use client'
 
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { Home, MessageCircle, Compass } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import styles from './not-found.module.css'
-import { trackCTAClick, trackWhatsAppOpen } from '@/lib/analytics'
+import { trackCTAClick, trackWhatsAppOpen, trackException } from '@/lib/analytics'
 
 export default function NotFound() {
+  useEffect(() => {
+    trackException('404_not_found', false)
+  }, [])
+
   const waUrl =
     'https://wa.me/6281513075155?text=' +
     encodeURIComponent(
@@ -45,7 +50,7 @@ export default function NotFound() {
             <Link
               href="/"
               className="btn btn-primary btn-lg"
-              onClick={() => trackCTAClick('404_back_home', '/')}
+              onClick={() => trackCTAClick('404_back_home', '/', '404 Hero')}
             >
               <Home size={20} />
               Kembali ke Beranda
