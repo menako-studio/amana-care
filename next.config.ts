@@ -37,8 +37,8 @@ const nextConfig: NextConfig = {
 
 export default withSentryConfig(nextConfig, {
   // Sentry project options
-  org: process.env.SENTRY_ORG || "amana-care",
-  project: process.env.SENTRY_PROJECT || "amana-care-web",
+  org: process.env.SENTRY_ORG || "menako-studio",
+  project: process.env.SENTRY_PROJECT || "amana-care",
 
   // Suppress warnings in non-Sentry build environments
   silent: !process.env.CI,
