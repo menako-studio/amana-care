@@ -13,7 +13,7 @@
 
 | Category | Technology | Version / Specification | Key Details / Config |
 | :--- | :--- | :--- | :--- |
-| **Framework** | Next.js | `^16.3.4` (App Router) | React 19.2.4, Turbopack enabled |
+| **Framework** | Next.js | `^16.4.3` (App Router) | React 19.2.4, Turbopack enabled |
 | **Language** | TypeScript | `^5.0.0` | Strict mode enabled |
 | **Styling** | CSS Modules & Global Design System | Vanilla CSS | Custom tokens in `app/globals.css`, scoped `*.module.css` |
 | **Animations & Motion** | Framer Motion & Lenis | `framer-motion@12.42.2`, `lenis@1.3.25` | Scroll reveal wrappers, smooth scrolling context |
@@ -21,10 +21,10 @@
 | **Carousel** | Embla Carousel React | `embla-carousel-react@8.6.0` | Used in Testimonials Carousel |
 | **Database (Optional)** | Supabase JS Client | `@supabase/supabase-js@2.110.3` | Table `contacts` for optional lead persistence |
 | **Email Service** | Resend | `resend@6.17.2` | Automated email dispatch to `amanacare.id@gmail.com` |
-| **Form & Validation** | React Hook Form & Zod | `react-hook-form@7.81.0`, `zod@4.4.3` | Schema-based validation via `@hookform/resolvers@5.4.0` |
-| **Analytics** | GA4 & GTM via `@next/third-parties` | `@next/third-parties@^16.3.4` | Custom dispatcher in `lib/analytics.ts` |
-| **Error Monitoring** | Sentry Next.js | `@sentry/nextjs@10.66.0` | Configured in `next.config.ts`, tunnelRoute `/monitoring` |
-| **Testing** | Vitest & React Testing Library | `vitest@^4.1.11`, `jsdom@29.1.1` | Unit tests in `tests/unit/`, integration in `tests/integration/` |
+| **Form & Validation** | React Hook Form & Zod | `react-hook-form@7.81.0`, `zod@4.6.7` | Schema-based validation via `@hookform/resolvers@5.4.0` |
+| **Analytics** | GA4 & GTM via `@next/third-parties` | `@next/third-parties@^16.4.3` | Custom dispatcher in `lib/analytics.ts` |
+| **Error Monitoring** | Sentry Next.js | `@sentry/nextjs@10.76.2` | Configured in `next.config.ts`, tunnelRoute `/monitoring` |
+| **Testing** | Vitest & React Testing Library | `vitest@^4.1.12`, `jsdom@29.1.1` | Unit tests in `tests/unit/`, integration in `tests/integration/` |
 
 ---
 

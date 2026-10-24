@@ -6,15 +6,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/_next/'],
+        // Jangan blokir /_next/ — Googlebot butuh CSS/JS untuk render halaman.
+        // /monitoring = Sentry tunnel route.
+        disallow: ['/api/', '/monitoring'],
       },
     ],
     sitemap: 'https://www.amanacare.id/sitemap.xml',
-    host: 'https://www.amanacare.id',
   }
 }
