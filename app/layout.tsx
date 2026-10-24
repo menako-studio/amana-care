@@ -128,7 +128,6 @@ const jsonLd = {
         '@type': 'ContactPoint',
         telephone: '+6281513075155',
         contactType: 'customer service',
-        contactOption: 'TollFree',
         availableLanguage: 'Indonesian',
       },
       openingHoursSpecification: [
@@ -144,6 +143,12 @@ const jsonLd = {
         'https://share.google/oW83N8priCPDFtC6n',
         'https://maps.app.goo.gl/YWpQNA5BRqkPgxvQ9',
       ],
+      hasMap: 'https://maps.app.goo.gl/YWpQNA5BRqkPgxvQ9',
+      areaServed: [
+        { '@type': 'City', name: 'Tangerang Selatan' },
+        { '@type': 'Place', name: 'Bintaro' },
+        { '@type': 'Place', name: 'Pondok Aren' },
+      ],
       priceRange: 'Rp Rp',
       currenciesAccepted: 'IDR',
       paymentAccepted: 'Cash, Transfer Bank',
@@ -155,14 +160,7 @@ const jsonLd = {
       name: 'Amana Care',
       description: 'Daycare & Parents Working Space Premium Bintaro Sektor 7',
       publisher: { '@id': `${siteUrl}/#organization` },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${siteUrl}/?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
-      },
+      inLanguage: 'id-ID',
     },
   ],
 }
